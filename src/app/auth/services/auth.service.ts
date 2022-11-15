@@ -70,7 +70,7 @@ export class AuthService {
       .pipe(
         first(),
         tap((tokenObject: any) => {
-          this.userId = tokenObject.userid;
+          this.username = tokenObject.username;
           localStorage.setItem("token", tokenObject.token);
           this.isUserLoggedIn$.next(true);
           // this.isUserLoggedIn$ = true;
@@ -82,12 +82,14 @@ export class AuthService {
         catchError(
           this.errorHandlerService.handleError<{
             token: string,
-            userid: Pick<Users, "username">
+            username: Pick<Users, "username">
           }>()
         ),
     ) 
     this.currUser = user;
     console.log(this.currUser,"djsjsdj");
+    
+    console.log('username' + this.username);
     return this.currUser;
   }
 
