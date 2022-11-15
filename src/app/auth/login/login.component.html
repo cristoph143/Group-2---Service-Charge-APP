@@ -5,15 +5,15 @@
             <form class="form" [formGroup]="loginForm" (ngSubmit)="onSubmitLogin">
                 <mat-form-field appearance="fill">
                     <mat-label>Enter your School ID</mat-label>
-                    <input matInput #input id="id" placeholder="2018021020" formControlName="school_id" minlength="10" maxlength="10" required>
-                    <mat-hint align="end">{{input.value.length || 0}}/10</mat-hint>
+                    <input matInput #input id="id" placeholder="2018021020" formControlName="username" minlength="4" maxlength="10" required>
+                    <mat-hint align="end">{{input.value.length || 0}}/4</mat-hint>
                     <mat-error *ngIf="isFieldInvalid('school_id')">
                         School ID is <strong>required</strong>
                     </mat-error>
                 </mat-form-field>
                 <mat-form-field appearance="fill">
                     <mat-label>Enter your password</mat-label>
-                    <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" minlength="5" required>
+                    <input matInput formControlName="password" [type]="hide ? 'password' : 'text'" minlength="4" required>
                     <mat-error *ngIf="isFieldInvalid('password')">
                         Password is <strong>required</strong>
                     </mat-error>

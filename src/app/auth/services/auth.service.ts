@@ -19,12 +19,12 @@ export class AuthService {
     private errorHandlerService: ErrorHandlerService,
   ) {}
 
-  private url = "http://localhost:8000/ticket-system/auth"
+  private url = "http://localhost:8080/ticket-system"
 
   isUserLoggedIn$ = new BehaviorSubject<boolean>(false);
   // isUserLoggedIn$ = false;
-  userId: Pick<Users, "id"> | undefined;
-  id: any;
+  userId: Pick<Users, "username"> | undefined;
+  username: any;
   httpOptions: {
     headers : HttpHeaders
   } = {
@@ -33,7 +33,7 @@ export class AuthService {
       })
     }
   
-  signup(user: Omit<Users,"id">): Observable<Users>{
+  signup(user: Omit<Users,"username">): Observable<Users>{
     console.log('signup')
     console.log(user);
     return this.http
@@ -51,18 +51,18 @@ export class AuthService {
   currUser: any;
 
   login(
-    id: Pick<Users, "id">,
+    username: Pick<Users, "username">,
     password: Pick<Users, "password">
   ): Observable<{
     token: string,
-    userid: Pick<Users, "id">
+    username: Pick<Users, "username">
   }> {
     console.log('login');
     const user = this.http
       .post(
         `${this.url}/login`,
         {
-          id,
+          username,
           password
         },
         this.httpOptions
@@ -74,15 +74,15 @@ export class AuthService {
           localStorage.setItem("token", tokenObject.token);
           this.isUserLoggedIn$.next(true);
           // this.isUserLoggedIn$ = true;
-          this.id = id;
-          console.log('sdd=>',this.id);
+          this.username = username;
+          console.log('sdd=>',this.username);
           this.router.navigate(["home"]);
           // alert("Successfully logged in");
         }),
         catchError(
           this.errorHandlerService.handleError<{
             token: string,
-            userid: Pick<Users, "id">
+            userid: Pick<Users, "username">
           }>()
         ),
     ) 

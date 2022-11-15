@@ -11,6 +11,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 
+import { MatInputModule } from "@angular/material/input";
+
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
@@ -49,6 +51,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatFormFieldModule,
     HttpClientModule,
     MatCheckboxModule,
+    MatInputModule,
     HotToastModule.forRoot(),
    
   ],

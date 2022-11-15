@@ -1,5 +1,5 @@
 export interface Users{
-    id?: string;
+    assigneeID?: number;
     fname: string;
     lname: string;
     username: string;

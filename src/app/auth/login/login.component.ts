@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
   rememberMe: boolean = false;
   
   loginForm: FormGroup = new FormGroup({
-    school_id: new FormControl(
+    username: new FormControl(
       '',
       Validators.required,
     ),
@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     
     console.log(this.authService
       .login(
-        this.loginForm.value.school_id,
+        this.loginForm.value.username,
         this.loginForm.value.password,
       )
       .pipe(
@@ -81,7 +81,7 @@ export class LoginComponent implements OnInit {
       return 'You must enter a value';
     }
 
-    return this.loginForm.hasError('school_id') ? 'Not a school_id' : '';
+    return this.loginForm.hasError('username') ? 'Not a username' : '';
   }
 
   nav(dest: string) {
