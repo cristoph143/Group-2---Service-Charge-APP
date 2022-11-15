@@ -76,7 +76,7 @@ export class AuthService {
           // this.isUserLoggedIn$ = true;
           this.username = username;
           console.log('sdd=>',this.username);
-          this.router.navigate(["home"]);
+          this.router.navigate(["user-dashboard"]);
           // alert("Successfully logged in");
         }),
         catchError(
