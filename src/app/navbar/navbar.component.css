@@ -1,7 +1,7 @@
 mat-toolbar {
     display: flex;
-    justify-content: space-between;
     padding: 0 30px;
+    justify-content: space-between;
     background-color: white;
 }
 
@@ -21,12 +21,20 @@ mat-toolbar {
     padding-right: 10px;
 } */
 
-.nav_list{
+.navbar-item{
+    font-family: 'Poppins';
+    font-weight: 700;
+    font-size: 17px;
+    color: #DD0301;
     display: flex;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
+    padding-left: 100px;
 }
+
+/* #home {
+    display: flex;
+    justify-content: end;
+    padding-left: 500px;
+} */
 
 
 .header {
