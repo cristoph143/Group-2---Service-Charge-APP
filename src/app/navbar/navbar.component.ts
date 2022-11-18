@@ -1,6 +1,7 @@
 import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { AuthService } from '../auth/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,9 +13,16 @@ export class NavbarComponent implements OnInit {
   constructor(
     private router: Router,
     private dialog: MatDialog,
+    private authService: AuthService,
   ) { }
 
   ngOnInit(): void {
+    console.log(this.authService.isUserLoggedIn$.subscribe((isLoggedIn) => {
+      this.isAuthenticated = isLoggedIn;
+      console.log('?????',this.isAuthenticated)
+    }))
+    // this.isAuthenticated = this.authService.isUserLoggedIn$;
+    console.log('hello', this.isAuthenticated);
   }
 
   
@@ -24,8 +32,12 @@ export class NavbarComponent implements OnInit {
     this.router.navigate([dest]);
   }
 
-  logout(){
-    this.isAuthenticated = false;
-    this.nav('login');
+  logout(): void {
+    localStorage.removeItem("token");
+    // const remove = this.authService.isUserLoggedIn$.next(false);
+    const remove: any = this.authService.isUserLoggedIn$.next(false);
+    // this.authService.isUserLoggedIn$ = false;
+    this.isAuthenticated = remove;
+    this.router.navigate(["login"]);
   }
 }
