@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.markAllAsTouched();
       return;
     }
+    console.log(this.loginForm.value.username)
     
     console.log(this.authService
       .login(

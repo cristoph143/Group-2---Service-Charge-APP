@@ -57,7 +57,7 @@ export class AuthService {
     token: string,
     username: Pick<Users, "username">
   }> {
-    console.log('login');
+    console.log('login' + username);
     const user = this.http
       .post(
         `${this.url}/login`,
@@ -71,6 +71,7 @@ export class AuthService {
         first(),
         tap((tokenObject: any) => {
           this.username = tokenObject.username;
+          console.log(tokenObject)
           localStorage.setItem("token", tokenObject.token);
           this.isUserLoggedIn$.next(true);
           // this.isUserLoggedIn$ = true;
@@ -86,6 +87,7 @@ export class AuthService {
           }>()
         ),
     ) 
+    console.log(user);
     this.currUser = user;
     console.log(this.currUser,"djsjsdj");
     
