@@ -4,6 +4,7 @@ import { Ticket } from '../../auth/model/ticket-interface';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { UsersService } from 'src/app/auth/services/users.service';
+import { TicketService } from 'src/app/auth/services/ticket.service';
 
 @Component({
   selector: 'app-user-dashboard',
@@ -16,16 +17,17 @@ export class UserDashboardComponent implements OnInit {
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
+    private ticketService: TicketService
     ) { }
 
-  users: Users[]=[];
-  tickets: Ticket[]=[];
+  tickets: any;
   account$: any;
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
+    this.fetchAllTickets();
   }
 
   userId: Pick<Users, "username"> | undefined;
@@ -53,5 +55,11 @@ export class UserDashboardComponent implements OnInit {
     console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
     console.log(this.account$, 'account$');
+  }
+
+  fetchAllTickets(){
+    this.ticketService.fetchAllTickets().subscribe((data:any) => {
+      this.tickets = data;
+    })
   }
 }
