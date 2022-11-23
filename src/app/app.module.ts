@@ -24,6 +24,14 @@ import { MatCardModule} from '@angular/material/card';
 import { HotToastModule } from '@ngneat/hot-toast';
 
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { Routes } from '@angular/router';
+import {MatDividerModule} from '@angular/material/divider';
+import {MatListModule} from '@angular/material/list';
+const appRoute: Routes =[
+  {path: 'Home', component: UserDashboardComponent},
+  // {path: 'chuchu/chu/:id', component: UserDashboardComponent},
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +61,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     MatCheckboxModule,
     MatInputModule,
     HotToastModule.forRoot(),
+    MatDividerModule,
+    MatListModule,
    
   ],
   providers: [],

@@ -1,0 +1,103 @@
+h2{
+    color: white;
+    text-align: center;
+}
+.container{
+    width: 100%;
+    height: 540px;
+    left: 0px;
+
+    background-image: url(bg.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position:relative;
+    isolation: isolate;
+}
+.container::before{
+    content: '';
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: black;
+    opacity: 75%;
+}
+
+.list{
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    transition-duration: 0.4s;
+    width: 350px;
+}
+.list:hover{
+    background-color: white;
+    color: black;
+}
+.create{
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+.create:hover{
+    background-color: white;
+    color: black;
+}
+.update{
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+.update:hover{
+    background-color: white;
+    color: black;
+}
+.view{
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+.view:hover{
+    background-color: white;
+    color: black;
+}
+.add{
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+.add:hover{
+    background-color: white;
+    color: black;
+}
+.workflow{
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+.workflow:hover{
+    background-color: white;
+    color: black;
+}

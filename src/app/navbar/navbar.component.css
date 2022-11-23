@@ -1,21 +1,21 @@
 mat-toolbar {
-    display: flex;
-    justify-content: space-between;
-    padding: 0 64px;
-    background-color: #1976d2;
+    display:flex;
+    justify-content: end;
+    /* padding: 0 64px; */
+    background-color: rgba(221, 3, 1, 1);
 }
 
 .logo {
-    width: 50px;
+    width: auto;
     height: 50px;
-    border-radius: 50%;
-    margin-right: 20px;
+    justify-content: left;
 }
 
 .header {
     display: flex;
     align-items: center;
 }
+
 
 mat-card-title {
     display: flex;
@@ -34,7 +34,7 @@ mat-card-title {
 .nav-list {
     display: flex;
     justify-content: space-between;
-    padding: 0 64px;
+    /* padding: 0 64px; */
     align-items: center;
 }
 
@@ -42,6 +42,8 @@ mat-card-title {
     display: flex;
     align-items: center;
     background-color: transparent;
+    position: relative;
+    display: inline-block;
 }
 
 .button {
@@ -50,16 +52,18 @@ mat-card-title {
 }
 
 .dropbtn {
-    background-color: #1976d2;
+    background-color: rgba(221, 3, 1, 1);
     color: white;
     padding: 16px;
     font-size: 16px;
     border: none;
 }
-
-.dropdown {
-    position: relative;
-    display: inline-block;
+.butn{
+    background-color: rgba(221, 3, 1, 1);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none; 
 }
 
 .dropdown-content {
@@ -87,5 +91,8 @@ mat-card-title {
 }
 
 .dropdown:hover .dropbtn {
-    background-color: #3e8e41;
+    background-color: black;
+}
+.butn:hover{
+    background-color: black;
 }
