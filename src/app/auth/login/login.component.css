@@ -1,4 +1,4 @@
-.alliance {
+/* #alliance {
     font-family: 'Bebas Neue';
     font-size: 200px;
     color: white;
@@ -7,20 +7,39 @@
     padding-left: 35px;
     display: flex;
     position: absolute;
-}
+} */
 
-.center {
+#alliance {
+    position: absolute;
+    width: 749px;
+    height: 300px;
+    left: 80px;
+    top: 309px;
     font-family: 'Bebas Neue';
-    font-size: 200px;
-    letter-spacing: 2px;
-    padding: 25% 35px;
-    color: white;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 250px;
+    line-height: 300px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
 }
 
 .subtitle {
+    position: absolute;
+    width: 571px;
+    height: 84px;
+    left: 80px;
+    top: 570px;
     font-family: 'Bebas Neue';
-    font-size: 20px;
-    color: white;
-    letter-spacing: 2px;
-    padding-left: 35px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 60px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.03em;
+    color: #FFFFFF;
 }
