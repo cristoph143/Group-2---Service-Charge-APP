@@ -1,14 +1,28 @@
 mat-toolbar {
     display: flex;
     padding: 0 30px;
-    justify-content: space-between;
     background-color: white;
+}
+
+span {
+    flex: auto;
+    /* justify-items: flex-end; */
 }
 
 .logo {
     width: 8em;
     margin-top: 10px;
     margin-right: 5px;
+}
+
+.loginBtn {
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 400;
+    background-color: #DD0301;
+    border: 0;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
 }
 
 /* .navbar{

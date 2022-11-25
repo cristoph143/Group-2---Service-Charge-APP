@@ -17,19 +17,12 @@
     </div> -->
 <!-- </mat-toolbar> -->
 
-<mat-toolbar color="white">
-    <img src="assets/alliance_logo.png" alt="logo" class="logo">
-    <mat-label class="navbar-item" id="home">
-        HOME
-    </mat-label>
-    <mat-label class="navbar-item">
-        ABOUT
-    </mat-label>
-    <mat-label class="navbar-item">
-        SERVICES
-    </mat-label>
-    <button type="button" class="btn btn-primary" routerLink="active" (click)="nav('login')" *ngIf="!isAuthenticated">
+<mat-toolbar>
+    <span><img src="assets/alliance_logo.png" alt="logo" class="logo"></span>
+    <span class="navbar-item" id="home" routerLink="active" *ngIf="!isAuthenticated">HOME</span>
+    <span class="navbar-item" id="about" routerLink="active" *ngIf="!isAuthenticated">ABOUT US</span>
+    <span class="navbar-item" id="services" routerLink="active" *ngIf="!isAuthenticated">SERVICES</span>
+    <button type="button" class="loginBtn" routerLink="active" (click)="nav('login')" *ngIf="!isAuthenticated">
         LOGIN
     </button>
-
-</mat-toolbar>
+  </mat-toolbar>

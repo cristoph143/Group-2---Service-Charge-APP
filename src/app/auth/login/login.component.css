@@ -1,0 +1,26 @@
+.alliance {
+    font-family: 'Bebas Neue';
+    font-size: 200px;
+    color: white;
+    letter-spacing: 2px;
+    text-align: left center;
+    padding-left: 35px;
+    display: flex;
+    position: absolute;
+}
+
+.center {
+    font-family: 'Bebas Neue';
+    font-size: 200px;
+    letter-spacing: 2px;
+    padding: 25% 35px;
+    color: white;
+}
+
+.subtitle {
+    font-family: 'Bebas Neue';
+    font-size: 20px;
+    color: white;
+    letter-spacing: 2px;
+    padding-left: 35px;
+}
