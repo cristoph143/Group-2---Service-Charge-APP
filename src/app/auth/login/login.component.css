@@ -43,3 +43,98 @@
     letter-spacing: 0.03em;
     color: #FFFFFF;
 }
+
+.right-panel {
+    position: absolute;
+    width: 624px;
+    height: 629px;
+    left: 1093px;
+    top: 172px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}
+
+.sign-in {
+    position: absolute;
+    width: 253px;
+    height: 64px;
+    left: 50px;
+    top: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 45px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+.sign-up {
+    position: absolute;
+    width: 292px;
+    height: 52px;
+    left: 165px;
+    top: 500px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 26px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #000000;
+}
+
+#emailField {
+    position: absolute;
+    top: 150px;
+    left: 50px;
+    font-family: 'Poppins';
+}
+
+#pwordField {
+    position: absolute;
+    top: 260px;
+    left: 50px;
+    font-family: 'Poppins';
+}
+
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+    background-color: rgb(227, 227, 227);
+    border-radius: 5px;
+}
+
+.example-margin {
+    top: 360px;
+    left: 60px;
+    font-size: smaller;
+    justify-items: space-between;
+    font-family: 'Poppins';
+}
+
+#forgot {
+    position: relative;
+    align-items: center;
+    padding-left: 220px;
+}
+
+#loginBtn {
+    position: absolute;
+    width: 222.78px;
+    height: 80.15px;
+    left: 200px;
+    top: 410px;
+    background: rgba(221, 3, 1, 0.98);
+    border-radius: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    color: white;
+    letter-spacing: 0.1em;
+    justify-content: center;
+    
+}
