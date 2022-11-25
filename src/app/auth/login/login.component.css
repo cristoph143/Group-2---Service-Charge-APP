@@ -61,8 +61,8 @@
     left: 50px;
     top: 50px;
     font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
+    font-style:normal ;
+    font-weight: bolder;
     font-size: 48px;
     line-height: 45px;
     display: flex;
@@ -75,12 +75,12 @@
     position: absolute;
     width: 292px;
     height: 52px;
-    left: 165px;
-    top: 500px;
+    left: 175px;
+    top: 510px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 17px;
+    font-size: 16px;
     line-height: 26px;
     display: flex;
     align-items: center;
@@ -126,7 +126,7 @@
     width: 222.78px;
     height: 80.15px;
     left: 200px;
-    top: 410px;
+    top: 415px;
     background: rgba(221, 3, 1, 0.98);
     border-radius: 10px;
     font-family: 'Poppins';
