@@ -1,2 +1,109 @@
-<p>User Dashboard Works!</p>
-<p>{{account$ | json}}</p>
+<!-- <div class="container">
+  <div class="bg">
+    <div class="content">
+      <h2>
+        TICKET MANAGEMENT
+      </h2>
+    </div>
+    <div class="table">
+      <table>
+        <tr>
+          <td>
+            <button
+>
+              TICKET LIST
+            </button>
+          </td>
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <button class="create">CREATE TICKET</button>
+          </td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <button class="update">UPDATE TICKET</button>
+          </td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <button class="view">VIEW TICKET</button>
+          </td>
+
+          <td></td>
+        </tr>
+
+        <tr>
+          <td>
+            <button class="add">ADD REMAINDER FOR AGING TICKETS</button>
+          </td>
+
+          <td></td>
+        </tr>
+        <tr>
+          <td>
+            <button class="workflow">TICKET WORKFLOW</button>
+          </td>
+
+          <td></td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div> -->
+<div class="container">
+  <div class="title">
+    <h2>
+      <p>TICKET MANAGEMENT</p>
+    </h2>
+  </div>
+
+  <mat-list>
+    <mat-list-item><button class="list">TICKET LIST</button></mat-list-item>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-list-item><button class="create">CREATE LIST</button></mat-list-item>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-list-item><button class="update">UPDATE LIST</button></mat-list-item>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-list-item><button class="view">VIEW TICKET</button></mat-list-item>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-list-item><button class="add">ADD REMAINDER FOR AGING TICKETS</button></mat-list-item>
+    <mat-divider [inset]="true"></mat-divider>
+    <mat-list-item><button class="workflow">TICKET WORKFLOW</button></mat-list-item>
+    <mat-divider [inset]="true"></mat-divider>
+  </mat-list>
+</div>
+
+<p>{{ account$ | json }}</p>
+<p>{{ tickets | json }}</p>
+<!-- table for tickets -->
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Ticket ID</th>
+      <th scope="col">Assignee ID</th>
+      <th scope="col">Status</th>
+      <th scope="col">Subject</th>
+      <th scope="col">Description</th>
+      <th scope="col">Tracker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let ticket of tickets">
+      <td>{{ ticket.ticketID }}</td>
+      <td>{{ ticket.assigneeID }}</td>
+      <td>{{ ticket.status }}</td>
+      <td>{{ ticket.subject }}</td>
+      <td>{{ ticket.description }}</td>
+      <td>{{ ticket.tracker }}</td>
+    </tr>
+  </tbody>
+</table>
