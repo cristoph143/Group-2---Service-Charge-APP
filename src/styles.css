@@ -1,4 +1,26 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* html, body { height: 100%; } */
+body { 
+    margin: 0; 
+    font-family: 'Poppins', sans-serif; 
+    background-image: url('../../bg.png'); 
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-repeat:no-repeat;
+    background-position:center;
+    overflow: hidden;
+}
+
+body::before {
+    content: '';
+    background-size: cover;
+    background-attachment: fixed;
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: black;
+    opacity: 70%;
+}
+

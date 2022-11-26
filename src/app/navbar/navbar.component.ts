@@ -23,13 +23,17 @@ export class NavbarComponent implements OnInit {
     }))
     // this.isAuthenticated = this.authService.isUserLoggedIn$;
     console.log('hello', this.isAuthenticated);
-  }
 
+  }
   
   isAuthenticated = false;
 
   nav(dest: string) {
     this.router.navigate([dest]);
+  }
+
+  todashboard(){
+    this.router.navigate(["/user-dashboard"]);
   }
 
   logout(): void {
@@ -41,3 +45,4 @@ export class NavbarComponent implements OnInit {
     this.router.navigate(["login"]);
   }
 }
+
