@@ -29,6 +29,7 @@ export class AgingTicketComponent implements OnInit {
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
     this.monthlyReport();
+    this.ticketPerAssignee();
   }
 
   userId: Pick<Users, "username"> | undefined;
@@ -60,6 +61,13 @@ export class AgingTicketComponent implements OnInit {
 
   monthlyReport() {
     this.ticketService.monthlyReport().subscribe((data:any) => {
+      this.tickets = data;
+      console.log(this.tickets);
+    });
+  }
+
+  ticketPerAssignee(){
+    this.ticketService.ticketPerAssignee().subscribe((data:any) => {
       this.tickets = data;
       console.log(this.tickets);
     });

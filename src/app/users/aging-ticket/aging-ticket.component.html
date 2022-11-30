@@ -1,5 +1,5 @@
 <!-- display monthly object in table format -->
-<table mat-table>
+<table mat-table class="table table-striped">
     <!-- Status, Count -->
     <thead>
         <tr>
@@ -14,3 +14,19 @@
             <td mat-cell>{{ item.total }}</td>
     </tbody>
 </table>
+<table mat-table class="table table-striped">
+    <!-- <assigneeID, Status, Count -->
+    <thead>
+        <tr>
+            <th mat-header-cell scope="col">Assignee ID</th>
+            <th mat-header-cell scope="col">Status</th>
+            <th mat-header-cell scope="col">Count</th>
+        </tr>
+    </thead>
+    <tbody>
+        <!-- use index to loop the monthly -->
+        <tr *ngFor="let item of tickets; let i = index">
+            <td mat-cell>{{ item.assigneeID }}</td>
+            <td mat-cell>{{ item.status }}</td>
+            <td mat-cell>{{ item.total }}</td>
+    </tbody>

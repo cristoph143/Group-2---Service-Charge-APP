@@ -68,4 +68,16 @@ export class TicketService {
     );
   }
 
+  // ticketPerAssignee
+  ticketPerAssignee(): Observable<Ticket> {
+    return this.http
+      .get<Ticket>(`${this.url}/ticket-per-assignee`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Ticket>("ticketPerAssignee")
+        )
+    );
+  }
+
 }
