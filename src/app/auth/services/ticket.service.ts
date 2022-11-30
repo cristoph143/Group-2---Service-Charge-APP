@@ -55,4 +55,17 @@ export class TicketService {
     return this.http
       .delete<Ticket>(`${this.url}/ticket-system/delete/${ticketID}`, {responseType: 'text' as 'json'})
   }
+
+  // monthlyReport
+  monthlyReport(): Observable<Ticket> {
+    return this.http
+      .get<Ticket>(`${this.url}/monthly-report`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Ticket>("monthlyReport")
+        )
+    );
+  }
+
 }

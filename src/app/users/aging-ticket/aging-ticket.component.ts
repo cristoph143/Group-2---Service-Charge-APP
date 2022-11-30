@@ -21,11 +21,14 @@ export class AgingTicketComponent implements OnInit {
 
   tickets: any;
   account$: any;
+  monthly:any;
+  monthlyJson: any
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
+    this.monthlyReport();
   }
 
   userId: Pick<Users, "username"> | undefined;
@@ -53,6 +56,13 @@ export class AgingTicketComponent implements OnInit {
     console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
     console.log(this.account$, 'account$');
+  }
+
+  monthlyReport() {
+    this.ticketService.monthlyReport().subscribe((data:any) => {
+      this.tickets = data;
+      console.log(this.tickets);
+    });
   }
 
 }
