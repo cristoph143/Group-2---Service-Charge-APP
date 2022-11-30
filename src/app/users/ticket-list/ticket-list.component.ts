@@ -72,6 +72,7 @@ export class TicketListComponent implements OnInit {
   createTicket(){
   }
   updateTicket(id:any){
+    console.log(this.tickets);
     const ticket = this.tickets.find(t => t.ticketID === id);
     console.log(ticket);
     // open the dialog box
@@ -89,7 +90,12 @@ export class TicketListComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
+      this.dialog.closeAll();
+      this.router.navigate(['/user-dashboard']);
+      this.fetchAllTickets();
+      // refresh content o
     });
+    // 
   }
   deleteTicket(id:any){}
   viewTicket(id:any){}

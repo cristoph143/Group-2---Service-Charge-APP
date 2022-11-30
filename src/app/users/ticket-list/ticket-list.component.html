@@ -11,8 +11,6 @@
                 <th mat-header-cell scope="col">Status</th>
                 <th mat-header-cell scope="col">Subject</th>
                 <th mat-header-cell scope="col">Description</th>
-                <th mat-header-cell scope="col">Tracker</th>
-                <th mat-header-cell scope="col">View</th>
                 <th mat-header-cell scope="col">Update</th>
                 <th mat-header-cell scope="col">Ticket</th>
             </tr>
@@ -24,14 +22,6 @@
                 <td mat-cell>{{ ticket.status }}</td>
                 <td mat-cell>{{ ticket.subject }}</td>
                 <td mat-cell>{{ ticket.description }}</td>
-                <td mat-cell>{{ ticket.tracker }}</td>
-                <!-- view -->
-                <td mat-cell>
-                    <button class="view" (click)="viewTicket(ticket.ticketID)">
-                        <!-- icon view -->
-                        <mat-icon>visibility</mat-icon>
-                    </button>
-                </td>
                 <!-- update -->
                 <td mat-cell>
                     <button mat-button class="update" (click)="updateTicket(ticket.ticketID)">

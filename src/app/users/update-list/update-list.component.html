@@ -3,4 +3,39 @@
         <mat-icon>close</mat-icon>
     </button>
 </mat-dialog-actions>
-<p>{{tickets | json}}</p>
+<form [formGroup]="ticket">
+    <!-- form for ticket -->
+    <mat-form-field class="form">
+        <mat-label>Ticket ID</mat-label>
+        <!-- ticket readOnly -->
+        <input matInput type="text" formControlName="ticketID" (ngModel)="tickets.ticketID" placeholder="{{tickets.ticketID}}" readonly>
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Assignee ID</mat-label>
+        <!-- assigneeID -->
+        <input matInput type="text" formControlName="assigneeID" (ngModel)="tickets.assigneeID" placeholder="{{tickets.assigneeID}}">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Status</mat-label>
+        <!-- status -->
+        <input matInput type="text" formControlName="status" (ngModel)="tickets.status" placeholder="{{tickets.status}}">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Subject</mat-label>
+        <!-- subject -->
+        <input matInput type="text" formControlName="subject" (ngModel)="tickets.subject" placeholder="{{tickets.subject}}">
+    </mat-form-field>
+    <mat-form-field class="form">
+        <mat-label>Description</mat-label>
+        <!-- description -->
+        <input matInput type="text" formControlName="description" (ngModel)="tickets.description" placeholder="{{tickets.description}}">
+    </mat-form-field>
+    <mat-dialog-actions align="end">
+        <button class="cent" mat-button mat-dialog-close>
+        <mat-icon>close</mat-icon>
+    </button>
+        <button class="cent" mat-button (click)="updateTicket()">
+        <mat-icon>update</mat-icon>
+    </button>
+    </mat-dialog-actions>
+</form>

@@ -12,7 +12,7 @@ export class TicketService {
   constructor(private http: HttpClient,
     private errorHandlerService: ErrorHandlerService) { }
   
-  private url = "http://localhost:8080/ticket-system";
+  private url = "http://localhost:8080";
 
   httpOptions: { headers: HttpHeaders } = {
       headers: new HttpHeaders({ "Content-Type": "application/json" }),
@@ -21,7 +21,7 @@ export class TicketService {
   // fetchAllTickets
   fetchAllTickets(): Observable<Ticket> {
     return this.http
-      .get<Ticket>(`${this.url}`, this.httpOptions)
+      .get<Ticket>(`${this.url}/ticket-system/`, this.httpOptions)
       .pipe(
         first(),
         catchError(
@@ -40,5 +40,13 @@ export class TicketService {
           this.errorHandlerService.handleError<Ticket>("createTicket")
         )
       );
+  }
+
+  // updateTicket
+  updateTicket(ticketID: any, ticket: Ticket): Observable<Ticket> {
+    console.log(ticket);
+    return this.http
+      .post<Ticket>(`${this.url}/update_ticket/${ticketID}`,
+      ticket, {responseType: 'text' as 'json'})
   }
 }

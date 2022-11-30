@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
@@ -23,6 +24,15 @@ export class UpdateListComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
+  ticket: FormGroup = new FormGroup({
+    ticketID: new FormControl(''),
+    assigneeID: new FormControl(''),
+    status: new FormControl(''),
+    subject: new FormControl(''),
+    description: new FormControl(''),
+  });
+
+    
   tickets: any;
   account$: any;
   ngOnInit(): void {
@@ -59,6 +69,25 @@ export class UpdateListComponent implements OnInit {
     console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
     console.log(this.account$, 'account$');
+  }
+
+  updateTicket() {
+    console.log(this.ticket.value)
+    console.log(this.tickets.ticket.ticketID)
+    let ticket = {
+      ticketID: this.tickets.ticket.ticketID,
+      assigneeID: this.ticket.value.assigneeID,
+      status: this.ticket.value.status,
+      subject: this.ticket.value.subject,
+      description: this.ticket.value.description
+    }
+    console.log(ticket)
+    this.ticketService.updateTicket(ticket.ticketID, ticket).subscribe((data:any) => {
+      console.log(data);
+      alert(data)
+      // close all
+      this.dialog.closeAll();
+    })
   }
 
 }
