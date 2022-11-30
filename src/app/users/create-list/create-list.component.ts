@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -16,8 +18,10 @@ export class CreateListComponent implements OnInit {
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService
-    ) { }
+    private ticketService: TicketService,
+    public dialog: MatDialog,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
   tickets: any;
   account$: any;
@@ -27,6 +31,14 @@ export class CreateListComponent implements OnInit {
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
   }
+
+  ticket: FormGroup = new FormGroup({
+    ticketID: new FormControl(''),
+    assigneeID: new FormControl(''),
+    status: new FormControl(''),
+    subject: new FormControl(''),
+    description: new FormControl(''),
+  });
 
   userId: Pick<Users, "username"> | undefined;
   username: any;
@@ -53,6 +65,23 @@ export class CreateListComponent implements OnInit {
     console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
     console.log(this.account$, 'account$');
+  }
+
+  createTicket() {
+    console.log(this.ticket.value)
+    let ticket = {
+      assigneeID: this.ticket.value.assigneeID,
+      status: this.ticket.value.status,
+      subject: this.ticket.value.subject,
+      description: this.ticket.value.description
+    }
+    console.log(ticket)
+    this.ticketService.createTicket(ticket).subscribe((data:any) => {
+      console.log(data);
+      alert(data)
+      // close all
+      this.dialog.closeAll();
+    })
   }
 
 }

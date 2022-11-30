@@ -33,7 +33,7 @@ export class TicketService {
   // createTicket
   createTicket(ticket: Ticket): Observable<Ticket> {
     return this.http
-      .post<Ticket>(`${this.url}`, ticket, this.httpOptions)
+      .post<Ticket>(`${this.url}/create_ticket`, ticket, {responseType: 'text' as 'json'})
       .pipe(
         first(),
         catchError(

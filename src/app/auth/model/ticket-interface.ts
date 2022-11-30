@@ -1,5 +1,5 @@
 export interface Ticket{
-    ticketID: number,
+    ticketID?: number,
     assigneeID: string,
     status: string,
     subject: string,

@@ -6,7 +6,7 @@ import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
-import { UpdateListComponent } from '../update-list/update-list.component';
+import { CreateListComponent } from '../create-list/create-list.component';
 
 @Component({
   selector: 'app-ticket-list',
@@ -70,6 +70,26 @@ export class TicketListComponent implements OnInit {
   }
 
   createTicket(){
+    const ticket = this.tickets;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "100%";
+    dialogConfig.data = {
+      ticket
+    };
+    console.log(dialogConfig.data, 'dialogConfig.data');
+    const dialogRef = this.dialog.open(CreateListComponent, dialogConfig);
+    console.log(dialogRef)
+    //   const dialogRef = this.dialog.open(dialogReference);
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+      this.dialog.closeAll();
+      this.router.navigate(['/user-dashboard']);
+      this.fetchAllTickets();
+      // refresh content o
+    });
   }
   updateTicket(id:any){
     console.log(this.tickets);
@@ -84,7 +104,7 @@ export class TicketListComponent implements OnInit {
       ticket
     };
     console.log(dialogConfig.data, 'dialogConfig.data');
-    const dialogRef = this.dialog.open(UpdateListComponent, dialogConfig);
+    const dialogRef = this.dialog.open(CreateListComponent, dialogConfig);
     console.log(dialogRef)
     //   const dialogRef = this.dialog.open(dialogReference);
 
