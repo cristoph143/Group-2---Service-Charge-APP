@@ -64,9 +64,9 @@ export class UserDashboardComponent implements OnInit {
   list: List[] = [
     // ["ticket_list", "create_list", "update_list", "view_ticket", "aging_ticket", "ticket_workflow"];
     { path: '/ticket_list', icon: 'list', name: 'Ticket List' },
-    { path: '/create_list', icon: 'add', name: 'Create Ticket' },
-    { path: '/update_list', icon: 'update', name: 'Update Ticket' },
-    { path: '/view_ticket', icon: 'view_list', name: 'View Ticket' },
+    // { path: '/create_list', icon: 'add', name: 'Create Ticket' },
+    // { path: '/update_list', icon: 'update', name: 'Update Ticket' },
+    // { path: '/view_ticket', icon: 'view_list', name: 'View Ticket' },
     { path: '/aging_ticket', icon: 'watch_later', name: 'Aging Ticket' },
     { path: '/ticket_workflow', icon: 'workflow', name: 'Ticket Workflow' },
   ];

@@ -68,7 +68,7 @@ export class ViewTicketComponent implements OnInit {
     })
   }
 
-  addTicket(){
+  createTicket(){
   }
   updateTicket(id:any){}
   deleteTicket(id:any){}
