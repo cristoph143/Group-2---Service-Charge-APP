@@ -97,7 +97,15 @@ export class TicketListComponent implements OnInit {
     });
     // 
   }
-  deleteTicket(id:any){}
+  deleteTicket(id:any){
+    // show dialog pop up if he wants to delete the ticket
+    if(confirm("Are you sure you want to delete this ticket#" + id +"?")){
+      this.ticketService.deleteTicket(id).subscribe(() => {
+        this.fetchAllTickets();
+      })
+    }
+
+  }
   viewTicket(id:any){}
 
 }

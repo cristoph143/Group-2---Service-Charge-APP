@@ -49,4 +49,10 @@ export class TicketService {
       .post<Ticket>(`${this.url}/update_ticket/${ticketID}`,
       ticket, {responseType: 'text' as 'json'})
   }
+
+  // deleteTicket
+  deleteTicket(ticketID: any): Observable<Ticket> {
+    return this.http
+      .delete<Ticket>(`${this.url}/ticket-system/delete/${ticketID}`, {responseType: 'text' as 'json'})
+  }
 }
