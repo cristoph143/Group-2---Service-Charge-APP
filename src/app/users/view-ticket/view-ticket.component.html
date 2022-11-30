@@ -1,0 +1,25 @@
+<p>view-ticket works!</p>
+
+<!-- table for tickets -->
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th scope="col">Ticket ID</th>
+            <th scope="col">Assignee ID</th>
+            <th scope="col">Status</th>
+            <th scope="col">Subject</th>
+            <th scope="col">Description</th>
+            <th scope="col">Tracker</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let ticket of tickets">
+            <td>{{ ticket.ticketID }}</td>
+            <td>{{ ticket.assigneeID }}</td>
+            <td>{{ ticket.status }}</td>
+            <td>{{ ticket.subject }}</td>
+            <td>{{ ticket.description }}</td>
+            <td>{{ ticket.tracker }}</td>
+        </tr>
+    </tbody>
+</table>

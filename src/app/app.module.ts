@@ -27,6 +27,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes } from '@angular/router';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatListModule} from '@angular/material/list';
+import { TicketListComponent } from './users/ticket-list/ticket-list.component';
+import { CreateListComponent } from './users/create-list/create-list.component';
+import { UpdateListComponent } from './users/update-list/update-list.component';
+import { ViewTicketComponent } from './users/view-ticket/view-ticket.component';
+import { AgingTicketComponent } from './users/aging-ticket/aging-ticket.component';
+import { TicketWorkflowComponent } from './users/ticket-workflow/ticket-workflow.component';
 const appRoute: Routes =[
   {path: 'Home', component: UserDashboardComponent},
   // {path: 'chuchu/chu/:id', component: UserDashboardComponent},
@@ -38,6 +44,12 @@ const appRoute: Routes =[
     LoginComponent,
     UserDashboardComponent,
     NavbarComponent,
+    TicketListComponent,
+    CreateListComponent,
+    UpdateListComponent,
+    ViewTicketComponent,
+    AgingTicketComponent,
+    TicketWorkflowComponent,
   ],
   exports: [
     CommonModule,

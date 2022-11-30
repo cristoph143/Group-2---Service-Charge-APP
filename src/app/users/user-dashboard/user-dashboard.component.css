@@ -1,7 +1,9 @@
-h2{
+h2 {
     color: white;
     text-align: center;
 }
+
+
 /* .container{
     width: 100%;
     height: 540px;
@@ -21,6 +23,7 @@ h2{
     background: black;
     opacity: 75%;
 } */
+
 
 /* .title {
     position: absolute;
@@ -42,7 +45,7 @@ h2{
     color: #FFFFFF;
 } */
 
-.list{
+.list {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
     font-size: 20px;
@@ -52,11 +55,18 @@ h2{
     transition-duration: 0.4s;
     width: 350px;
 }
-.list:hover{
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.list:hover {
     background-color: white;
     color: black;
 }
-.create{
+
+.create {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
     font-size: 20px;
@@ -65,11 +75,13 @@ h2{
     border-radius: 8px;
     width: 350px;
 }
-.create:hover{
+
+.create:hover {
     background-color: white;
     color: black;
 }
-.update{
+
+.update {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
     font-size: 20px;
@@ -78,11 +90,13 @@ h2{
     border-radius: 8px;
     width: 350px;
 }
-.update:hover{
+
+.update:hover {
     background-color: white;
     color: black;
 }
-.view{
+
+.view {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
     font-size: 20px;
@@ -91,11 +105,13 @@ h2{
     border-radius: 8px;
     width: 350px;
 }
-.view:hover{
+
+.view:hover {
     background-color: white;
     color: black;
 }
-.add{
+
+.add {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
     font-size: 20px;
@@ -104,11 +120,13 @@ h2{
     border-radius: 8px;
     width: 350px;
 }
-.add:hover{
+
+.add:hover {
     background-color: white;
     color: black;
 }
-.workflow{
+
+.workflow {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
     font-size: 20px;
@@ -117,7 +135,17 @@ h2{
     border-radius: 8px;
     width: 350px;
 }
-.workflow:hover{
+
+.workflow:hover {
     background-color: white;
     color: black;
 }
+
+
+/* .content {
+    margin: 700px;
+}
+
+.tab {
+    margin: 350px;
+} */
