@@ -22,6 +22,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import { MatCardModule} from '@angular/material/card';
 
 import { HotToastModule } from '@ngneat/hot-toast';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { Routes } from '@angular/router';
@@ -60,6 +62,7 @@ const appRoute: Routes =[
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    MatPaginatorModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
     MatToolbarModule,

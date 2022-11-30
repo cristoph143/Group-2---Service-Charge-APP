@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -18,6 +19,10 @@ export class ViewTicketComponent implements OnInit {
     private router: Router,
     private ticketService: TicketService
     ) { }
+
+    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+  
+    @ViewChild(MatPaginator) paginator: MatPaginator;
 
   tickets: any;
   account$: any;
@@ -62,5 +67,11 @@ export class ViewTicketComponent implements OnInit {
       this.tickets = data;
     })
   }
+
+  addTicket(){
+  }
+  updateTicket(id:any){}
+  deleteTicket(id:any){}
+  viewTicket(id:any){}
 
 }

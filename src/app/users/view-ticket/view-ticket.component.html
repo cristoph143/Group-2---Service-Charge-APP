@@ -1,25 +1,54 @@
-<p>view-ticket works!</p>
-
-<!-- table for tickets -->
-<table class="table table-striped">
-    <thead>
-        <tr>
-            <th scope="col">Ticket ID</th>
-            <th scope="col">Assignee ID</th>
-            <th scope="col">Status</th>
-            <th scope="col">Subject</th>
-            <th scope="col">Description</th>
-            <th scope="col">Tracker</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr *ngFor="let ticket of tickets">
-            <td>{{ ticket.ticketID }}</td>
-            <td>{{ ticket.assigneeID }}</td>
-            <td>{{ ticket.status }}</td>
-            <td>{{ ticket.subject }}</td>
-            <td>{{ ticket.description }}</td>
-            <td>{{ ticket.tracker }}</td>
-        </tr>
-    </tbody>
-</table>
+<div class="ticket">
+    <div class="end">
+        <!-- add/create button -->
+        <button class="add" (click)="addTicket()">ADD TICKET</button>
+    </div>
+    <table mat-table class="table table-striped">
+        <thead>
+            <tr>
+                <th mat-header-cell scope="col">Ticket ID</th>
+                <th mat-header-cell scope="col">Assignee ID</th>
+                <th mat-header-cell scope="col">Status</th>
+                <th mat-header-cell scope="col">Subject</th>
+                <th mat-header-cell scope="col">Description</th>
+                <th mat-header-cell scope="col">Tracker</th>
+                <th mat-header-cell scope="col">View</th>
+                <th mat-header-cell scope="col">Update</th>
+                <th mat-header-cell scope="col">Ticket</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let ticket of tickets">
+                <td mat-cell>{{ ticket.ticketID }}</td>
+                <td mat-cell>{{ ticket.assigneeID }}</td>
+                <td mat-cell>{{ ticket.status }}</td>
+                <td mat-cell>{{ ticket.subject }}</td>
+                <td mat-cell>{{ ticket.description }}</td>
+                <td mat-cell>{{ ticket.tracker }}</td>
+                <!-- view -->
+                <td mat-cell>
+                    <button class="view" (click)="viewTicket(ticket.ticketID)">
+                        <!-- icon view -->
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                </td>
+                <!-- update -->
+                <td mat-cell>
+                    <button mat-button class="update" (click)="updateTicket(ticket.ticketID)">
+                        <!-- icon update -->
+                        <mat-icon>update</mat-icon>
+                    </button>
+                </td>
+                <!-- delete -->
+                <td mat-cell>
+                    <button mat-button class="delete" (click)="deleteTicket(ticket.ticketID)">
+                        <!-- icon delete -->
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+    </mat-paginator>
+</div>
