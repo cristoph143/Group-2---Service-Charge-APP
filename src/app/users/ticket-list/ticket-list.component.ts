@@ -2,11 +2,13 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
+import { Ticket } from 'src/app/auth/model/ticket-interface';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 import { CreateListComponent } from '../create-list/create-list.component';
+import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
   selector: 'app-ticket-list',
@@ -24,11 +26,18 @@ export class TicketListComponent implements OnInit {
     ) { }
   
     @ViewChild(MatPaginator) paginator: MatPaginator;
-
-  tickets: any;
-  account$: any;
-  ngOnInit(): void {
-    // this.userId = this.authService.userId;
+    
+    tickets: Ticket[] = [];
+    dataSource:any;
+    
+    ngAfterViewInit() {
+      this.dataSource = new MatTableDataSource<Ticket>(this.tickets);
+      this.dataSource.paginator = this.paginator;
+    }
+    
+    account$: any;
+    ngOnInit(): void {
+      // this.userId = this.authService.userId;
     this.username = this.authService.username;
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
