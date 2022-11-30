@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
   })
 
   hide = true;
+  currUser: any;
 
   onSubmitLogin(){
     if (this.loginForm.invalid) {
@@ -59,21 +60,22 @@ export class LoginComponent implements OnInit {
         // toaster 
         this.toast.observe({
           success: 'Successfully logged in',
+          // if this.currUser is undefined, error
           loading: 'loading',
-          error: (msg) => {
-            console.log(msg)
-            alert(msg)
-            return msg;
-          }
+          // error: (msg) => {
+          //   console.log(msg)
+          //   alert(msg)
+          //   return msg;
+          // }
         })
       )
       .subscribe(data => {
         console.log('Data', data);
-        
-        // this.router.navigate(['/home']);
+        this.currUser = data;
       }
       )
     );
+    console.log(this.currUser);
     console.log(this.authService.currUser)
     console.log(this.authService.isUserAuthenticated)
   }

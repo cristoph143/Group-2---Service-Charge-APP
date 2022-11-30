@@ -29,4 +29,16 @@ export class TicketService {
         )
     );
   }
+
+  // createTicket
+  createTicket(ticket: Ticket): Observable<Ticket> {
+    return this.http
+      .post<Ticket>(`${this.url}`, ticket, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+          this.errorHandlerService.handleError<Ticket>("createTicket")
+        )
+      );
+  }
 }
