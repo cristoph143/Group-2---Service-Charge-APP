@@ -2,7 +2,7 @@ h2{
     color: white;
     text-align: center;
 }
-.container{
+/* .container{
     width: 100%;
     height: 540px;
     left: 0px;
@@ -20,7 +20,27 @@ h2{
     inset: 0;
     background: black;
     opacity: 75%;
-}
+} */
+
+/* .title {
+    position: absolute;
+    width: 606px;
+    height: 83px;
+    left: 657px;
+    top: 135px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 55px;
+    line-height: 82px;
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    color: #FFFFFF;
+} */
 
 .list{
     font-family: 'Poppins';
