@@ -141,11 +141,26 @@ h2 {
     color: black;
 }
 
-
-/* .content {
-    margin: 700px;
+.inside {
+    display: flex;
 }
 
-.tab {
-    margin: 350px;
-} */
+.mat-list-base {
+    padding-top: 2px;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+    padding: 40px 0;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    width: 700px;
+    height: 458px;
+    margin-top: 39px;
+}
