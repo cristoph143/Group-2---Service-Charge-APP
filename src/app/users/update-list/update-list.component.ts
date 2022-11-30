@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -12,12 +13,15 @@ import { UsersService } from 'src/app/auth/services/users.service';
 })
 export class UpdateListComponent implements OnInit {
 
+  @Output() submitClicked = new EventEmitter<any>();
   constructor(
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService
-    ) { }
+    private ticketService: TicketService,
+    public dialog: MatDialog,
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
 
   tickets: any;
   account$: any;
@@ -26,6 +30,8 @@ export class UpdateListComponent implements OnInit {
     this.username = this.authService.username;
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
+    console.log(this.data)
+    this.tickets = this.data
   }
 
   userId: Pick<Users, "username"> | undefined;

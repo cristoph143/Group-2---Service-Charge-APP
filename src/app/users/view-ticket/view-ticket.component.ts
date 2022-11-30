@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
@@ -17,10 +18,9 @@ export class ViewTicketComponent implements OnInit {
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    public dialog: MatDialog
     ) { }
-
-    displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
   
     @ViewChild(MatPaginator) paginator: MatPaginator;
 
@@ -31,7 +31,6 @@ export class ViewTicketComponent implements OnInit {
     this.username = this.authService.username;
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
-    this.fetchAllTickets();
   }
 
   userId: Pick<Users, "username"> | undefined;
@@ -60,18 +59,5 @@ export class ViewTicketComponent implements OnInit {
     this.account$ = curr_acc;
     console.log(this.account$, 'account$');
   }
-
-  
-  fetchAllTickets(){
-    this.ticketService.fetchAllTickets().subscribe((data:any) => {
-      this.tickets = data;
-    })
-  }
-
-  createTicket(){
-  }
-  updateTicket(id:any){}
-  deleteTicket(id:any){}
-  viewTicket(id:any){}
 
 }
