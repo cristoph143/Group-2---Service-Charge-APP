@@ -9,6 +9,7 @@ import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 import { CreateListComponent } from '../create-list/create-list.component';
 import {MatTableDataSource} from '@angular/material/table';
+import { UpdateListComponent } from '../update-list/update-list.component';
 
 @Component({
   selector: 'app-ticket-list',
@@ -101,7 +102,7 @@ export class TicketListComponent implements OnInit {
     });
   }
   updateTicket(id:any){
-    console.log(this.tickets);
+    console.log(this.tickets +"update");
     const ticket = this.tickets.find(t => t.ticketID === id);
     console.log(ticket);
     // open the dialog box
@@ -113,7 +114,7 @@ export class TicketListComponent implements OnInit {
       ticket
     };
     console.log(dialogConfig.data, 'dialogConfig.data');
-    const dialogRef = this.dialog.open(CreateListComponent, dialogConfig);
+    const dialogRef = this.dialog.open(UpdateListComponent, dialogConfig);
     console.log(dialogRef)
     //   const dialogRef = this.dialog.open(dialogReference);
 

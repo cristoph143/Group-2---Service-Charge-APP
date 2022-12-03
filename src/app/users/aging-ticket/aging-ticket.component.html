@@ -1,42 +1,44 @@
-<!-- display monthly object in table format -->
-<table mat-table class="table table-striped">
-    <!-- Status, Count -->
-    <thead>
-        <tr>
-            <th mat-header-cell scope="col">Status</th>
-            <th mat-header-cell scope="col">Count</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- use index to loop the monthly -->
-        <tr *ngFor="let item of tickets_monthly; let i = index">
-            <td mat-cell>{{ item.status }}</td>
-            <td mat-cell>{{ item.total }}</td>
-    </tbody>
-</table>
-<table mat-table class="table table-striped">
-    <!-- <assigneeID, Status, Count -->
-    <thead>
-        <tr>
-            <th mat-header-cell scope="col">Ticket ID</th>
-            <th mat-header-cell scope="col">Assignee ID</th>
-            <th mat-header-cell scope="col">Status</th>
-            <th mat-header-cell scope="col">Count</th>
-            <th mat-header-cell scope="col">View</th>
-        </tr>
-    </thead>
-    <tbody>
-        <!-- use index to loop the monthly -->
-        <tr *ngFor="let item of tickets_assignee; let i = index">
-            <td mat-cell>{{ item.ticketID }}</td>
-            <td mat-cell>{{ item.assigneeID }}</td>
-            <td mat-cell>{{ item.status }}</td>
-            <td mat-cell>{{ item.total }}</td>
-            <td mat-cell>
-                <button mat-button class="view" (click)="viewTicket(item.assigneeID,item.status)">
-                    <!-- icon view -->
-                    <mat-icon>visibility</mat-icon>
-                </button>
-            </td>
-    </tbody>
-</table>
+<div class="row">
+    <!-- display monthly object in table format -->
+    <table mat-table class="table table-striped">
+        <!-- Status, Count -->
+        <thead>
+            <tr>
+                <th mat-header-cell scope="col">Status</th>
+                <th mat-header-cell scope="col">Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- use index to loop the monthly -->
+            <tr *ngFor="let item of tickets_monthly; let i = index">
+                <td mat-cell>{{ item.status }}</td>
+                <td mat-cell>{{ item.total }}</td>
+        </tbody>
+    </table>
+    <table mat-table class="table table-striped">
+        <!-- <assigneeID, Status, Count -->
+        <thead>
+            <tr>
+                <th mat-header-cell scope="col">Ticket ID</th>
+                <th mat-header-cell scope="col">Assignee ID</th>
+                <th mat-header-cell scope="col">Status</th>
+                <th mat-header-cell scope="col">Count</th>
+                <th mat-header-cell scope="col">View</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- use index to loop the monthly -->
+            <tr *ngFor="let item of tickets_assignee; let i = index">
+                <td mat-cell>{{ item.ticketID }}</td>
+                <td mat-cell>{{ item.assigneeID }}</td>
+                <td mat-cell>{{ item.status }}</td>
+                <td mat-cell>{{ item.total }}</td>
+                <td mat-cell>
+                    <button mat-button class="view" (click)="viewTicket(item.assigneeID,item.status)">
+                        <!-- icon view -->
+                        <mat-icon>visibility</mat-icon>
+                    </button>
+                </td>
+        </tbody>
+    </table>
+</div>

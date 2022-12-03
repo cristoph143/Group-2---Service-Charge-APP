@@ -5,6 +5,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 import { CreateListComponent } from '../create-list/create-list.component';
+import { UpdateListComponent } from '../update-list/update-list.component';
 
 @Component({
   selector: 'app-view-ticket-per-assignee',
@@ -32,6 +33,8 @@ export class ViewTicketPerAssigneeComponent implements OnInit {
 
   header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
 
+  show: boolean = false;
+
   updateTicket(id:any){
     console.log(this.tickets);
     const ticket = this.tickets.find(t => t.ticketID === id);
@@ -45,7 +48,7 @@ export class ViewTicketPerAssigneeComponent implements OnInit {
       ticket
     };
     console.log(dialogConfig.data, 'dialogConfig.data');
-    const dialogRef = this.dialog.open(CreateListComponent, dialogConfig);
+    const dialogRef = this.dialog.open(UpdateListComponent, dialogConfig);
     console.log(dialogRef)
     //   const dialogRef = this.dialog.open(dialogReference);
 
@@ -53,9 +56,9 @@ export class ViewTicketPerAssigneeComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
-      // this.fetchAllTickets();
-      // refresh content o
+      this.show = true;
     });
+    console.log(this.show)
     // 
   }
   deleteTicket(id:any){
@@ -63,6 +66,8 @@ export class ViewTicketPerAssigneeComponent implements OnInit {
     if(confirm("Are you sure you want to delete this ticket#" + id +"?")){
       this.ticketService.deleteTicket(id).subscribe(() => {
         // this.fetchAllTickets();
+        // close
+        this.dialog.closeAll();
       })
     }
 

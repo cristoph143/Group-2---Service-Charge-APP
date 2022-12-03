@@ -96,7 +96,8 @@ export class AgingTicketComponent implements OnInit {
       dialogRef.afterClosed().subscribe((result: any) => {
         console.log(`Dialog result: ${result}`);
         this.dialog.closeAll();
-        this.router.navigate(['/user-dashboard']);
+        console.log(this.monthlyReport())
+        this.ticketPerAssignee();
       });
 
     });
