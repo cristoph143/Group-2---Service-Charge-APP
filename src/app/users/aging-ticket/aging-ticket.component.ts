@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
+import { ViewTicketPerAssigneeComponent } from 'src/app/users/view-ticket-per-assignee/view-ticket-per-assignee.component';
 
 @Component({
   selector: 'app-aging-ticket',
@@ -16,7 +18,8 @@ export class AgingTicketComponent implements OnInit {
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    public dialog: MatDialog
     ) { }
 
   tickets_monthly: any;
@@ -74,4 +77,28 @@ export class AgingTicketComponent implements OnInit {
     });
   }
 
+  viewTicket(assigneeID: any,status: any){
+    this.ticketService.findTicketsPerAssigneeAndStatus(assigneeID,status).subscribe((data:any) => {
+      const datas = data.data;
+      
+      const dialogConfig = new MatDialogConfig();
+      dialogConfig.disableClose = true;
+      dialogConfig.autoFocus = true;
+      dialogConfig.width = "100%";
+      dialogConfig.data = {
+        datas
+      };
+      console.log(dialogConfig.data, 'dialogConfig.data');
+      const dialogRef = this.dialog.open(ViewTicketPerAssigneeComponent, dialogConfig);
+      console.log(dialogRef)
+      //   const dialogRef = this.dialog.open(dialogReference);
+
+      dialogRef.afterClosed().subscribe((result: any) => {
+        console.log(`Dialog result: ${result}`);
+        this.dialog.closeAll();
+        this.router.navigate(['/user-dashboard']);
+      });
+
+    });
+  }
 }

@@ -22,6 +22,7 @@
             <th mat-header-cell scope="col">Assignee ID</th>
             <th mat-header-cell scope="col">Status</th>
             <th mat-header-cell scope="col">Count</th>
+            <th mat-header-cell scope="col">View</th>
         </tr>
     </thead>
     <tbody>
@@ -31,5 +32,11 @@
             <td mat-cell>{{ item.assigneeID }}</td>
             <td mat-cell>{{ item.status }}</td>
             <td mat-cell>{{ item.total }}</td>
+            <td mat-cell>
+                <button mat-button class="view" (click)="viewTicket(item.assigneeID,item.status)">
+                    <!-- icon view -->
+                    <mat-icon>visibility</mat-icon>
+                </button>
+            </td>
     </tbody>
 </table>

@@ -80,4 +80,15 @@ export class TicketService {
     );
   }
 
+  findTicketsPerAssigneeAndStatus(assigneeID: string, status: string): Observable<Ticket> {
+    return this.http
+      .get<Ticket>(`${this.url}/ticket-system/findByAssigneeID/${assigneeID}/${status}`, this.httpOptions)
+      .pipe(
+          first(),
+          catchError(
+              this.errorHandlerService.handleError<Ticket>("findTicketsPerAssigneeAndStatus")
+          )
+      );
+    }
+
 }
