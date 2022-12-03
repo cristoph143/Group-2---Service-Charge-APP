@@ -19,7 +19,8 @@ export class AgingTicketComponent implements OnInit {
     private ticketService: TicketService
     ) { }
 
-  tickets: any;
+  tickets_monthly: any;
+  tickets_assignee: any;
   account$: any;
   monthly:any;
   monthlyJson: any
@@ -61,15 +62,15 @@ export class AgingTicketComponent implements OnInit {
 
   monthlyReport() {
     this.ticketService.monthlyReport().subscribe((data:any) => {
-      this.tickets = data;
-      console.log(this.tickets);
+      this.tickets_monthly = data;
+      console.log(this.tickets_monthly);
     });
   }
 
   ticketPerAssignee(){
     this.ticketService.ticketPerAssignee().subscribe((data:any) => {
-      this.tickets = data;
-      console.log(this.tickets);
+      this.tickets_assignee = data;
+      console.log(this.tickets_assignee);
     });
   }
 

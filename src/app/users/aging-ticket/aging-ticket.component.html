@@ -9,7 +9,7 @@
     </thead>
     <tbody>
         <!-- use index to loop the monthly -->
-        <tr *ngFor="let item of tickets; let i = index">
+        <tr *ngFor="let item of tickets_monthly; let i = index">
             <td mat-cell>{{ item.status }}</td>
             <td mat-cell>{{ item.total }}</td>
     </tbody>
@@ -25,8 +25,9 @@
     </thead>
     <tbody>
         <!-- use index to loop the monthly -->
-        <tr *ngFor="let item of tickets; let i = index">
+        <tr *ngFor="let item of tickets_assignee; let i = index">
             <td mat-cell>{{ item.assigneeID }}</td>
             <td mat-cell>{{ item.status }}</td>
             <td mat-cell>{{ item.total }}</td>
     </tbody>
+</table>
