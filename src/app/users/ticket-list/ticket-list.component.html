@@ -2,15 +2,14 @@
     <div class="end">
         <!-- add/create angular button -->
         <button class="create" (click)="createTicket()">CREATE TICKET</button>
+        <!-- export to pdf -->
+        <button class="export" (click)="exportToCSV()">EXPORT TO CSV</button>
     </div>
     <table mat-table class="table table-striped">
         <thead>
             <tr>
-                <th mat-header-cell scope="col">Ticket ID</th>
-                <th mat-header-cell scope="col">Assignee ID</th>
-                <th mat-header-cell scope="col">Status</th>
-                <th mat-header-cell scope="col">Subject</th>
-                <th mat-header-cell scope="col">Description</th>
+                <!-- loop the header display in header -->
+                <th mat-header-cell scope="col" *ngFor="let header of header">{{header}}</th>
                 <th mat-header-cell scope="col">Update</th>
                 <th mat-header-cell scope="col">Ticket</th>
             </tr>
