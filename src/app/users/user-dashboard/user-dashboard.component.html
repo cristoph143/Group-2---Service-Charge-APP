@@ -59,18 +59,16 @@
     </div>
   </div>
 </div> -->
-<div class="container">
+<!-- <div class="container">
     <div class="title">
         <h2>
-            <p>TICKET MANAGEMENT</p>
+            <p>DASHBOARD</p>
         </h2>
     </div>
     <div class="inside">
         <div class="tab">
-            <!-- loop through the mat-list  -->
             <mat-list>
                 <mat-list-item *ngFor="let item of list" (click)="tab(item.path)">
-                    <!-- button -->
                     <button mat-button class="list">
                         <mat-icon>{{item.icon}}</mat-icon>
                         <span>{{item.name}}</span>
@@ -78,17 +76,20 @@
                 </mat-list-item>
             </mat-list>
         </div>
-        <!-- display div if path = ticket_list -->
-        <div class="content" *ngIf="paths === '/ticket_list'">
+        <div class="content" *ngIf="paths === '/ticket_management'">
             <app-ticket-list></app-ticket-list>
         </div>
-        <!-- display div if path = aging_ticket -->
-        <div class="content" *ngIf="paths === '/aging_ticket'">
+        <div class="content" *ngIf="paths === '/reports'">
             <app-aging-ticket></app-aging-ticket>
         </div>
-        <!-- display div if path = ticket_workflow -->
-        <div class="content" *ngIf="paths === '/ticket_workflow'">
+        <div class="content" *ngIf="paths === '/user_role_mgt'">
             <app-ticket-workflow></app-ticket-workflow>
         </div>
     </div>
+</div> -->
+
+<div>
+  <div class="title">
+    <h1 class="dashboard">DASHBOARD</h1>
+  </div>
 </div>

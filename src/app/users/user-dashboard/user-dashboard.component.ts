@@ -69,6 +69,10 @@ export class UserDashboardComponent implements OnInit {
     // { path: '/view_ticket', icon: 'view_list', name: 'View Ticket' },
     { path: '/aging_ticket', icon: 'watch_later', name: 'Aging Ticket' },
     { path: '/ticket_workflow', icon: 'workflow', name: 'Ticket Workflow' },
+    { path: '/ticket_management', icon: 'ticket', name: 'TICKET MANAGEMENT' },
+    { path: '/reports', icon: 'report', name: 'REPORTS' },
+    { path: '/user_role_mgt', icon: 'ticket', name: 'USER/ROLE MANAGEMENT' },
+
   ];
     
   paths: any;
