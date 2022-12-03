@@ -25,6 +25,19 @@
         <!-- description -->
         <input matInput type="text" formControlName="description">
     </mat-form-field>
+    <!-- upload button -->
+    <div class="row">
+        <mat-card-title class="res_cent">Upload Research</mat-card-title>
+        <div class=" columns">
+            <!-- accepts only pdf, word file -->
+            <input id="file-input" type="file" accept=".pdf, .docx, .docs" (change)="selectFiles($event)" ng2FileSelect uploader="uploader" />
+        </div>
+        <!-- if attachment-list is not equal to zero -->
+        <div class="columns btnss" *ngIf="attachmentList.length != 0">
+            <button class="pas" mat-raised-button color="warn" (click)="removeFile(attachmentList[0])">Remove File</button>
+            <!-- <button class="pas" mat-raised-button color="primary" (click)="uploadFiles()">Upload</button> -->
+        </div>
+    </div>
     <mat-dialog-actions align="end">
         <button class="cent" mat-button mat-dialog-close>
             <mat-icon>close</mat-icon>
