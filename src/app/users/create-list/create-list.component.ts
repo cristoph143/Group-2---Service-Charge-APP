@@ -2,7 +2,7 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import * as saveAs from 'file-saver';
+// import * as saveAs from 'file-saver';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
@@ -106,7 +106,7 @@ export class CreateListComponent implements OnInit {
     this.fileService.downloadFile(filename)
     .subscribe(
         (data: any) => {
-        return saveAs(data, filename);
+        // return saveAs(data, filename);
       },
         (error: any) => {
           return console.error(error);
