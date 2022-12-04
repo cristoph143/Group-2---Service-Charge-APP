@@ -258,3 +258,41 @@ h2 {
     left: 120px;
     top: 75px;
 }
+
+.user_role_btn {
+    position: absolute;
+    width: 389px;
+    height: 541px;
+    left: 1497px;
+    top: 350px;
+    outline: none;
+    background: #DD0301;
+    border-radius: 50px;
+}
+
+.user_role_text {
+    position: absolute;
+    width: 308px;
+    height: 168px;
+    left: 40px;
+    top: 300px;
+
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.user_icon {
+    position: absolute;
+    width: 272px;
+    height: 157px;
+    left: 60px;
+    top: 75px;
+}
