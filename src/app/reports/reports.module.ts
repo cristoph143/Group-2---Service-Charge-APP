@@ -7,13 +7,12 @@ import { MenuReportsComponent } from '../menu-reports/menu-reports.component';
 import { MatListModule } from '@angular/material/list';
 import { ReportsRoutingModule } from './reports-routing.module';
 import { MatIconModule } from '@angular/material/icon';
+import { TicketManagementModule } from '../ticket-management/ticket-management.module';
 
 
 
 @NgModule({
   declarations: [
-    TicketListComponent,
-    AgingTicketComponent,
     MonthlyReportComponent,
     MenuReportsComponent,
   ],
@@ -22,11 +21,11 @@ import { MatIconModule } from '@angular/material/icon';
     MatListModule,
     ReportsRoutingModule,
     MatIconModule,
+    TicketManagementModule,
   ],
   exports: [
     TicketListComponent,
     AgingTicketComponent,
-    MonthlyReportComponent,
   ]
 })
 export class ReportsModule { }

@@ -40,6 +40,7 @@ import { ViewTicketPerAssigneeComponent } from './users/view-ticket-per-assignee
 import { MenuComponent } from './ticket-management/menu/menu.component';
 import { MenuReportsComponent } from './menu-reports/menu-reports.component';
 import { MonthlyReportComponent } from './monthly-report/monthly-report.component';
+import { ReportsModule } from './reports/reports.module';
 
 const appRoute: Routes =[
   {path: 'Home', component: UserDashboardComponent},
@@ -59,8 +60,8 @@ const appRoute: Routes =[
     // AgingTicketComponent,
     // TicketWorkflowComponent,
     ViewTicketPerAssigneeComponent,
-    MenuReportsComponent,
-    MonthlyReportComponent,
+    // MenuReportsComponent,
+    // MonthlyReportComponent,
     // MenuComponent,
   ],
   exports: [
@@ -73,6 +74,7 @@ const appRoute: Routes =[
     AppRoutingModule,
     CommonModule,
     TicketManagementModule,
+    ReportsModule,
     MatPaginatorModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
