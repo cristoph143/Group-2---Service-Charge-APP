@@ -164,3 +164,59 @@ h2 {
     height: 458px;
     margin-top: 39px;
 }
+
+.dashboard {
+    position: absolute;
+    width: 566px;
+    height: 180px;
+    left: 63px;
+    top: 120px;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 150px;
+    line-height: 180px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.tix_mgt_btn {
+    position: absolute;
+    width: 389px;
+    height: 541px;
+    left: 214px;
+    top: 350px;
+    outline: none;
+    background: #DD0301;
+    border-radius: 50px;
+}
+
+.text-btn {
+    position: absolute;
+    width: 308px;
+    height: 168px;
+    left: 38px;
+    top: 300px;
+
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.ticket_icon {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 45px;
+    top: 0px;
+}
