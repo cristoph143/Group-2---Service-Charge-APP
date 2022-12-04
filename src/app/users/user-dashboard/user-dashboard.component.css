@@ -194,7 +194,7 @@ h2 {
     border-radius: 50px;
 }
 
-.text-btn {
+.tix_text {
     position: absolute;
     width: 308px;
     height: 168px;
@@ -219,4 +219,42 @@ h2 {
     height: 300px;
     left: 45px;
     top: 0px;
+}
+
+.report_btn {
+    position: absolute;
+    width: 389px;
+    height: 541px;
+    left: 850px;
+    top: 350px;
+    outline: none;
+    background: #DD0301;
+    border-radius: 50px;
+}
+
+.report_text {
+    position: absolute;
+    width: 308px;
+    height: 168px;
+    left: 95px;
+    top: 300px;
+
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 70px;
+    line-height: 84px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.report_icon {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    left: 120px;
+    top: 75px;
 }
