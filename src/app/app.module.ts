@@ -36,6 +36,7 @@ import { ViewTicketComponent } from './users/view-ticket/view-ticket.component';
 import { AgingTicketComponent } from './users/aging-ticket/aging-ticket.component';
 import { TicketWorkflowComponent } from './users/ticket-workflow/ticket-workflow.component';
 import { ViewTicketPerAssigneeComponent } from './users/view-ticket-per-assignee/view-ticket-per-assignee.component';
+import { TicketManagementComponent } from './ticket-management/ticket-management.component';
 const appRoute: Routes =[
   {path: 'Home', component: UserDashboardComponent},
   // {path: 'chuchu/chu/:id', component: UserDashboardComponent},
@@ -54,6 +55,7 @@ const appRoute: Routes =[
     AgingTicketComponent,
     TicketWorkflowComponent,
     ViewTicketPerAssigneeComponent,
+    TicketManagementComponent,
   ],
   exports: [
     CommonModule,

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../app/auth/login/login.component';
 import { AuthGuard } from './auth/services/auth-guard.service';
+import { TicketManagementComponent } from './ticket-management/ticket-management.component';
 import { UserDashboardComponent } from './users/user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
@@ -21,8 +22,8 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: 'user-dashboard',
-        component: UserDashboardComponent,
+        path: 'ticket-management',
+        component: TicketManagementComponent,
       },
     ]
   },

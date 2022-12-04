@@ -195,6 +195,14 @@ h2 {
     border: none;
 }
 
+.tix_mgt_btn:hover {background-color: black}
+
+.tix_mgt_btn:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .tix_text {
     position: absolute;
     width: 308px;
@@ -234,6 +242,14 @@ h2 {
     border: none;
 }
 
+.report_btn:hover {background-color: black}
+
+.report_btn:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 .report_text {
     position: absolute;
     width: 308px;
@@ -271,6 +287,14 @@ h2 {
     background: #DD0301;
     border-radius: 50px;
     border: none;
+}
+
+.user_role_btn:hover {background-color: black}
+
+.user_role_btn:active {
+  background-color: black;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .user_role_text {
