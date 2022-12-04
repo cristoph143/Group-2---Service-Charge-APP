@@ -1,0 +1,152 @@
+
+.ticket_mgt {
+    position: absolute;
+    width: 1016px;
+    height: 180px;
+    left: 63px;
+    top: 120px;
+    font-family: 'Bebas Neue';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 150px;
+    line-height: 180px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.inside {
+    position: absolute;
+    left: 90px;
+}
+
+.list {
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 32px;
+    color: white;
+    font-weight: 500;
+    border-radius: 10px;
+    transition-duration: 0.4s;
+    justify-items: center;
+
+    position: absolute;
+    width: 498px;
+    height: 80px;
+    left: 77px;
+    top: 180px;
+}
+
+.icon-display {
+    /* 
+    padding-top: 3px; */
+    size: 100px;
+    margin-right: 20px;
+    transform: scale(1.3);
+}
+
+mat-icon {
+    size: 2em;
+}
+
+.list:hover {
+    background-color: white;
+    color: black;
+}
+
+.create {
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.create:hover {
+    background-color: white;
+    color: black;
+}
+
+.update {
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.update:hover {
+    background-color: white;
+    color: black;
+}
+
+.view {
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.view:hover {
+    background-color: white;
+    color: black;
+}
+
+.add {
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.add:hover {
+    background-color: white;
+    color: black;
+}
+
+.workflow {
+    font-family: 'Poppins';
+    background-color: rgba(222, 4, 2, 0.5);
+    font-size: 20px;
+    color: white;
+    padding: 12px 28px;
+    border-radius: 8px;
+    width: 350px;
+}
+
+.workflow:hover {
+    background-color: white;
+    color: black;
+}
+
+.mat-list-base {
+    padding-top: 3px;
+}
+
+.mat-list-base .mat-list-item,
+.mat-list-base .mat-list-option {
+    padding: 60px 0;
+}
+
+.content {
+    position: absolute;
+    width: 1300px;
+    height: 608px;
+    left: 634px;
+    top: 240px;
+    background: #FFFFFF;
+    border-radius: 20px;
+}

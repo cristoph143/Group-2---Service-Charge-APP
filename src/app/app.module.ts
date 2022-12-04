@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
+import { TicketManagementModule } from './ticket-management/ticket-management.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './auth/login/login.component';
 import { UserDashboardComponent } from './users/user-dashboard/user-dashboard.component';
@@ -36,7 +37,8 @@ import { ViewTicketComponent } from './users/view-ticket/view-ticket.component';
 import { AgingTicketComponent } from './users/aging-ticket/aging-ticket.component';
 import { TicketWorkflowComponent } from './users/ticket-workflow/ticket-workflow.component';
 import { ViewTicketPerAssigneeComponent } from './users/view-ticket-per-assignee/view-ticket-per-assignee.component';
-import { TicketManagementComponent } from './ticket-management/ticket-management.component';
+import { MenuComponent } from './ticket-management/menu/menu.component';
+
 const appRoute: Routes =[
   {path: 'Home', component: UserDashboardComponent},
   // {path: 'chuchu/chu/:id', component: UserDashboardComponent},
@@ -48,14 +50,14 @@ const appRoute: Routes =[
     LoginComponent,
     UserDashboardComponent,
     NavbarComponent,
-    TicketListComponent,
+    // TicketListComponent,
     CreateListComponent,
     UpdateListComponent,
     ViewTicketComponent,
-    AgingTicketComponent,
-    TicketWorkflowComponent,
+    // AgingTicketComponent,
+    // TicketWorkflowComponent,
     ViewTicketPerAssigneeComponent,
-    TicketManagementComponent,
+    // MenuComponent,
   ],
   exports: [
     CommonModule,
@@ -66,6 +68,7 @@ const appRoute: Routes =[
     BrowserModule,
     AppRoutingModule,
     CommonModule,
+    TicketManagementModule,
     MatPaginatorModule,
     ReactiveFormsModule,
     NoopAnimationsModule,
@@ -81,7 +84,8 @@ const appRoute: Routes =[
     MatInputModule,
     HotToastModule.forRoot(),
     MatDividerModule,
-    MatListModule,
+    // MatListModule,
+
    
   ],
   providers: [],

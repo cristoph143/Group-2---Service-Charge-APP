@@ -58,62 +58,30 @@
       </table>
     </div>
   </div>
-</div> -->
-<!-- <div class="container">
+</div> --> -->
+<div class="container">
     <div class="title">
-        <h2>
-            <p>DASHBOARD</p>
-        </h2>
+        <h1 class="ticket_mgt">TICKET MANAGEMENT</h1>
     </div>
     <div class="inside">
         <div class="tab">
             <mat-list>
                 <mat-list-item *ngFor="let item of list" (click)="tab(item.path)">
                     <button mat-button class="list">
-                        <mat-icon>{{item.icon}}</mat-icon>
-                        <span>{{item.name}}</span>
+                        <mat-icon class="icon-display">{{item.icon}}</mat-icon>
+                        <span class="list_name">{{item.name}}</span>
                     </button>
                 </mat-list-item>
             </mat-list>
         </div>
-        <div class="content" *ngIf="paths === '/ticket_management'">
+        <div class="content" *ngIf="paths === '/ticket_list'">
             <app-ticket-list></app-ticket-list>
         </div>
-        <div class="content" *ngIf="paths === '/reports'">
+        <div class="content" *ngIf="paths === '/aging_ticket'">
             <app-aging-ticket></app-aging-ticket>
         </div>
-        <div class="content" *ngIf="paths === '/user_role_mgt'">
+        <div class="content" *ngIf="paths === '/ticket_workflow'">
             <app-ticket-workflow></app-ticket-workflow>
         </div>
     </div>
-</div> -->
-
-<div>
-  <div class="title">
-    <h1 class="dashboard">DASHBOARD</h1>
-  </div>
-  <div class="card-deck" id="tix_mgt" >
-    <button class="tix_mgt_btn" (click)="goToTicketMgt()">
-      <div>
-        <span><img src="assets/ticket_icon.png" alt="ticket_icon" class="ticket_icon"></span>
-        <p class="tix_text">TICKET MANAGEMENT</p>
-      </div>
-    </button>
-  </div>
-  <div class="card-deck" id="reports">
-    <button class="report_btn">
-      <div class="center">
-        <span><img src="assets/reports_icon.png" alt="report_icon" class="report_icon"></span>
-        <p class="report_text">REPORTS</p>
-      </div>
-    </button>
-  </div>
-  <div class="card-deck" id="user_role">
-    <button class="user_role_btn">
-      <div class="center">
-        <span><img src="assets/users_icon.png" alt="user_icon" class="user_icon"></span>
-        <p class="user_role_text">USER/ROLE MANAGEMENT</p>
-      </div>
-    </button>
-  </div>
-</div>
+</div> 
