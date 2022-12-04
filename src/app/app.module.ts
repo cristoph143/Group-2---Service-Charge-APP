@@ -38,7 +38,7 @@ import { AgingTicketComponent } from './users/aging-ticket/aging-ticket.componen
 import { TicketWorkflowComponent } from './users/ticket-workflow/ticket-workflow.component';
 import { ViewTicketPerAssigneeComponent } from './users/view-ticket-per-assignee/view-ticket-per-assignee.component';
 import { MenuComponent } from './ticket-management/menu/menu.component';
-import { MenuReportsComponent } from './menu-reports/menu-reports.component';
+import { MenuReportsComponent } from './reports/menu-reports/menu-reports.component';
 import { MonthlyReportComponent } from './monthly-report/monthly-report.component';
 import { ReportsModule } from './reports/reports.module';
 

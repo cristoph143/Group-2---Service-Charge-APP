@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { MenuReportsComponent } from '../menu-reports/menu-reports.component';
 import { MonthlyReportComponent } from '../monthly-report/monthly-report.component';
 import { AgingTicketComponent } from '../users/aging-ticket/aging-ticket.component';
 import { TicketListComponent } from '../users/ticket-list/ticket-list.component';
+import { MenuReportsComponent } from './menu-reports/menu-reports.component';
 
 const routes: Routes = [
     {
