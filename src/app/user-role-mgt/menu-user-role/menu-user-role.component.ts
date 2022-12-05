@@ -1,32 +1,33 @@
-import { Users } from '../../auth/model/user-interface';
 import { Component, OnInit } from '@angular/core';
-import { Ticket } from '../../auth/model/ticket-interface';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { UsersService } from 'src/app/auth/services/users.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
+import { UsersService } from 'src/app/auth/services/users.service';
+import { Router } from '@angular/router';
+import { Users } from 'src/app/auth/model/user-interface';
 
 export interface List {
   path: string;
   icon: string;
   name: string;
 }
+
 @Component({
-  selector: 'app-user-dashboard',
-  templateUrl: './user-dashboard.component.html',
-  styleUrls: ['./user-dashboard.component.css']
+  selector: 'app-menu-user-role',
+  templateUrl: './menu-user-role.component.html',
+  styleUrls: ['./menu-user-role.component.css']
 })
-export class UserDashboardComponent implements OnInit {
+export class MenuUserRoleComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
     private ticketService: TicketService
-    ) { }
+  ) { }
 
   tickets: any;
   account$: any;
+
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
@@ -62,19 +63,9 @@ export class UserDashboardComponent implements OnInit {
   }
 
   list: List[] = [
-    // ["ticket_list", "create_list", "update_list", "view_ticket", "aging_ticket", "ticket_workflow"];
-    { path: '/ticket_list', icon: 'list', name: 'Ticket List' },
-    // { path: '/create_list', icon: 'add', name: 'Create Ticket' },
-    // { path: '/update_list', icon: 'update', name: 'Update Ticket' },
-    // { path: '/view_ticket', icon: 'view_list', name: 'View Ticket' },
-    { path: '/aging_ticket', icon: 'watch_later', name: 'Aging Ticket' },
-    { path: '/ticket_workflow', icon: 'workflow', name: 'Ticket Workflow' },
-    { path: '/ticket_management', icon: 'ticket', name: 'TICKET MANAGEMENT' },
-    { path: '/reports', icon: 'report', name: 'REPORTS' },
-    { path: '/user_role_mgt', icon: 'ticket', name: 'USER/ROLE MANAGEMENT' },
-
+    { path: '/user-role-list', icon: 'list', name: 'LIST' },
   ];
-    
+
   paths: any;
   tab(path: any){
     // loop this.list.path if equal to path
@@ -85,15 +76,4 @@ export class UserDashboardComponent implements OnInit {
     }
   }
 
-  goToTicketMgt() {
-    this.router.navigate(["/ticket-management"]);
-  }
-
-  goToReports() {
-    this.router.navigate(["/reports"]);
-  }
-
-  goToUserRoleMgt() {
-    this.router.navigate(["/user-role-management"]);
-  }
 }
