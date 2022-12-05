@@ -4,6 +4,8 @@ import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
+import { CreateListComponent } from 'src/app/users/create-list/create-list.component';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 
 export interface List {
   path: string;
@@ -22,7 +24,8 @@ export class MenuComponent implements OnInit {
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService
+    private ticketService: TicketService,
+    public dialog: MatDialog
   ) { }
 
   tickets: any;
@@ -76,6 +79,35 @@ export class MenuComponent implements OnInit {
         this.paths = this.list[i].path;
       }
     }
+  }
+
+  fetchAllTickets(){
+    this.ticketService.fetchAllTickets().subscribe((data:any) => {
+      this.tickets = data;
+    })
+  }
+
+  createTicket() {
+    const ticket = this.tickets;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "100%";
+    dialogConfig.data = {
+      ticket
+    };
+    console.log(dialogConfig.data, 'dialogConfig.data');
+    const dialogRef = this.dialog.open(CreateListComponent, dialogConfig);
+    console.log(dialogRef)
+    //   const dialogRef = this.dialog.open(dialogReference);
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+      this.dialog.closeAll();
+      this.router.navigate(['/user-dashboard']);
+      this.fetchAllTickets();
+      // refresh content o
+    });
   }
 
 }

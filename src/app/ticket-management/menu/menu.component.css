@@ -18,6 +18,26 @@
     color: #FFFFFF;
 }
 
+.create_btn {
+    position: absolute;
+    width: 251px;
+    height: 65px;
+    left: 1560px;
+    top: 210px;
+    background: #DE0402;
+    color: #FFFDFD;
+    border-radius: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 32px;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 .inside {
     position: absolute;
     left: 90px;

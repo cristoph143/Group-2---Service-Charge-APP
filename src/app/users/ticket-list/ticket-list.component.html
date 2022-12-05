@@ -1,9 +1,9 @@
 <div class="ticket">
     <div class="end">
         <!-- add/create angular button -->
-        <button class="create" (click)="createTicket()">CREATE TICKET</button>
+        <!-- <button class="create" (click)="createTicket()">CREATE TICKET</button> -->
         <!-- export to pdf -->
-        <button class="export" (click)="exportToCSV()">EXPORT TO CSV</button>
+        <button class="export" id="export_btn" (click)="exportToCSV()">EXPORT TO CSV</button>
     </div>
     <table mat-table class="table table-striped">
         <thead>
