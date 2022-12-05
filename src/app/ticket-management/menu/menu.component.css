@@ -144,10 +144,10 @@ mat-icon {
 
 .content {
     position: absolute;
-    width: 1300px;
-    height: 608px;
-    left: 634px;
-    top: 240px;
+    width: 1200px;
+    height: 550px;
+    left: 520px;
+    top: 219px;
     background: #FFFFFF;
     border-radius: 20px;
 }
