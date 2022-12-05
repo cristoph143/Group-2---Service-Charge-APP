@@ -3,174 +3,12 @@ h2 {
     text-align: center;
 }
 
-
-/* .container{
-    width: 100%;
-    height: 540px;
-    left: 0px;
-
-    background-image: url(bg.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    position:relative;
-    isolation: isolate;
-}
-.container::before{
-    content: '';
-    position: absolute;
-    z-index: -1;
-    inset: 0;
-    background: black;
-    opacity: 75%;
-} */
-
-
-/* .title {
-    position: absolute;
-    width: 606px;
-    height: 83px;
-    left: 657px;
-    top: 135px;
-
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 600;
-    font-size: 55px;
-    line-height: 82px;
-
-    display: flex;
-    align-items: center;
-    text-align: center;
-
-    color: #FFFFFF;
-} */
-
-.list {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    transition-duration: 0.4s;
-    width: 350px;
-}
-
-.container {
-    display: flex;
-    flex-direction: column;
-}
-
-.list:hover {
-    background-color: white;
-    color: black;
-}
-
-.create {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.create:hover {
-    background-color: white;
-    color: black;
-}
-
-.update {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.update:hover {
-    background-color: white;
-    color: black;
-}
-
-.view {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.view:hover {
-    background-color: white;
-    color: black;
-}
-
-.add {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.add:hover {
-    background-color: white;
-    color: black;
-}
-
-.workflow {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.workflow:hover {
-    background-color: white;
-    color: black;
-}
-
-.inside {
-    display: flex;
-}
-
-.mat-list-base {
-    padding-top: 2px;
-}
-
-.mat-list-base .mat-list-item,
-.mat-list-base .mat-list-option {
-    padding: 40px 0;
-}
-
-.content {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid black;
-    width: 700px;
-    height: 458px;
-    margin-top: 39px;
-}
-
 .dashboard {
     position: absolute;
     width: 566px;
     height: 180px;
     left: 63px;
-    top: 120px;
+    top: 100px;
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: 400;
@@ -187,8 +25,8 @@ h2 {
     position: absolute;
     width: 389px;
     height: 541px;
-    left: 214px;
-    top: 350px;
+    left: 190px;
+    top: 300px;
     outline: none;
     background: #DD0301;
     border-radius: 50px;
@@ -234,8 +72,8 @@ h2 {
     position: absolute;
     width: 389px;
     height: 541px;
-    left: 850px;
-    top: 350px;
+    left: 775px;
+    top: 300px;
     outline: none;
     background: #DD0301;
     border-radius: 50px;
@@ -281,8 +119,8 @@ h2 {
     position: absolute;
     width: 389px;
     height: 541px;
-    left: 1497px;
-    top: 350px;
+    left: 1360px;
+    top: 300px;
     outline: none;
     background: #DD0301;
     border-radius: 50px;

@@ -3,7 +3,7 @@
     width: 1016px;
     height: 180px;
     left: 63px;
-    top: 120px;
+    top: 100px;
     font-family: 'Bebas Neue';
     font-style: normal;
     font-weight: 400;
@@ -29,14 +29,15 @@
     color: white;
     font-weight: 500;
     border-radius: 10px;
+    border: none;
     transition-duration: 0.4s;
     justify-items: center;
 
     position: absolute;
-    width: 498px;
+    width: 450px;
     height: 80px;
-    left: 77px;
-    top: 180px;
+    left: 10px;
+    top: 160px;
 }
 
 .icon-display {
@@ -135,7 +136,7 @@ mat-icon {
 
 .mat-list-base .mat-list-item,
 .mat-list-base .mat-list-option {
-    padding: 60px 0;
+    padding: 55px 0;
 }
 
 .content {

@@ -12,8 +12,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
-    // component: UserDashboardComponent,
+    // component: LoginComponent,
+    component: UserDashboardComponent,
   },
   {
     path: 'user-dashboard',
