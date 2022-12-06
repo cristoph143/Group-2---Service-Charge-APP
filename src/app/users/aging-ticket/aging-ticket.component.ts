@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { Ticket } from 'src/app/auth/model/ticket-interface';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
@@ -21,7 +22,9 @@ export class AgingTicketComponent implements OnInit {
     private ticketService: TicketService,
     public dialog: MatDialog
     ) { }
-
+    
+  tickets: Ticket[] = [];
+  dataSource:any;
   tickets_monthly: any;
   tickets_assignee: any;
   account$: any;
@@ -101,5 +104,32 @@ export class AgingTicketComponent implements OnInit {
       });
 
     });
+  }
+
+  // header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+  header = ["Status", "Count", "TicketID", "AssigneeID", "Status", "Count"];
+  
+  exportToCSV(){
+    // export tickets to csv file
+    const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
+    // push the this.headers to headers
+    const header = Object.keys(this.tickets[0])
+    console.log(header)
+    console.log(this.tickets);
+    // from this.tickets get the values and push it to the rows
+    const csv = this.tickets.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
+    csv.unshift(header.join(','));
+    console.table(csv)
+    const csvArray = csv.join('\r\n');
+
+    const a = document.createElement('a');
+    const blob = new Blob([csvArray], { type: 'text/csv' });
+    const url = window.URL.createObjectURL(blob);
+
+    a.href = url;
+    a.download = 'myFile.csv';
+    a.click();
+    window.URL.revokeObjectURL(url);
+    a.remove();
   }
 }
