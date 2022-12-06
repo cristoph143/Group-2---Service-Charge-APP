@@ -104,7 +104,7 @@ export class MenuComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
-      this.router.navigate(['/user-dashboard']);
+      this.router.navigate(['/ticket-management']);
       this.fetchAllTickets();
       // refresh content o
     });

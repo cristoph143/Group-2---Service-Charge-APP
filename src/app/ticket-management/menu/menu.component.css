@@ -61,6 +61,11 @@
     top: 160px;
 }
 
+.list:focus {
+    color: black;
+    background-color: white;
+}
+
 .icon-display {
     /* 
     padding-top: 3px; */
