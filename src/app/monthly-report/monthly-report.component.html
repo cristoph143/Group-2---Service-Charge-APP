@@ -1,4 +1,7 @@
 <div class="row">
+    <div class="end">
+        <button class="export" id="export_btn" (click)="exportToCSV()">EXPORT TO CSV</button>
+    </div>
     <!-- display monthly object in table format -->
     <table mat-table class="table table-striped">
         <!-- Status, Count -->
@@ -34,7 +37,7 @@
                 <td mat-cell>{{ item.status }}</td>
                 <td mat-cell>{{ item.total }}</td>
                 <td mat-cell>
-                    <button mat-button class="view" (click)="viewTicket(item.assigneeID,item.status)">
+                    <button mat-button class="view" id="view_btn" (click)="viewTicket(item.assigneeID,item.status)">
                         <!-- icon view -->
                         <mat-icon>visibility</mat-icon>
                     </button>

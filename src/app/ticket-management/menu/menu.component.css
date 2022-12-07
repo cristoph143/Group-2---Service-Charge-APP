@@ -22,7 +22,7 @@
     position: absolute;
     width: 200px;
     height: 40px;
-    left: 1585px;
+    left: 1591px;
     top: 210px;
     margin-top: 15px;
     margin-right: 20px;
@@ -84,7 +84,7 @@ mat-icon {
     color: black;
 }
 
-.create {
+/* .create {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
     font-size: 20px;
@@ -97,7 +97,7 @@ mat-icon {
 .create:hover {
     background-color: white;
     color: black;
-}
+} */
 
 .update {
     font-family: 'Poppins';

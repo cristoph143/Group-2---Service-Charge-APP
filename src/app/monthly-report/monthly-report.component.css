@@ -1,13 +1,35 @@
 .table-striped {
-    background-color: #fff;
-    border: 1px solid #ddd;
     border-radius: 4px;
     margin-bottom: 20px;
-    width: 100%;
+    margin-left: 12px;
+    width: 98%;
     height: auto;
+
 }
 
 .row {
     display: flex;
     flex-direction: row;
+}
+
+.end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.export {
+    width: 200px;
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: none;
+    background: #DE0402;
+    color: white;
+    font-family: 'Poppins';
+}
+
+#view_btn {
+    border: none;
+    background-color: transparent;
 }

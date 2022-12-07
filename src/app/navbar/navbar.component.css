@@ -1,5 +1,5 @@
 mat-toolbar {
-    display: flex;
+    /* display: flex; */
     padding: 0 30px;
     background-color: white;
 }
@@ -76,7 +76,7 @@ mat-card-title {
 .dropbtn {
     background-color: rgba(221, 3, 1, 1);
     color: white;
-    padding: 16px;
+    padding: 5px 20px 5px 20px;
     font-size: 16px;
     border: none;
 }
@@ -122,6 +122,5 @@ mat-card-title {
     background-color: black;
 }
 .butn:hover{
-    background-color: black;
-    color: white;
+    color: black;
 }

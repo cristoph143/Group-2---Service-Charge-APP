@@ -15,8 +15,8 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    component: LoginComponent,
-    // component: UserDashboardComponent,
+    // component: LoginComponent,
+    component: UserDashboardComponent,
   },
   {
     path: 'user-dashboard',
@@ -29,39 +29,39 @@ const routes: Routes = [
       },
     ]
   },
-  {
-    path: 'ticket-management',
-    component: MenuComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'ticket-management',
-        component: MenuComponent,
-      },
-    ]
-  },
-  {
-    path: 'reports',
-    component: MenuReportsComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'reports',
-        component: MenuReportsComponent,
-      },
-    ]
-  },
-  {
-    path: 'user-role-management',
-    component: MenuUserRoleComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: 'user-role-management',
-        component: MenuUserRoleComponent,
-      },
-    ]
-  },
+  // {
+  //   path: 'ticket-management',
+  //   component: MenuComponent,
+  //   canActivate: [AuthGuard],
+  //   children: [
+  //     {
+  //       path: 'ticket-management',
+  //       component: MenuComponent,
+  //     },
+  //   ]
+  // },
+  // {
+  //   path: 'reports',
+  //   component: MenuReportsComponent,
+  //   canActivate: [AuthGuard],
+  //   children: [
+  //     {
+  //       path: 'reports',
+  //       component: MenuReportsComponent,
+  //     },
+  //   ]
+  // },
+  // {
+  //   path: 'user-role-management',
+  //   component: MenuUserRoleComponent,
+  //   canActivate: [AuthGuard],
+  //   children: [
+  //     {
+  //       path: 'user-role-management',
+  //       component: MenuUserRoleComponent,
+  //     },
+  //   ]
+  // },
   
 ];
 

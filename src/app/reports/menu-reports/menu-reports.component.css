@@ -60,21 +60,6 @@ mat-icon {
     color: black;
 }
 
-.create {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.create:hover {
-    background-color: white;
-    color: black;
-}
-
 .update {
     font-family: 'Poppins';
     background-color: rgba(222, 4, 2, 0.5);
