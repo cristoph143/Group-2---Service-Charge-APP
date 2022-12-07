@@ -121,7 +121,7 @@ export class TicketListComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
-      this.router.navigate(['/ticket-management']);
+      this.router.navigate(['/user-dashboard']);
       this.fetchAllTickets();
       // refresh content o
     });

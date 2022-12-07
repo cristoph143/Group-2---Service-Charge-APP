@@ -1,0 +1,223 @@
+.modal-Qhg {
+    background-color: #ffffff;
+    height: 85.4rem;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .create-tic-modal-zft {
+    align-items: center;
+    background-color: #ffffff;
+    border: solid 0.2rem #000000;
+    border-radius: 1.7rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 4.7rem 0.2rem 6.8rem 0.2rem;
+    width: 100%;
+  }
+  .create-ticket-header-XpE {
+    background-color: #de0402;
+    border-radius: 0 0.9rem 0.9rem 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0rem 25.5rem 6.6rem 0rem;
+    padding: 0.95rem 2.371rem 1.05rem 2.371rem;
+    white-space: nowrap;
+    width: 45.5rem;
+  }
+  .auto-group-ycyr-H4e {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    height: 4.4rem;
+    margin: 0rem 9.8rem 3.6rem 2.4rem;
+    width: calc(100% - 12.2rem);
+  }
+  .assignee-id-8LA {
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-right: 5.1rem;
+    white-space: nowrap;
+  }
+  .auto-group-cpev-bjY {
+    background-color: #d9d9d9;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.8rem;
+    font-weight: 500;
+    height: 100%;
+    line-height: 1.5;
+    padding: 0.05rem 2.1rem;
+    white-space: nowrap;
+    width: 39.7rem;
+  }
+  
+  .auto-group-gjmt-RCn {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    height: 4.4rem;
+    margin: 0rem 9.8rem 3.6rem 2.4rem;
+    width: calc(100% - 12.2rem);
+  }
+  .status-2yG {
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-right: 176.9px;
+    white-space: nowrap;
+  }
+  .auto-group-531t-qfp {
+    background-color: #d9d9d9;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.8rem;
+    font-weight: 500;
+    height: 100%;
+    line-height: 1.5;
+    padding: 0.05rem 1.9rem;
+    white-space: nowrap;
+    width: 39.7rem;
+  }
+  
+  .auto-group-fks6-c4J {
+    align-items: center;
+    display: flex;
+    flex-shrink: 0;
+    height: 4.4rem;
+    margin: 0rem 9.8rem 3.9rem 2.4rem;
+    width: calc(100% - 12.2rem);
+  }
+  .subject-HgE {
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-right: 153.7px;
+    white-space: nowrap;
+  }
+  .auto-group-arv8-PDU {
+    background-color: #d9d9d9;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.8rem;
+    font-weight: 500;
+    height: 100%;
+    line-height: 1.5;
+    padding: 0.05rem 1.7rem;
+    white-space: nowrap;
+    width: 39.7rem;
+  }
+  
+  .auto-group-jyzk-3J2 {
+    align-items: flex-start;
+    display: flex;
+    flex-shrink: 0;
+    height: 7.6rem;
+    margin: 0rem 9.8rem 8.7rem 2.2rem;
+    width: calc(100% - 12rem);
+  }
+  .description-XDC {
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-right: 88px;
+    white-space: nowrap;
+  }
+  .auto-group-vgyx-R3g {
+    background-color: #d9d9d9;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.4rem;
+    font-weight: 500;
+    height: 100%;
+    line-height: 1.5;
+    padding: 2.4rem 0.9rem 1.6rem 0.9rem;
+    white-space: nowrap;
+    width: 39.7rem;
+  }
+  
+  .auto-group-hpku-jyU {
+    align-items: flex-start;
+    display: flex;
+    flex-shrink: 0;
+    margin: 0rem 23.2rem 6.7rem 22.008rem;
+    width: calc(100% - 45.2083rem);
+  }
+  .material-symbols-drive-folder-upload-ajC {
+    flex-shrink: 0;
+    height: 4rem;
+    margin-right: 5.3083rem;
+    object-fit: contain;
+    vertical-align: top;
+    width: 5.0833rem;
+  }
+  .upload-file-s-THC {
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 2.4rem;
+    font-weight: 500;
+    line-height: 1.5;
+    white-space: nowrap;
+  }
+  
+  .group-2-wy4 {
+    align-items: center;
+    background-color: #de0402;
+    border-radius: 0.9rem;
+    color: #ffffff;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 3rem;
+    font-weight: 500;
+    height: 8rem;
+    justify-content: center;
+    line-height: 1.5;
+    margin: 0rem 23.1rem 0rem 27.7rem;
+    white-space: nowrap;
+    width: calc(100% - 50.8rem);
+  }
+  
