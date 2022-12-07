@@ -55,7 +55,7 @@ export class ViewTicketPerAssigneeComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
-      this.router.navigate(['/ticket-manangement']);
+      this.router.navigate(['/user-dashboard']);
       this.show = true;
     });
     console.log(this.show)
