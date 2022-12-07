@@ -9,10 +9,10 @@ import { ViewTicketPerAssigneeComponent } from 'src/app/users/view-ticket-per-as
 
 @Component({
   selector: 'app-aging-ticket',
-  templateUrl: './aging-ticket.component.html',
-  styleUrls: ['./aging-ticket.component.css']
+  templateUrl: './monthly-reports.component.html',
+  styleUrls: ['./monthly-reports.component.css']
 })
-export class AgingTicketComponent implements OnInit {
+export class MontlyReportsComponent implements OnInit {
 
   constructor(
     private authService: AuthService,

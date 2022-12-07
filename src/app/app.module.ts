@@ -34,7 +34,7 @@ import { TicketListComponent } from './users/ticket-list/ticket-list.component';
 import { CreateListComponent } from './users/create-list/create-list.component';
 import { UpdateListComponent } from './users/update-list/update-list.component';
 import { ViewTicketComponent } from './users/view-ticket/view-ticket.component';
-import { AgingTicketComponent } from './users/aging-ticket/aging-ticket.component';
+import { MontlyReportsComponent } from './users/monthly-reports/monthly-reports.component';
 import { TicketWorkflowComponent } from './users/ticket-workflow/ticket-workflow.component';
 import { ViewTicketPerAssigneeComponent } from './users/view-ticket-per-assignee/view-ticket-per-assignee.component';
 import { MenuComponent } from './ticket-management/menu/menu.component';

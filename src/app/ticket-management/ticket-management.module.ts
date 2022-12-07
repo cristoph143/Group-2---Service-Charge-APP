@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { TicketManagementRoutingModule } from './ticket-management-routing.module';
 import { TicketListComponent } from '../users/ticket-list/ticket-list.component';
-import { AgingTicketComponent } from '../users/aging-ticket/aging-ticket.component';
+import { MontlyReportsComponent } from '../users/monthly-reports/monthly-reports.component';
 import { TicketWorkflowComponent } from '../users/ticket-workflow/ticket-workflow.component';
 import { MenuComponent } from './menu/menu.component';
 import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
@@ -15,7 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [
     TicketListComponent,
-    AgingTicketComponent,
+    MontlyReportsComponent,
     TicketWorkflowComponent,
     MenuComponent,
   ],
@@ -27,7 +27,7 @@ import { MatIconModule } from '@angular/material/icon';
   ],
   exports: [
     TicketListComponent,
-    AgingTicketComponent,
+    MontlyReportsComponent,
     TicketWorkflowComponent,
   ]
 })

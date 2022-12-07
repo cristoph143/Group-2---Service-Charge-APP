@@ -3,47 +3,70 @@
         <mat-icon>close</mat-icon>
     </button>
 </mat-dialog-actions>
+<div class="modal-Qhg" id="172:27">
+    <div class="create-tic-modal-zft" id="172:3">
+        <div class="create-ticket-header-XpE" id="172:5">CREATE TICKET</div>
 <form [formGroup]="ticket">
-    <!-- form for ticket -->
-    <mat-form-field class="form">
-        <mat-label>Assignee ID</mat-label>
-        <!-- assigneeID -->
-        <input matInput type="text" formControlName="assigneeID">
-    </mat-form-field>
-    <mat-form-field class="form">
-        <mat-label>Status</mat-label>
-        <!-- status -->
-        <input matInput type="text" formControlName="status">
-    </mat-form-field>
-    <mat-form-field class="form">
-        <mat-label>Subject</mat-label>
-        <!-- subject -->
-        <input matInput type="text" formControlName="subject">
-    </mat-form-field>
-    <mat-form-field class="form">
-        <mat-label>Description</mat-label>
-        <!-- description -->
-        <input matInput type="text" formControlName="description">
-    </mat-form-field>
-    <!-- upload button -->
-    <div class="row">
-        <mat-card-title class="res_cent">Upload Research</mat-card-title>
-        <div class=" columns">
-            <!-- accepts only pdf, word file -->
-            <input id="file-input" type="file" accept=".pdf, .docx, .docs" (change)="selectFiles($event)" ng2FileSelect uploader="uploader" />
-        </div>
-        <!-- if attachment-list is not equal to zero -->
-        <div class="columns btnss" *ngIf="attachmentList.length != 0">
-            <button class="pas" mat-raised-button color="warn" (click)="removeFile(attachmentList[0])">Remove File</button>
-            <!-- <button class="pas" mat-raised-button color="primary" (click)="uploadFiles()">Upload</button> -->
-        </div>
+    <div class="auto-group-ycyr-H4e" id="PsqLAUWwTfmGWzodCKYcYr">
+        <div class="assignee-id-8LA" id="172:11">Assignee ID</div>
+        <!-- form for ticket -->
+        <mat-form-field class="form">
+            <!-- assigneeID -->
+            <div class="auto-group-cpev-bjY" id="PsqLUTzxkneigAz6brCpev">
+                <input matInput type="text" formControlName="assigneeID">
+            </div>
+        </mat-form-field>
     </div>
-    <mat-dialog-actions align="end">
+    <div class="auto-group-fks6-c4J" id="PsqLv7vtA88yRL8awSFkS6">
+        <div class="status-2yG" id="172:12">Status</div>
+        <mat-form-field class="form">
+            <!-- status -->
+            <div class="auto-group-arv8-PDU" id="PsqM57ftogahVvDpeCarV8">
+                <input matInput type="text" formControlName="status">
+            </div>
+        </mat-form-field>
+    </div>
+    <div class="auto-group-fks6-c4J" id="PsqLv7vtA88yRL8awSFkS6">
+        <div class="subject-HgE" id="172:13">Subject</div>
+        <mat-form-field class="form">
+            <!-- subject -->
+            <div class="auto-group-arv8-PDU" id="PsqM57ftogahVvDpeCarV8">
+                <input matInput type="text" formControlName="subject">
+            </div>
+        </mat-form-field>
+    </div>
+    <div class="auto-group-jyzk-3J2" id="PsqMCSo1n4imiFQXt5jyZk">
+        <div class="description-XDC" id="172:14">Description</div>
+        <mat-form-field class="form">
+            <!-- description -->
+            <div class="auto-group-vgyx-R3g" id="PsqMLXPtJaPzGJ6gRrvgyx">
+                <input matInput type="text" formControlName="description">
+            </div> 
+        </mat-form-field>
+    </div>
+    <!-- upload button -->
+    <!-- <div class="row">
+        <mat-card-title class="res_cent">Upload Research</mat-card-title>
+        <div class=" columns"> -->
+            <!-- accepts only pdf, word file -->
+            <!-- <input id="file-input" type="file" accept=".pdf, .docx, .docs" (change)="selectFiles($event)" ng2FileSelect uploader="uploader" />
+        </div> -->
+        <!-- if attachment-list is not equal to zero -->
+        <!-- <div class="columns btnss" *ngIf="attachmentList.length != 0">
+            <button class="pas" mat-raised-button color="warn" (click)="removeFile(attachmentList[0])">Remove File</button> -->
+            <!-- <button class="pas" mat-raised-button color="primary" (click)="uploadFiles()">Upload</button> -->
+        <!-- </div>
+    </div> -->
+    
+    <mat-dialog-actions align="start">
         <button class="cent" mat-button mat-dialog-close>
             <mat-icon>close</mat-icon>
         </button>
-        <button class="cent" mat-button (click)="createTicket()">
-            <mat-icon>create></mat-icon>
-        </button>
+            <button class="cent" mat-button (click)="createTicket()">
+                <div class="group-2-wy4" id="172:8">CREATE</div>
+            </button>
+        
     </mat-dialog-actions>
 </form>
+    </div>
+</div>
