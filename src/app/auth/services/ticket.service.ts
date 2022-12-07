@@ -33,7 +33,7 @@ export class TicketService {
   // createTicket
   createTicket(ticket: Ticket): Observable<Ticket> {
     return this.http
-      .post<Ticket>(`${this.url}/create_ticket`, ticket, {responseType: 'text' as 'json'})
+      .post<Ticket>(`${this.url}/ticket-system/create`, ticket, {responseType: 'text' as 'json'})
       .pipe(
         first(),
         catchError(
@@ -43,12 +43,12 @@ export class TicketService {
   }
 
   // updateTicket
-  updateTicket(ticketID: any, ticket: Ticket): Observable<Ticket> {
-    console.log(ticket);
+  public updateTicket(ticketID: any, data: any){
     return this.http
-      .post<Ticket>(`${this.url}/update_ticket/${ticketID}`,
-      ticket, {responseType: 'text' as 'json'})
+      .post(`${this.url}/ticket-system/ticket/update/${ticketID}`, data
+      );
   }
+
 
   // deleteTicket
   deleteTicket(ticketID: any): Observable<Ticket> {
