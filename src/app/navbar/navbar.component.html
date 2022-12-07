@@ -3,7 +3,8 @@
 <mat-toolbar>
     <span><img src="assets/alliance_logo.png" alt="logo" class="logo"></span>
   <div class="navbar-item" id="home">
-    <button (click)="todashboard()"  routerLink="/app-user-dashboard" *ngIf="isAuthenticated" class="butn">HOME</button>
+    <a (click)="todashboard()" routerLink="/app-user-dashboard" *ngIf="isAuthenticated" class="butn">HOME</a>
+    <!-- <button (click)="todashboard()"  routerLink="/app-user-dashboard" *ngIf="isAuthenticated" class="butn">HOME</button> -->
   </div>
     <span class="navbar-item" id="about" routerLink="active" *ngIf="!isAuthenticated">ABOUT US</span>
     <span class="navbar-item" id="services" routerLink="active" *ngIf="!isAuthenticated">SERVICES</span>
