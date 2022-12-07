@@ -82,9 +82,23 @@ export class UpdateListComponent implements OnInit {
     formData.append('subject', this.ticket.value.subject.toString());
     formData.append('description', this.ticket.value.description.toString());
 
+    // let ticket = {
+    //   ticketID: this.tickets.ticket.ticketID,
+    //   assigneeID: this.ticket.value.assigneeID,
+    //   status: this.ticket.value.status,
+    //   subject: this.ticket.value.subject,
+    //   description: this.ticket.value.description,
+    // }
+    // console.log(ticket)
+    // this.ticketService.updateTicket(ticket.ticketID, ticket).subscribe((data:any) => {
+    //   console.log(data);
+    //   alert(data)
+    //   // close all
+    //   this.dialog.closeAll();
+    // })
     this.ticketService.updateTicket(this.tickets.ticket.ticketID, formData).subscribe((data:any) => {
       console.log(data);
-      alert(data.message);
+      alert(data.message)
       // close all
       this.dialog.closeAll();
     })

@@ -31,9 +31,9 @@ export class TicketService {
   }
 
   // createTicket
-  createTicket(ticket: Ticket): Observable<Ticket> {
+  createTicket(data: any){
     return this.http
-      .post<Ticket>(`${this.url}/ticket-system/create`, ticket, {responseType: 'text' as 'json'})
+      .post(`${this.url}/ticket-system/create`, data)
       .pipe(
         first(),
         catchError(

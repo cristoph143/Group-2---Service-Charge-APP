@@ -73,20 +73,35 @@ export class CreateListComponent implements OnInit {
   attachmentList:any = [];
   createTicket() {
     console.log(this.ticket.value)
-    let ticket = {
-      assigneeID: this.ticket.value.assigneeID,
-      status: this.ticket.value.status,
-      subject: this.ticket.value.subject,
-      description: this.ticket.value.description
-    }
-    console.log(ticket)
-    this.ticketService.createTicket(ticket).subscribe((data:any) => {
+    let formData : FormData = new FormData();
+
+    formData.append('assignee', this.ticket.value.assigneeID.toString());
+    formData.append('status', this.ticket.value.status.toString());
+    formData.append('subject', this.ticket.value.subject.toString());
+    formData.append('description', this.ticket.value.description.toString());
+
+    this.ticketService.createTicket(formData).subscribe((data:any) => {
       console.log(data);
-      alert(data)
+      alert(data.message)
       // close all
       this.dialog.closeAll();
       this.router.navigate['/ticket-list'];
     })
+
+    // let ticket = {
+    //   assigneeID: this.ticket.value.assigneeID,
+    //   status: this.ticket.value.status,
+    //   subject: this.ticket.value.subject,
+    //   description: this.ticket.value.description
+    // }
+    // console.log(ticket)
+    // this.ticketService.createTicket(ticket).subscribe((data:any) => {
+    //   console.log(data);
+    //   alert(data)
+    //   // close all
+    //   this.dialog.closeAll();
+    //   this.router.navigate['/ticket-list'];
+    // })
   }
 
   // onFileSelected($event: Event) {
