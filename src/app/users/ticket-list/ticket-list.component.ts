@@ -75,7 +75,8 @@ export class TicketListComponent implements OnInit {
    
   fetchAllTickets(){
     this.ticketService.fetchAllTickets().subscribe((data:any) => {
-      this.tickets = data;
+      this.tickets = data.data;
+      
     })
   }
 

@@ -21,7 +21,7 @@ export class TicketService {
   // fetchAllTickets
   fetchAllTickets(): Observable<Ticket> {
     return this.http
-      .get<Ticket>(`${this.url}/ticket-system/`, this.httpOptions)
+      .get<Ticket>(`${this.url}/ticket-system/all-tickets`, this.httpOptions)
       .pipe(
         first(),
         catchError(
