@@ -85,6 +85,7 @@ export class CreateListComponent implements OnInit {
       alert(data)
       // close all
       this.dialog.closeAll();
+      this.router.navigate['/ticket-list'];
     })
   }
 
