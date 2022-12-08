@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from '../app/auth/login/login.component';
 import { AuthGuard } from './auth/services/auth-guard.service';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 import { UserDashboardComponent } from './users/user-dashboard/user-dashboard.component';
 
 const routes: Routes = [
@@ -22,15 +23,18 @@ const routes: Routes = [
     children: [
       {
         path: 'user-dashboard',
-        component: UserDashboardComponent
+        component: UserDashboardComponent,
       },
-    ]
+    ],
   },
-  
+  {
+    path: 'forgotpassword',
+    component: ForgotpasswordComponent,
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
