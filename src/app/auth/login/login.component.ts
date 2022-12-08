@@ -1,20 +1,28 @@
 import { UsersService } from '../services/users.service';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, Routes, } from '@angular/router';
 import { FormGroup, FormControl } from '@angular/forms';
 import { Validators } from '@angular/forms';
 import { HotToastService } from '@ngneat/hot-toast';
 import { Users } from '../model/user-interface';
 import { AuthService } from '../services/auth.service';
 import { Observable } from 'rxjs';
+import { ForgotpasswordComponent } from 'src/app/forgotpassword/forgotpassword.component';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+
 export class LoginComponent implements OnInit {
- 
+
+  
+
+ routes: Routes =[
+    {path: 'forgotpassword', component: ForgotpasswordComponent},
+  ];
+
   constructor( 
     private authService: AuthService,
     // private AccountCrudService: AccountCrudService,
@@ -99,4 +107,8 @@ export class LoginComponent implements OnInit {
       (this.loginForm.get(field)?.untouched && this.formSubmitAttempt)
     );
   }
+  goToForgotPassword() {
+    this.router.navigate(["/forgotpassword"]);
+    }
+ 
 }
