@@ -1,6 +1,6 @@
 export interface Ticket{
     ticketID?: number,
-    assigneeID: number,
+    assignee: number,
     status: string,
     subject: string,
     description: string,
