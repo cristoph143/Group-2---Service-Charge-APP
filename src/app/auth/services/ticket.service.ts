@@ -21,7 +21,7 @@ export class TicketService {
   // fetchAllTickets
   fetchAllTickets(): Observable<Ticket> {
     return this.http
-      .get<Ticket>(`${this.url}/ticket-system/`, this.httpOptions)
+      .get<Ticket>(`${this.url}/ticket-system/all-tickets`, this.httpOptions)
       .pipe(
         first(),
         catchError(
@@ -31,9 +31,9 @@ export class TicketService {
   }
 
   // createTicket
-  createTicket(ticket: Ticket): Observable<Ticket> {
+  createTicket(data: any){
     return this.http
-      .post<Ticket>(`${this.url}/create_ticket`, ticket, {responseType: 'text' as 'json'})
+      .post(`${this.url}/ticket-system/create`, data)
       .pipe(
         first(),
         catchError(
@@ -43,17 +43,17 @@ export class TicketService {
   }
 
   // updateTicket
-  updateTicket(ticketID: any, ticket: Ticket): Observable<Ticket> {
-    console.log(ticket);
+  public updateTicket(ticketID: any, data: any){
     return this.http
-      .post<Ticket>(`${this.url}/update_ticket/${ticketID}`,
-      ticket, {responseType: 'text' as 'json'})
+      .post(`${this.url}/ticket-system/ticket/update/${ticketID}`, data
+      );
   }
+
 
   // deleteTicket
   deleteTicket(ticketID: any): Observable<Ticket> {
     return this.http
-      .delete<Ticket>(`${this.url}/ticket-system/delete/${ticketID}`, {responseType: 'text' as 'json'})
+      .delete<Ticket>(`${this.url}/ticket-system/ticket/delete/${ticketID}`, {responseType: 'text' as 'json'})
   }
 
   // monthlyReport
@@ -82,7 +82,7 @@ export class TicketService {
 
   findTicketsPerAssigneeAndStatus(assigneeID: string, status: string): Observable<Ticket> {
     return this.http
-      .get<Ticket>(`${this.url}/ticket-system/findByAssigneeID/${assigneeID}/${status}`, this.httpOptions)
+      .get<Ticket>(`${this.url}/ticket-system/${assigneeID}/${status}/tickets`, this.httpOptions)
       .pipe(
           first(),
           catchError(

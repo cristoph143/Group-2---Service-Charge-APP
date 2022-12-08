@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -74,17 +74,31 @@ export class UpdateListComponent implements OnInit {
   updateTicket() {
     console.log(this.ticket.value)
     console.log(this.tickets.ticket.ticketID)
-    let ticket = {
-      ticketID: this.tickets.ticket.ticketID,
-      assigneeID: this.ticket.value.assigneeID,
-      status: this.ticket.value.status,
-      subject: this.ticket.value.subject,
-      description: this.ticket.value.description
-    }
-    console.log(ticket)
-    this.ticketService.updateTicket(ticket.ticketID, ticket).subscribe((data:any) => {
+    let formData : FormData = new FormData();
+    
+    formData.append('ticketID', this.tickets.ticket.ticketID.toString());
+    formData.append('assignee', this.ticket.value.assigneeID.toString());
+    formData.append('status', this.ticket.value.status.toString());
+    formData.append('subject', this.ticket.value.subject.toString());
+    formData.append('description', this.ticket.value.description.toString());
+
+    // let ticket = {
+    //   ticketID: this.tickets.ticket.ticketID,
+    //   assigneeID: this.ticket.value.assigneeID,
+    //   status: this.ticket.value.status,
+    //   subject: this.ticket.value.subject,
+    //   description: this.ticket.value.description,
+    // }
+    // console.log(ticket)
+    // this.ticketService.updateTicket(ticket.ticketID, ticket).subscribe((data:any) => {
+    //   console.log(data);
+    //   alert(data)
+    //   // close all
+    //   this.dialog.closeAll();
+    // })
+    this.ticketService.updateTicket(this.tickets.ticket.ticketID, formData).subscribe((data:any) => {
       console.log(data);
-      alert(data)
+      alert(data.message)
       // close all
       this.dialog.closeAll();
     })

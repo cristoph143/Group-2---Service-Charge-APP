@@ -5,7 +5,7 @@ import { UsersService } from 'src/app/auth/services/users.service';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { CreateListComponent } from 'src/app/users/create-list/create-list.component';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
 
 export interface List {
   path: string;
