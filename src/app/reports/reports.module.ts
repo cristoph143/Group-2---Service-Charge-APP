@@ -8,8 +8,8 @@ import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-l
 import { ReportsRoutingModule } from './reports-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { TicketManagementModule } from '../ticket-management/ticket-management.module';
-import { AgingTicketsComponent } from '../users/aging-tickets/aging-tickets.component';
-import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef, MatDialogActions } from '@angular/material/dialog';
+import { AgingListComponent } from '../users/aging-list/aging-list.component';
 
 
 
@@ -17,6 +17,7 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
   declarations: [
     MonthlyReportComponent,
     MenuReportsComponent,
+    
   ],
   imports: [
     CommonModule,
@@ -29,6 +30,8 @@ import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/materia
   ],
   exports: [
     TicketListComponent,
+    AgingListComponent,
+    MatDialogActions,
     
   ]
 })

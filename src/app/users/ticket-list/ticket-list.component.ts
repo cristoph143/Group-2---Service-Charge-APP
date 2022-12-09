@@ -79,7 +79,7 @@ export class TicketListComponent implements OnInit {
 
   getHeader(){
     //if admin naay assigneeID
-    if(this.account$.roleID == 101){
+    if(this.account$.roleID == 102){
       this.header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
     }else{
       this.header = ["TicketID", "Status", "Subject", "Description"];

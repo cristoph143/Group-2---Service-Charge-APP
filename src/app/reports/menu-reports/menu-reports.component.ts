@@ -78,6 +78,9 @@ export class MenuReportsComponent implements OnInit {
     }
   }
 
-
-
+  fetchAllTickets(){
+    this.ticketService.fetchAllTickets().subscribe((data:any) => {
+      this.tickets = data;
+    })
+  }
 }

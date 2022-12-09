@@ -27,6 +27,7 @@ import { AgingListComponent } from '../users/aging-list/aging-list.component';
   ],
   exports: [
     TicketListComponent,
+    AgingListComponent,
     
     
   ]
