@@ -30,6 +30,18 @@ export class TicketService {
     );
   }
 
+  // fetchAllAgingTickets
+  fetchAllAgingTickets(): Observable<Ticket> {
+    return this.http
+      .get<Ticket>(`${this.url}/ticket-system/aging-tickets`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Ticket>("fetchTicket")
+        )
+    );
+  }
+
   // createTicket
   createTicket(data: any){
     return this.http
