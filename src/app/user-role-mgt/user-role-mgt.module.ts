@@ -12,6 +12,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { EditUserComponent } from './edit-user/edit-user.component';
 
 
 
@@ -21,6 +22,7 @@ import { MatInputModule } from '@angular/material/input';
     ListUserRoleComponent,
     ListUserComponent,
     CreateUserComponent,
+    EditUserComponent,
   ],
   imports: [
     CommonModule,

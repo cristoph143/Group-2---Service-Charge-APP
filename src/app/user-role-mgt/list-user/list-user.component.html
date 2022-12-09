@@ -22,6 +22,13 @@
                 <td mat-cell>{{ user.lname }}</td>
                 <td mat-cell>{{ user.username }}</td>
                 <td mat-cell>{{ user.password }}</td>
+                 <!-- update -->
+                 <td mat-cell>
+                    <button mat-button class="update" (click)="updateUser(user.userID)">
+                        <!-- icon update -->
+                        <mat-icon>update</mat-icon>
+                    </button>
+                </td>
                 <!-- delete -->
                 <td mat-cell>
                     <button mat-button class="delete" (click)="deleteUser(user.userID)">

@@ -55,6 +55,13 @@ export class UsersService {
       );
   }
 
+  // updateUser
+  public updateUser(userID: any, data: any){
+    return this.http
+      .post(`${this.url}/user/update/${userID}`, data
+      );
+  }
+
   // deleteUser
   deleteUser(userID: any): Observable<Users> {
     return this.http

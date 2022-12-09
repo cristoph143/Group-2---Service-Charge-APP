@@ -1,11 +1,12 @@
 import { Component, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { UsersService } from 'src/app/auth/services/users.service';
+import { EditUserComponent } from '../edit-user/edit-user.component';
 
 @Component({
   selector: 'app-list-user',
@@ -81,8 +82,35 @@ export class ListUserComponent {
         this.fetchAllUsers();
       })
     }
-
   }
+  updateUser(id:any){
+    console.log(this.users +"update");
+    const user = this.users.find(t => t.userID === id);
+    console.log(user);
+    // open the dialog box
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "100%";
+    dialogConfig.data = {
+      user
+    };
+    console.log(dialogConfig.data, 'dialogConfig.data');
+    const dialogRef = this.dialog.open(EditUserComponent, dialogConfig);
+    console.log(dialogRef)
+    //   const dialogRef = this.dialog.open(dialogReference);
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+      this.dialog.closeAll();
+      this.router.navigate(['/user-dashboard']);
+      this.fetchAllUsers();
+      // refresh content o
+    });
+    // 
+  }
+
+  
 
   exportToCSV(){
     // export tickets to csv file
