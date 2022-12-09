@@ -34,7 +34,6 @@ import { TicketListComponent } from './users/ticket-list/ticket-list.component';
 import { CreateListComponent } from './users/create-list/create-list.component';
 import { UpdateListComponent } from './users/update-list/update-list.component';
 import { ViewTicketComponent } from './users/view-ticket/view-ticket.component';
-import { TicketWorkflowComponent } from './users/ticket-workflow/ticket-workflow.component';
 import { ViewTicketPerAssigneeComponent } from './users/view-ticket-per-assignee/view-ticket-per-assignee.component';
 import { MenuComponent } from './ticket-management/menu/menu.component';
 import { MenuReportsComponent } from './reports/menu-reports/menu-reports.component';
@@ -43,6 +42,7 @@ import { ReportsModule } from './reports/reports.module';
 import { MenuUserRoleComponent } from './user-role-mgt/menu-user-role/menu-user-role.component';
 import { ListUserRoleComponent } from './user-role-mgt/list-user-role/list-user-role.component';
 import { UserRoleMgtModule } from './user-role-mgt/user-role-mgt.module';
+
 
 const appRoute: Routes =[
   {path: 'Home', component: UserDashboardComponent},
@@ -58,10 +58,11 @@ const appRoute: Routes =[
     // TicketListComponent,
     CreateListComponent,
     UpdateListComponent,
-    ViewTicketComponent,
+    // ViewTicketComponent,
     // AgingTicketComponent,
     // TicketWorkflowComponent,
-    ViewTicketPerAssigneeComponent,
+    // ViewTicketPerAssigneeComponent,
+    // AgingListComponent,
     // MenuUserRoleComponent,
     // ListUserRoleComponent,
     // MenuReportsComponent,

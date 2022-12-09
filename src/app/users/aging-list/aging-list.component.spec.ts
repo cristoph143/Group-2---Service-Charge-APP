@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TicketWorkflowComponent } from './ticket-workflow.component';
+import { AgingListComponent } from './aging-list.component';
 
-describe('TicketWorkflowComponent', () => {
-  let component: TicketWorkflowComponent;
-  let fixture: ComponentFixture<TicketWorkflowComponent>;
+describe('AgingListComponent', () => {
+  let component: AgingListComponent;
+  let fixture: ComponentFixture<AgingListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TicketWorkflowComponent ]
+      declarations: [ AgingListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TicketWorkflowComponent);
+    fixture = TestBed.createComponent(AgingListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

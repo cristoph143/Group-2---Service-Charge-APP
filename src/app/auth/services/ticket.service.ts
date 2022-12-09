@@ -30,6 +30,42 @@ export class TicketService {
     );
   }
 
+  //fetchAllTicketsByID
+  fetchAllTicketsByID(userID: any): Observable<Ticket> {
+    return this.http
+      .get<Ticket>(`${this.url}/ticket-system/${userID}/tickets`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Ticket>("fetchTicket")
+        )
+    );
+  }
+
+  // fetchAllAgingTickets
+  fetchAllAgingTickets(): Observable<Ticket> {
+    return this.http
+      .get<Ticket>(`${this.url}/ticket-system/aging-tickets`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Ticket>("fetchTicket")
+        )
+    );
+  }
+
+  //fetchAllAgingTicketsByID
+  fetchAllAgingTicketsByID(userID: any): Observable<Ticket> {
+    return this.http
+      .get<Ticket>(`${this.url}/ticket-system/${userID}/aging-tickets`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Ticket>("fetchTicket")
+        )
+    );
+  }
+
   // createTicket
   createTicket(data: any){
     return this.http

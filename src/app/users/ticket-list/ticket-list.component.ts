@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
 import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
 import { Router } from '@angular/router';
@@ -25,6 +25,8 @@ export class TicketListComponent implements OnInit {
     private ticketService: TicketService,
     public dialog: MatDialog
     ) { }
+
+    @Input() user: any;
   
     @ViewChild(MatPaginator) paginator: MatPaginator;
     
@@ -42,7 +44,8 @@ export class TicketListComponent implements OnInit {
     this.username = this.authService.username;
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
-    this.fetchAllTickets();
+    this.fetchAllTickets(this.user);
+    
   }
 
   userId: Pick<Users, "username"> | undefined;
@@ -72,12 +75,31 @@ export class TicketListComponent implements OnInit {
     console.log(this.account$, 'account$');
   }
 
+  header : any;
+
+  getHeader(){
+    //if admin naay assigneeID
+    if(this.account$.roleID == 101){
+      this.header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+    }else{
+      this.header = ["TicketID", "Status", "Subject", "Description"];
+    }
+    //if di kay wala
+  }
+
    
-  fetchAllTickets(){
+  fetchAllTickets(user: any){
+    if(user.roleID == 101){
     this.ticketService.fetchAllTickets().subscribe((data:any) => {
       this.tickets = data.data;
-      
+      this.getHeader();
     })
+    }else{
+      this.ticketService.fetchAllTicketsByID(user.userID).subscribe((data:any) => {
+        this.tickets = data.data;
+        this.getHeader();
+      })
+    }
   }
 
   createTicket(){
@@ -98,7 +120,7 @@ export class TicketListComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
-      this.fetchAllTickets();
+      this.fetchAllTickets(this.user);
       // refresh content o
     });
   }
@@ -123,7 +145,7 @@ export class TicketListComponent implements OnInit {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
-      this.fetchAllTickets();
+      this.fetchAllTickets(this.user);
       // refresh content o
     });
     // 
@@ -132,14 +154,14 @@ export class TicketListComponent implements OnInit {
     // show dialog pop up if he wants to delete the ticket
     if(confirm("Are you sure you want to delete this ticket#" + id +"?")){
       this.ticketService.deleteTicket(id).subscribe(() => {
-        this.fetchAllTickets();
+        this.fetchAllTickets(this.user);
       })
     }
 
   }
-  viewTicket(id:any){}
+  
 
-  header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+ 
   
   exportToCSV(){
     // export tickets to csv file
