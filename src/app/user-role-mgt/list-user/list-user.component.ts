@@ -128,7 +128,7 @@ export class ListUserComponent {
     const url = window.URL.createObjectURL(blob);
 
     a.href = url;
-    a.download = 'myFile.csv';
+    a.download = 'user_list_file.csv';
     a.click();
     window.URL.revokeObjectURL(url);
     a.remove();
