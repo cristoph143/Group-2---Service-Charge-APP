@@ -1,0 +1,111 @@
+.modal-Qhg {
+    background-color: #ffffff;
+    /* height: 85.4rem; */
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+  }
+  .create-tic-modal-zft {
+    /* align-items: center; */
+    background-color: #ffffff;
+    border: solid 0.2rem #000000;
+    border-radius: 1.7rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* height: 100%; */
+    padding: 4.7rem 0.2rem 6.8rem 0.2rem;
+    width: 100%;
+  }
+  .create-ticket-header-XpE {
+    background-color: #de0402;
+    border-radius: 0 0.9rem 0.9rem 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.5;
+    margin: 0rem 47.5rem 2.614rem 0rem;
+    padding: 0.95rem 2.371rem 1.05rem 0.3710000000000022rem;;
+    white-space: nowrap;
+    width: 25.5rem;
+  }
+  .auto-group-cpev-bjY {
+    background-color: #b9b9b9;
+    border-radius: 0.5rem;
+    box-sizing: border-box;
+    color: #000000;
+    display: flex;
+    flex-shrink: 0;
+    font-family: Poppins, "Source Sans Pro";
+    font-size: 30px;
+    font-weight: 500;
+    height: 100%;
+    line-height: 1.5;
+    padding: 0.05rem 2.1rem;
+    white-space: nowrap;
+    width: 39.7rem;
+  }
+
+.role_id {
+  align-items: center;
+  display: flex;
+  flex-shrink: 0;
+  height: 4.4rem;
+  margin: 0rem 9.8rem -0.39860000000000007rem 2.4rem;
+  width: calc(100% - 12.2rem);
+}
+.role-label {
+  color: #000000;
+  padding-bottom: 20px;
+  display: flex;
+  flex-shrink: 0;
+  font-family: Poppins, "Source Sans Pro";
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-right: 2.1000000000000014rem;;
+  white-space: nowrap;
+}
+
+.auto-group-jyzk-3J2 {
+    align-items: flex-start;
+    display: flex;
+    flex-shrink: 0;
+    height: 7.6rem;
+    margin: -1rem 9.8rem 2.70rem 2.2rem;
+    width: calc(100% - 12rem);
+  }
+
+.description-XDC {
+  color: #000000;
+  display: flex;
+  flex-shrink: 0;
+  font-family: Poppins, "Source Sans Pro";
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-right: 2.500000000000001rem;
+  white-space: nowrap;
+  padding-top: 6px;
+}
+
+.auto-group-vgyx-R3g {
+  background-color: #b9b9b9;
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  flex-shrink: 0;
+  font-family: Poppins, "Source Sans Pro";
+  font-size: 30px;
+  font-weight: 500;
+  height: 100%;
+  line-height: 1.5;
+  padding: 0.05rem 1.7rem;
+  white-space: nowrap;
+  width: 39.7rem;
+}
