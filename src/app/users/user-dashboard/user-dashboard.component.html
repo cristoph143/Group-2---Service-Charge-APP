@@ -108,7 +108,7 @@
       </div>
     </button>
   </div>
-  <div class="card-deck" id="user_role">
+  <div class="card-deck" id="user_role" *ngIf="account$.roleID == 102">
     <button class="user_role_btn" (click)="goToUserRoleMgt()">
       <div class="center">
         <span><img src="assets/users_icon.png" alt="user_icon" class="user_icon"></span>
