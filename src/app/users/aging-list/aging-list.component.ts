@@ -1,9 +1,10 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, Input, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import * as e from 'cors';
+import { firstValueFrom, Observable } from 'rxjs';
 import { Ticket } from 'src/app/auth/model/ticket-interface';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -23,6 +24,8 @@ export class AgingListComponent {
     private ticketService: TicketService,
     public dialog: MatDialog
     ) { }
+
+    @Input() user: any;
   
     @ViewChild(MatPaginator) paginator: MatPaginator;
     
@@ -32,35 +35,42 @@ export class AgingListComponent {
     ngAfterViewInit() {
       this.dataSource = new MatTableDataSource<Ticket>(this.tickets);
       this.dataSource.paginator = this.paginator;
+      
     }
 
     account$: any;
-    ngOnInit(): void {
+    ngOnInit(): void{
       // this.userId = this.authService.userId;
     this.username = this.authService.username;
     console.log(this.username)
-    this.getInfoUsingUsername(this.username);
-    this.fetchAllAgingTickets();
+    console.log(this.user, "GIPASA")
+  
+    this.getInfoUsingUsername(this.username)
+    this.fetchAllAgingTickets(this.user);
+    
     }
+
+    
+
 
     userId: Pick<Users, "username"> | undefined;
     username: any;
     header: any;
   
-    getInfoUsingUsername(username: any) {
+  getInfoUsingUsername(username: any) {
       console.log(username, 'username');
       let res: never[] = [];
       // return this.accService.fetchAccount(username);
       this.userService
         .fetchAccountUsingUsername(
           username
-      )
-        .subscribe((data:any) => {
-          console.log(data);
-          res = data;
-          this.getAcc(res);
-        }
+      ).subscribe((data:any) => {
+        console.log(data);
+        res = data;
+        this.getAcc(res);
+      }
       );
+      
     }
 
     getAcc(res:any) {
@@ -69,14 +79,29 @@ export class AgingListComponent {
       console.log(curr_acc, 'curr_acc');
       this.account$ = curr_acc;
       console.log(this.account$, 'account$');
-      console.log(this.account$.roleID, 'account$');
+      console.log(this.account$.roleID, 'account$ YAWA');
+      
     }
 
-    fetchAllAgingTickets(){
-      this.ticketService.fetchAllAgingTickets().subscribe((data:any) => {
-        this.tickets = data.data;
-        this.getHeader();
-      })
+    fetchAllAgingTickets(user: any){
+      console.log(this.account$, "KAABOT KA DIRI?2")      
+      if(user.roleID == 101){
+        this.ticketService.fetchAllAgingTickets().subscribe((data:any) => {
+          this.tickets = data.data; 
+          console.log(this.account$, "KAABOT KA DIRI?1")     
+          this.getHeader();
+        })
+      }
+      else{
+        this.ticketService.fetchAllAgingTicketsByID(user.userID).subscribe((data:any) => {
+          this.tickets = data.data;
+          console.log(this.tickets, "KAABOT KA DIRI?2")   
+          this.getHeader();   
+        })
+      }
+
+
+      
     }
 
     

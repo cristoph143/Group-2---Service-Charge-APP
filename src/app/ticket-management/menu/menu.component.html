@@ -17,10 +17,10 @@
             </mat-list>
         </div>
         <div class="content" *ngIf="paths === '/ticket_list'">
-            <app-ticket-list></app-ticket-list>
+            <app-ticket-list [user] = "account$"></app-ticket-list>
         </div>
         <div class="content" *ngIf="paths === '/aging_ticket'">
-            <app-aging-list></app-aging-list>
+            <app-aging-list [user] = "account$"></app-aging-list>
         </div>
         
     </div>
