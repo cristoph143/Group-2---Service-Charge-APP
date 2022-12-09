@@ -1,6 +1,8 @@
+
+
 .modal-Qhg {
   background-color: #ffffff;
-  height: 85.4rem;
+  /* height: 85.4rem; */
   overflow: hidden;
   position: relative;
   width: 100%;
@@ -38,7 +40,7 @@
   display: flex;
   flex-shrink: 0;
   height: 4.4rem;
-  margin: 0rem 9.8rem 2.6014rem 2.4rem;
+  margin: 0rem 9.8rem -0.39860000000000007rem  2.4rem;
   width: calc(100% - 12.2rem);
 }
 .assignee-id-8LA {
@@ -46,21 +48,21 @@
   display: flex;
   flex-shrink: 0;
   font-family: Poppins, "Source Sans Pro";
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 500;
   line-height: 1.5;
-  margin-right: 5.1rem;
+  margin-right: 6.100000000000001rem;
   white-space: nowrap;
 }
 .auto-group-cpev-bjY {
-  background-color: #d9d9d9;
+  background-color: #b9b9b9;
   border-radius: 0.5rem;
   box-sizing: border-box;
   color: #000000;
   display: flex;
   flex-shrink: 0;
   font-family: Poppins, "Source Sans Pro";
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 500;
   height: 100%;
   line-height: 1.5;
@@ -82,14 +84,14 @@
   display: flex;
   flex-shrink: 0;
   font-family: Poppins, "Source Sans Pro";
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 500;
   line-height: 1.5;
-  margin-right: 176.9px;
+  margin-right: 10.100000000000001rem;
   white-space: nowrap;
 }
 .auto-group-531t-qfp {
-  background-color: #d9d9d9;
+  background-color: #b9b9b9;
   border-radius: 0.5rem;
   box-sizing: border-box;
   color: #000000;
@@ -110,7 +112,7 @@
   display: flex;
   flex-shrink: 0;
   height: 4.4rem;
-  margin: 0rem 9.8rem 2.6014rem 2.4rem;
+  margin: 0rem 9.8rem -0.39860000000000007rem  2.4rem;
   width: calc(100% - 12.2rem);
 }
 .subject-HgE {
@@ -118,21 +120,21 @@
   display: flex;
   flex-shrink: 0;
   font-family: Poppins, "Source Sans Pro";
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 500;
   line-height: 1.5;
-  margin-right: 153.7px;
+  margin-right: 9.100000000000001rem;
   white-space: nowrap;
 }
 .auto-group-arv8-PDU {
-  background-color: #d9d9d9;
+  background-color: #b9b9b9;
   border-radius: 0.5rem;
   box-sizing: border-box;
   color: #000000;
   display: flex;
   flex-shrink: 0;
   font-family: Poppins, "Source Sans Pro";
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 500;
   height: 100%;
   line-height: 1.5;
@@ -146,7 +148,7 @@
   display: flex;
   flex-shrink: 0;
   height: 7.6rem;
-  margin: 0rem 9.8rem 2.70rem 2.2rem;
+  margin: -1rem 9.8rem 2.70rem 2.2rem;
   width: calc(100% - 12rem);
 }
 .description-XDC {
@@ -154,14 +156,15 @@
   display: flex;
   flex-shrink: 0;
   font-family: Poppins, "Source Sans Pro";
-  font-size: 32px;
+  font-size: 25px;
   font-weight: 500;
   line-height: 1.5;
-  margin-right: 88px;
+  margin-right: 6.100000000000001rem;
   white-space: nowrap;
+  padding-top: 24px;
 }
 .auto-group-vgyx-R3g {
-  background-color: #d9d9d9;
+  background-color: #b9b9b9;
   border-radius: 0.5rem;
   box-sizing: border-box;
   color: #000000;
@@ -213,22 +216,10 @@
   font-family: Poppins, "Source Sans Pro";
   font-size: 35px;
   font-weight: 500;
-  height: 8rem;
+  height: 5rem;
   justify-content: center;
   line-height: 1.5;
   margin: 1rem 23.1rem 0rem 27.7rem;
   white-space: nowrap;
   width: calc(100% - 50.8rem);
 }
-/* .mat-dialog-container {
-  display: block;
-  padding: 24px;
-  border-radius: 4px;
-  box-sizing: border-box;
-  overflow: auto;
-  outline: 0;
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-  max-height: inherit;
-} */
