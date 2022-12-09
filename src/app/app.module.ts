@@ -64,7 +64,7 @@ const appRoute: Routes =[
     // ViewTicketComponent,
     // AgingTicketComponent,
     // TicketWorkflowComponent,
-    ViewTicketPerAssigneeComponent,
+    // ViewTicketPerAssigneeComponent,
     ForgotpasswordComponent,
     // MenuUserRoleComponent,
     // ListUserRoleComponent,
