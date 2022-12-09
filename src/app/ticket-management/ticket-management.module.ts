@@ -15,9 +15,8 @@ import { AgingListComponent } from '../users/aging-list/aging-list.component';
 
 @NgModule({
   declarations: [
-    TicketListComponent,
-    
-    
+    TicketListComponent, 
+    AgingListComponent,
     MenuComponent,
   ],
   imports: [
@@ -28,7 +27,7 @@ import { AgingListComponent } from '../users/aging-list/aging-list.component';
   ],
   exports: [
     TicketListComponent,
-    AgingListComponent,
+    
     
   ]
 })
