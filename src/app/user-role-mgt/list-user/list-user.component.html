@@ -11,26 +11,20 @@
                 <!-- loop the header display in header -->
                 <th mat-header-cell scope="col" *ngFor="let header of header">{{header}}</th>
                 <th mat-header-cell scope="col">Update</th>
-                <th mat-header-cell scope="col">Delete Ticket</th>
+                <th mat-header-cell scope="col">Ticket</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let ticket of tickets">
-                <td mat-cell>{{ ticket.ticketID }}</td>
-                <td mat-cell>{{ ticket.assignee }}</td>
-                <td mat-cell>{{ ticket.status }}</td>
-                <td mat-cell>{{ ticket.subject }}</td>
-                <td mat-cell>{{ ticket.description }}</td>
-                <!-- update -->
-                <td mat-cell>
-                    <button mat-button class="update" (click)="updateTicket(ticket.ticketID)">
-                        <!-- icon update -->
-                        <mat-icon>update</mat-icon>
-                    </button>
-                </td>
+            <tr *ngFor="let user of users">
+                <td mat-cell>{{ user.userID }}</td>
+                <td mat-cell>{{ user.roleID }}</td>
+                <td mat-cell>{{ user.fname }}</td>
+                <td mat-cell>{{ user.lname }}</td>
+                <td mat-cell>{{ user.username }}</td>
+                <td mat-cell>{{ user.password }}</td>
                 <!-- delete -->
                 <td mat-cell>
-                    <button mat-button class="delete" (click)="deleteTicket(ticket.ticketID)">
+                    <button mat-button class="delete" (click)="deleteUser(user.userID)">
                         <!-- icon delete -->
                         <mat-icon>delete</mat-icon>
                     </button>

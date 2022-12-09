@@ -29,5 +29,23 @@ export class UsersService {
                 this.errorHandlerService.handleError<Users>("fetchAccount")
             )
         );
-  } 
+  }
+
+   // fetchAllUsers
+   fetchAllUsers(): Observable<Users> {
+    return this.http
+      .get<Users>(`${this.url}/all-users`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Users>("fetchTicket")
+        )
+    );
+  }
+
+  // deleteTicket
+  deleteUser(userID: any): Observable<Users> {
+    return this.http
+      .delete<Users>(`${this.url}/user/delete/${userID}`, {responseType: 'text' as 'json'})
+  }
 }
