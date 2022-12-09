@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
+import * as e from 'cors';
 import { Ticket } from 'src/app/auth/model/ticket-interface';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -44,6 +45,7 @@ export class AgingListComponent {
 
     userId: Pick<Users, "username"> | undefined;
     username: any;
+    header: any;
   
     getInfoUsingUsername(username: any) {
       console.log(username, 'username');
@@ -67,18 +69,24 @@ export class AgingListComponent {
       console.log(curr_acc, 'curr_acc');
       this.account$ = curr_acc;
       console.log(this.account$, 'account$');
+      console.log(this.account$.roleID, 'account$');
     }
 
     fetchAllAgingTickets(){
       this.ticketService.fetchAllAgingTickets().subscribe((data:any) => {
         this.tickets = data.data;
-        
+        this.getHeader();
       })
     }
 
-    header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+    
     getHeader(){
       //if admin naay assigneeID
+      if(this.account$.roleID == 101){
+        this.header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+      }else{
+        this.header = ["TicketID", "Status", "Subject", "Description"];
+      }
       //if di kay wala
     }
 
