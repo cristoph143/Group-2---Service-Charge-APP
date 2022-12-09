@@ -1,30 +1,29 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatLegacyDialog as MatDialog } from '@angular/material/legacy-dialog';
-import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
+import { Component, Inject } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { TicketService } from 'src/app/auth/services/ticket.service';
+import { UserRoleService } from 'src/app/auth/services/user-role.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 
 @Component({
-  selector: 'app-view-ticket',
-  templateUrl: './view-ticket.component.html',
-  styleUrls: ['./view-ticket.component.css']
+  selector: 'app-create-user-role',
+  templateUrl: './create-user-role.component.html',
+  styleUrls: ['./create-user-role.component.css']
 })
-export class ViewTicketComponent implements OnInit {
-
+export class CreateUserRoleComponent {
   constructor(
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService,
-    public dialog: MatDialog
-    ) { }
-  
-    @ViewChild(MatPaginator) paginator: MatPaginator;
+    public dialog: MatDialog,
+    private userRoleService: UserRoleService,
 
-  tickets: any;
+    @Inject(MAT_DIALOG_DATA) public data: any
+  ) { }
+
+  userRoles: any;
   account$: any;
   ngOnInit(): void {
     // this.userId = this.authService.userId;
@@ -32,6 +31,11 @@ export class ViewTicketComponent implements OnInit {
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
   }
+
+  userRole: FormGroup = new FormGroup({
+    roleID: new FormControl(''),
+    description: new FormControl(''),
+  });
 
   userId: Pick<Users, "username"> | undefined;
   username: any;
@@ -60,4 +64,20 @@ export class ViewTicketComponent implements OnInit {
     console.log(this.account$, 'account$');
   }
 
+  attachmentList:any = [];
+  createUser() {
+    let formData : FormData = new FormData();
+
+    formData.append('description', this.userRole.value.description.toString());
+
+    this.userRoleService.createUserRole(formData).subscribe((data:any) => {
+      console.log(data);
+      alert(data.message)
+      // close all
+      this.dialog.closeAll();
+      this.router.navigate['/user-role-management'];
+    })
+
+    
+  }
 }

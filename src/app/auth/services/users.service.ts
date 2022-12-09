@@ -29,5 +29,42 @@ export class UsersService {
                 this.errorHandlerService.handleError<Users>("fetchAccount")
             )
         );
-  } 
+  }
+
+   // fetchAllUsers
+   fetchAllUsers(): Observable<Users> {
+    return this.http
+      .get<Users>(`${this.url}/all-users`, this.httpOptions)
+      .pipe(
+        first(),
+        catchError(
+            this.errorHandlerService.handleError<Users>("fetchTicket")
+        )
+    );
+  }
+
+   // createUser
+   createUser(data: any){
+    return this.http
+      .post(`${this.url}/user/create`, data)
+      .pipe(
+        first(),
+        catchError(
+          this.errorHandlerService.handleError<Users>("createTicket")
+        )
+      );
+  }
+
+  // updateUser
+  public updateUser(userID: any, data: any){
+    return this.http
+      .post(`${this.url}/user/update/${userID}`, data
+      );
+  }
+
+  // deleteUser
+  deleteUser(userID: any): Observable<Users> {
+    return this.http
+      .delete<Users>(`${this.url}/user/delete/${userID}`, {responseType: 'text' as 'json'})
+  }
 }

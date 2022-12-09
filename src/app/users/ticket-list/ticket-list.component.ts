@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { MatPaginator } from '@angular/material/paginator';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
+import { MatLegacyPaginator as MatPaginator } from '@angular/material/legacy-paginator';
 import { Router } from '@angular/router';
 import { Ticket } from 'src/app/auth/model/ticket-interface';
 import { Users } from 'src/app/auth/model/user-interface';
@@ -8,7 +8,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 import { CreateListComponent } from '../create-list/create-list.component';
-import {MatTableDataSource} from '@angular/material/table';
+import {MatLegacyTableDataSource as MatTableDataSource} from '@angular/material/legacy-table';
 import { UpdateListComponent } from '../update-list/update-list.component';
 
 @Component({
@@ -75,7 +75,8 @@ export class TicketListComponent implements OnInit {
    
   fetchAllTickets(){
     this.ticketService.fetchAllTickets().subscribe((data:any) => {
-      this.tickets = data;
+      this.tickets = data.data;
+      
     })
   }
 
@@ -96,7 +97,7 @@ export class TicketListComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
-      this.router.navigate(['/ticket-management']);
+      this.router.navigate(['/user-dashboard']);
       this.fetchAllTickets();
       // refresh content o
     });

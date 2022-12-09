@@ -1,5 +1,6 @@
 export interface Users{
-    assigneeID?: number;
+    userID?: number;
+    roleID: number;
     fname: string;
     lname: string;
     username: string;

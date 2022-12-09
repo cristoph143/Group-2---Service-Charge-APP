@@ -1,4 +1,4 @@
-<div class="user-role">
+<div class="ticket">
     <div class="end">
         <!-- add/create angular button -->
         <!-- <button class="create" (click)="createTicket()">CREATE TICKET</button> -->
@@ -11,23 +11,27 @@
                 <!-- loop the header display in header -->
                 <th mat-header-cell scope="col" *ngFor="let header of header">{{header}}</th>
                 <th mat-header-cell scope="col">Update</th>
-                <th mat-header-cell scope="col">Delete User Role</th>
+                <th mat-header-cell scope="col">Delete User</th>
             </tr>
         </thead>
         <tbody>
-            <tr *ngFor="let userRole of userRoles">
-                <td mat-cell>{{ userRole.roleID }}</td>         
-                <td mat-cell>{{ userRole.description }}</td>
-                <!-- update -->
-                <td mat-cell>
-                    <button mat-button class="update" (click)="updateUserRole(userRole.roleID)">
+            <tr *ngFor="let user of users">
+                <td mat-cell>{{ user.userID }}</td>
+                <td mat-cell>{{ user.roleID }}</td>
+                <td mat-cell>{{ user.fname }}</td>
+                <td mat-cell>{{ user.lname }}</td>
+                <td mat-cell>{{ user.username }}</td>
+                <td mat-cell>{{ user.password }}</td>
+                 <!-- update -->
+                 <td mat-cell>
+                    <button mat-button class="update" (click)="updateUser(user.userID)">
                         <!-- icon update -->
                         <mat-icon>update</mat-icon>
                     </button>
                 </td>
                 <!-- delete -->
                 <td mat-cell>
-                    <button mat-button class="delete" (click)="deleteUserRole(userRole.roleID)">
+                    <button mat-button class="delete" (click)="deleteUser(user.userID)">
                         <!-- icon delete -->
                         <mat-icon>delete</mat-icon>
                     </button>

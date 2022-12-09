@@ -1,6 +1,6 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Output } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MatLegacyDialog as MatDialog, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -8,32 +8,30 @@ import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 
 @Component({
-  selector: 'app-update-list',
-  templateUrl: './update-list.component.html',
-  styleUrls: ['./update-list.component.css']
+  selector: 'app-edit-user',
+  templateUrl: './edit-user.component.html',
+  styleUrls: ['./edit-user.component.css']
 })
-export class UpdateListComponent implements OnInit {
-
+export class EditUserComponent {
   @Output() submitClicked = new EventEmitter<any>();
   constructor(
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService,
     public dialog: MatDialog,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) { }
 
-  ticket: FormGroup = new FormGroup({
-    ticketID: new FormControl(''),
-    assigneeID: new FormControl(''),
-    status: new FormControl(''),
-    subject: new FormControl(''),
-    description: new FormControl(''),
+  user: FormGroup = new FormGroup({
+    userID: new FormControl(''),
+    roleID: new FormControl(''),
+    fname: new FormControl(''),
+    lname: new FormControl(''),
+    username: new FormControl(''),
+    password: new FormControl(''),
   });
 
-    
-  tickets: any;
+  users: any;
   account$: any;
   ngOnInit(): void {
     // this.userId = this.authService.userId;
@@ -41,7 +39,7 @@ export class UpdateListComponent implements OnInit {
     console.log(this.username)
     this.getInfoUsingUsername(this.username);
     console.log(this.data)
-    this.tickets = this.data
+    this.users = this.data
   }
 
   userId: Pick<Users, "username"> | undefined;
@@ -72,22 +70,21 @@ export class UpdateListComponent implements OnInit {
   }
 
   updateTicket() {
-    console.log(this.ticket.value)
-    console.log(this.tickets.ticket.ticketID);
+    console.log(this.users.user.userID);
     let formData : FormData = new FormData();
     
-    formData.append('ticketID', this.tickets.ticket.ticketID.toString());
-    formData.append('assignee', this.ticket.value.assigneeID.toString());
-    formData.append('status', this.ticket.value.status.toString());
-    formData.append('subject', this.ticket.value.subject.toString());
-    formData.append('description', this.ticket.value.description.toString());
+    formData.append('userID', this.users.user.userID.toString());
+    formData.append('roleID', this.user.value.roleID.toString());
+    formData.append('fname', this.user.value.fname.toString());
+    formData.append('lname', this.user.value.lname.toString());
+    formData.append('username', this.user.value.username.toString());
+    formData.append('password', this.user.value.password.toString());
 
-    this.ticketService.updateTicket(this.tickets.ticket.ticketID, formData).subscribe((data:any) => {
+    this.userService.updateUser(this.users.user.userID, formData).subscribe((data:any) => {
       console.log(data);
       alert(data.message)
       // close all
       this.dialog.closeAll();
     })
   }
-
 }

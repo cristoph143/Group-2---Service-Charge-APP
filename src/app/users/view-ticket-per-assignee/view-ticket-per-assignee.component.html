@@ -1,4 +1,3 @@
-<p>view-ticket-per-assignee works!</p>
 <!-- table for ticketID, assigneeID, status, subject, description -->
 <table mat-table class="table table-striped">
     <thead>
@@ -13,7 +12,7 @@
         <!-- loop tickets and display values to table -->
         <tr *ngFor="let ticket of tickets">
             <td mat-cell>{{ ticket.ticketID }}</td>
-            <td mat-cell>{{ ticket.assigneeID }}</td>
+            <td mat-cell>{{ ticket.assignee }}</td>
             <td mat-cell>{{ ticket.status }}</td>
             <td mat-cell>{{ ticket.subject }}</td>
             <td mat-cell>{{ ticket.description }}</td>

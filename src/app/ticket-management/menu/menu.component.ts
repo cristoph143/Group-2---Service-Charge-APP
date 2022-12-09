@@ -5,7 +5,7 @@ import { UsersService } from 'src/app/auth/services/users.service';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
 import { CreateListComponent } from 'src/app/users/create-list/create-list.component';
-import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig } from '@angular/material/legacy-dialog';
 
 export interface List {
   path: string;
@@ -68,7 +68,6 @@ export class MenuComponent implements OnInit {
   list: List[] = [
     { path: '/ticket_list', icon: 'list', name: 'TICKET LIST' },
     { path: '/aging_ticket', icon: 'watch_later', name: 'AGING TICKET' },
-    { path: '/ticket_workflow', icon: 'workflow', name: 'TICKET WORKFLOW' },
   ];
 
   paths: any;
@@ -104,7 +103,7 @@ export class MenuComponent implements OnInit {
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
-      this.router.navigate(['/ticket-management']);
+      this.router.navigate(['/user-dashboard']);
       this.fetchAllTickets();
       // refresh content o
     });
