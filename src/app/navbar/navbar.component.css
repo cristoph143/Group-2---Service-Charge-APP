@@ -1,12 +1,10 @@
 mat-toolbar {
-    /* display: flex; */
     padding: 0 30px;
     background-color: white;
 }
 
 span {
     flex: auto;
-    /* justify-items: flex-end; */
 }
 
 .logo {
@@ -29,43 +27,11 @@ span {
     padding-left: 5px;
 }
 
-/* .navbar{
-    padding: 5px;
-    background-color: black;
-    display: flex;
-    color: white;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 10px;
-} */
-
 .navbar-item{
     font-family: 'Poppins';
     font-weight: 700;
     font-size: 17px;
     color: #DD0301;
-}
-
-mat-card-title {
-    display: flex;
-    justify-content: center;
-    font-weight: 100px;
-    /* margin-bottom: 40px; */
-    font-family: Poppins;
-    font-style: normal;
-    font-weight: bolder;
-    font-size: 40px;
-    line-height: 50px;
-    text-align: center;
-    color: #1f0e7e;
-}
-
-.dropdown {
-    display: flex;
-    align-items: center;
-    background-color: transparent;
-    position: relative;
-    display: inline-block;
 }
 
 .button {
@@ -119,6 +85,57 @@ mat-card-title {
 .dropdown:hover .dropbtn {
     background-color: black;
 }
+
+.butn {
+    background-color: transparent;
+}
+
 .butn:hover{
     color: black;
 }
+
+
+
+ /* mat-toolbar {
+    padding: 0 30px;
+    background-color: white;
+    justify-self: auto;
+    position: absolute;
+}
+
+.logo {
+    width: 8em;
+    margin-top: 5px;
+    margin-right: 5px;
+}
+
+.dropbtn {
+    color: white;
+    font-family: 'Poppins';
+    font-weight: 400;
+    background-color: #DD0301;
+    border: 0;
+    padding: 10px 20px 10px 20px;
+    border-radius: 5px;
+}
+
+#dropdown-icon {
+    padding-left: 5px;
+}
+
+.dropbtn {
+    background-color: rgba(221, 3, 1, 1);
+    color: white;
+    padding: 5px 20px 5px 20px;
+    font-size: 16px;
+    border: none;
+}
+
+.butn{
+    background-color: rgba(221, 3, 1, 1);
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none; 
+}  */
+

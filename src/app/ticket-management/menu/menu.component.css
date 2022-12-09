@@ -26,7 +26,7 @@
     top: 210px;
     background: #DE0402;
     color: #FFFDFD;
-    border-radius: 20px;
+    border-radius: 10px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 500;
@@ -61,6 +61,12 @@
     top: 160px;
 }
 
+.list:focus {
+    background-color: white;
+    color: black;
+    
+}
+
 .icon-display {
     /* 
     padding-top: 3px; */
@@ -77,21 +83,6 @@ mat-icon {
     background-color: white;
     color: black;
 }
-
-/* .create {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.create:hover {
-    background-color: white;
-    color: black;
-} */
 
 .update {
     font-family: 'Poppins';
