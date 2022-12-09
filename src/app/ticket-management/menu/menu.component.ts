@@ -68,6 +68,7 @@ export class MenuComponent implements OnInit {
   list: List[] = [
     { path: '/ticket_list', icon: 'list', name: 'TICKET LIST' },
     { path: '/aging_ticket', icon: 'watch_later', name: 'AGING TICKET' },
+    
   ];
 
   paths: any;
