@@ -32,10 +32,29 @@ export class UserRoleService {
     );
   }
 
-  // deleteTicket
-  deleteTicket(userRoleID: any): Observable<UserRole> {
+  // updateTicket
+  updateUserRole(roleID: any, data: any){
     return this.http
-      .delete<UserRole>(`${this.url}/user_role/delete/${userRoleID}`, {responseType: 'text' as 'json'})
+      .post(`${this.url}/role/update/${roleID}`, data
+      );
+  }
+
+  // deleteTicket
+  deleteUserRole(userRoleID: any): Observable<UserRole> {
+    return this.http
+      .delete<UserRole>(`${this.url}/role/delete/${userRoleID}`, {responseType: 'text' as 'json'})
+  }
+
+  // createTicket
+  createUserRole(data: any){
+    return this.http
+      .post(`${this.url}/role/create`, data)
+      .pipe(
+        first(),
+        catchError(
+          this.errorHandlerService.handleError<UserRole>("createTicket")
+        )
+      );
   }
 
 }

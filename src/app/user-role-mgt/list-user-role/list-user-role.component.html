@@ -18,6 +18,13 @@
             <tr *ngFor="let userRole of userRoles">
                 <td mat-cell>{{ userRole.roleID }}</td>         
                 <td mat-cell>{{ userRole.description }}</td>
+                <!-- update -->
+                <td mat-cell>
+                    <button mat-button class="update" (click)="updateUserRole(userRole.roleID)">
+                        <!-- icon update -->
+                        <mat-icon>update</mat-icon>
+                    </button>
+                </td>
                 <!-- delete -->
                 <td mat-cell>
                     <button mat-button class="delete" (click)="deleteUserRole(userRole.roleID)">

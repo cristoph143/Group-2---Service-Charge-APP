@@ -13,6 +13,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { EditUserComponent } from './edit-user/edit-user.component';
+import { EditUserRoleComponent } from './edit-user-role/edit-user-role.component';
+import { CreateUserRoleComponent } from './create-user-role/create-user-role.component';
 
 
 
@@ -23,6 +25,8 @@ import { EditUserComponent } from './edit-user/edit-user.component';
     ListUserComponent,
     CreateUserComponent,
     EditUserComponent,
+    EditUserRoleComponent,
+    CreateUserRoleComponent,
   ],
   imports: [
     CommonModule,

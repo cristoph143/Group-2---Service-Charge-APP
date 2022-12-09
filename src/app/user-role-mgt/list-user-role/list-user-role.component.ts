@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatDialog } from '@angular/material/dialog';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
@@ -9,6 +9,7 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UserRoleService } from 'src/app/auth/services/user-role.service';
 import { UsersService } from 'src/app/auth/services/users.service';
+import { EditUserRoleComponent } from '../edit-user-role/edit-user-role.component';
 
 @Component({
   selector: 'app-list-user-role',
@@ -81,13 +82,39 @@ export class ListUserRoleComponent implements OnInit {
   }
 
   deleteUserRole(id:any){
-    // show dialog pop up if he wants to delete the ticket
+    // show dialog pop up if he wants to delete the user role
     if(confirm("Are you sure you want to delete this role#" + id +"?")){
-      this.userRoleService.deleteTicket(id).subscribe(() => {
+      this.userRoleService.deleteUserRole(id).subscribe(() => {
         this.fetchAllUserRoles();
       })
     }
+  }
 
+  updateUserRole(id:any){
+    console.log(this.userRoles +"update");
+    const ticket = this.userRoles.find(t => t.roleID === id);
+    console.log(ticket);
+    // open the dialog box
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "100%";
+    dialogConfig.data = {
+      ticket
+    };
+    console.log(dialogConfig.data, 'dialogConfig.data');
+    const dialogRef = this.dialog.open(EditUserRoleComponent, dialogConfig);
+    console.log(dialogRef)
+    //   const dialogRef = this.dialog.open(dialogReference);
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+      this.dialog.closeAll();
+      this.router.navigate(['/user-dashboard']);
+      this.fetchAllUserRoles();
+      // refresh content o
+    });
+    // 
   }
 
 
