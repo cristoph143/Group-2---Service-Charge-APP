@@ -8,6 +8,7 @@ import { ReportsRoutingModule } from './reports-routing.module';
 import { MatIconModule } from '@angular/material/icon';
 import { TicketManagementModule } from '../ticket-management/ticket-management.module';
 import { AgingTicketsComponent } from '../users/aging-tickets/aging-tickets.component';
+import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 
 
 
@@ -22,6 +23,8 @@ import { AgingTicketsComponent } from '../users/aging-tickets/aging-tickets.comp
     ReportsRoutingModule,
     MatIconModule,
     TicketManagementModule,
+    MatDialogModule,
+    MatIconModule,
   ],
   exports: [
     TicketListComponent,

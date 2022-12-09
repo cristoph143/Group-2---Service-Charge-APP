@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
-import { MatLegacyDialog as MatDialog, MatLegacyDialogConfig as MatDialogConfig, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
@@ -31,7 +32,7 @@ export class ViewTicketPerAssigneeComponent implements OnInit {
     console.log(this.tickets)
   }
 
-  header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+  header = ["AssigneeID", "Status", "Subject", "Description"];
 
   show: boolean = false;
 
