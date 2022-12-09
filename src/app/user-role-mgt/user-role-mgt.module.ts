@@ -9,6 +9,10 @@ import { ListUserComponent } from './list-user/list-user.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { CreateUserComponent } from './create-user/create-user.component';
 
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
 
 
 @NgModule({
@@ -24,6 +28,10 @@ import { CreateUserComponent } from './create-user/create-user.component';
     MatIconModule,
     MatListModule,
     MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ]
 })
 export class UserRoleMgtModule { }

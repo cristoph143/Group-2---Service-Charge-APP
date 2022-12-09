@@ -79,7 +79,7 @@ export class MenuUserRoleComponent implements OnInit {
     }
   }
 
-  createTicket() {
+  createUser() {
     const ticket = this.users;
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;

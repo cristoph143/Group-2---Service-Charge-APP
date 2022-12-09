@@ -43,7 +43,19 @@ export class UsersService {
     );
   }
 
-  // deleteTicket
+   // createUser
+   createUser(data: any){
+    return this.http
+      .post(`${this.url}/user/create`, data)
+      .pipe(
+        first(),
+        catchError(
+          this.errorHandlerService.handleError<Users>("createTicket")
+        )
+      );
+  }
+
+  // deleteUser
   deleteUser(userID: any): Observable<Users> {
     return this.http
       .delete<Users>(`${this.url}/user/delete/${userID}`, {responseType: 'text' as 'json'})

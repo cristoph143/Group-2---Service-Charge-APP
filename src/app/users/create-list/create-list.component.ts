@@ -88,20 +88,7 @@ export class CreateListComponent implements OnInit {
       this.router.navigate['/ticket-list'];
     })
 
-    // let ticket = {
-    //   assigneeID: this.ticket.value.assigneeID,
-    //   status: this.ticket.value.status,
-    //   subject: this.ticket.value.subject,
-    //   description: this.ticket.value.description
-    // }
-    // console.log(ticket)
-    // this.ticketService.createTicket(ticket).subscribe((data:any) => {
-    //   console.log(data);
-    //   alert(data)
-    //   // close all
-    //   this.dialog.closeAll();
-    //   this.router.navigate['/ticket-list'];
-    // })
+    
   }
 
   // onFileSelected($event: Event) {
