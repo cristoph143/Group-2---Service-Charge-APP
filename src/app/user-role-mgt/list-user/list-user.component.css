@@ -21,3 +21,13 @@
     color: white;
     font-family: 'Poppins';
 }
+
+.update {
+    background-color: transparent;
+    border: none;
+}
+
+.delete {
+    background-color: transparent;
+    border: none;
+}

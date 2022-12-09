@@ -45,6 +45,11 @@
     color: black;
 }
 
+.list:focus {
+    color: black;
+    background-color: white;
+}
+
 .icon-display {
     size: 100px;
     margin-right: 20px;
