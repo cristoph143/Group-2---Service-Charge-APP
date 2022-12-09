@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { Router } from '@angular/router';
+import { MonthlyReport } from '../auth/model/monthly-report';
 import { Ticket } from '../auth/model/ticket-interface';
 import { Users } from '../auth/model/user-interface';
 import { AuthService } from '../auth/services/auth.service';
@@ -23,7 +24,8 @@ export class MonthlyReportComponent implements OnInit {
     public dialog: MatDialog
     ) { }
     
-    tickets: Ticket[] = [];
+    // tickets: Ticket[] = [];
+    monthly_report: MonthlyReport[] = [];
     tickets_monthly: any;
     tickets_assignee: any;
     account$: any;
@@ -103,17 +105,15 @@ export class MonthlyReportComponent implements OnInit {
 
     });
   }
-  header = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+  header = ["Status", "Count"];
   
   exportToCSV(){
     // export tickets to csv file
     const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
     // push the this.headers to headers
-    const header = Object.keys(this.tickets[0])
-    console.log(header)
-    console.log(this.tickets);
+    const header = Object.keys(this.monthly_report[0])
     // from this.tickets get the values and push it to the rows
-    const csv = this.tickets.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
+    const csv = this.monthly_report.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
     csv.unshift(header.join(','));
     console.table(csv)
     const csvArray = csv.join('\r\n');
@@ -123,7 +123,7 @@ export class MonthlyReportComponent implements OnInit {
     const url = window.URL.createObjectURL(blob);
 
     a.href = url;
-    a.download = 'myFile.csv';
+    a.download = 'monthly_report_file.csv';
     a.click();
     window.URL.revokeObjectURL(url);
     a.remove();
