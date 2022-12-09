@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ViewTicketComponent } from './view-ticket.component';
+import { AgingListComponent } from './aging-list.component';
 
-describe('ViewTicketComponent', () => {
-  let component: ViewTicketComponent;
-  let fixture: ComponentFixture<ViewTicketComponent>;
+describe('AgingListComponent', () => {
+  let component: AgingListComponent;
+  let fixture: ComponentFixture<AgingListComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ViewTicketComponent ]
+      declarations: [ AgingListComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ViewTicketComponent);
+    fixture = TestBed.createComponent(AgingListComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

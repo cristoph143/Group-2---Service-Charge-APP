@@ -4,6 +4,9 @@ import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 import { Router } from '@angular/router';
 import { Users } from 'src/app/auth/model/user-interface';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { CreateUserComponent } from '../create-user/create-user.component';
+import { CreateUserRoleComponent } from '../create-user-role/create-user-role.component';
 
 export interface List {
   path: string;
@@ -22,10 +25,10 @@ export class MenuUserRoleComponent implements OnInit {
     private authService: AuthService,
     private userService: UsersService,
     private router: Router,
-    private ticketService: TicketService
+    public dialog: MatDialog
   ) { }
 
-  tickets: any;
+  users: any;
   account$: any;
 
   ngOnInit(): void {
@@ -63,7 +66,8 @@ export class MenuUserRoleComponent implements OnInit {
   }
 
   list: List[] = [
-    { path: '/user-role-list', icon: 'list', name: 'LIST' },
+    { path: '/user-role-list', icon: 'list', name: 'USER ROLE LIST' },
+    { path: '/user-list', icon: 'list', name: 'USER LIST'}
   ];
 
   paths: any;
@@ -74,6 +78,50 @@ export class MenuUserRoleComponent implements OnInit {
         this.paths = this.list[i].path;
       }
     }
+  }
+
+  createUser() {
+    const users = this.users;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "100%";
+    dialogConfig.data = {
+      users
+    };
+    console.log(dialogConfig.data, 'dialogConfig.data');
+    const dialogRef = this.dialog.open(CreateUserComponent, dialogConfig);
+    console.log(dialogRef)
+    //   const dialogRef = this.dialog.open(dialogReference);
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+      this.dialog.closeAll();
+      this.router.navigate(['/user-dashboard']);
+      // refresh content o
+    });
+  }
+
+  createUserRole() {
+    const users = this.users;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.disableClose = true;
+    dialogConfig.autoFocus = true;
+    dialogConfig.width = "100%";
+    dialogConfig.data = {
+      users
+    };
+    console.log(dialogConfig.data, 'dialogConfig.data');
+    const dialogRef = this.dialog.open(CreateUserRoleComponent, dialogConfig);
+    console.log(dialogRef)
+    //   const dialogRef = this.dialog.open(dialogReference);
+
+    dialogRef.afterClosed().subscribe((result: any) => {
+      console.log(`Dialog result: ${result}`);
+      this.dialog.closeAll();
+      this.router.navigate(['/user-dashboard']);
+      // refresh content o
+    });
   }
 
 }

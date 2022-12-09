@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TicketWorkflowComponent } from './ticket-workflow.component';
+import { CreateUserComponent } from './create-user.component';
 
-describe('TicketWorkflowComponent', () => {
-  let component: TicketWorkflowComponent;
-  let fixture: ComponentFixture<TicketWorkflowComponent>;
+describe('CreateUserComponent', () => {
+  let component: CreateUserComponent;
+  let fixture: ComponentFixture<CreateUserComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ TicketWorkflowComponent ]
+      declarations: [ CreateUserComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(TicketWorkflowComponent);
+    fixture = TestBed.createComponent(CreateUserComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

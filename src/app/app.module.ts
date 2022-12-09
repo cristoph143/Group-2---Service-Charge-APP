@@ -33,10 +33,10 @@ import {MatLegacyListModule as MatListModule} from '@angular/material/legacy-lis
 import { TicketListComponent } from './users/ticket-list/ticket-list.component';
 import { CreateListComponent } from './users/create-list/create-list.component';
 import { UpdateListComponent } from './users/update-list/update-list.component';
-import { ViewTicketComponent } from './users/view-ticket/view-ticket.component';
-import { MontlyReportsComponent } from './users/monthly-reports/monthly-reports.component';
-import { TicketWorkflowComponent } from './users/ticket-workflow/ticket-workflow.component';
-import { ViewTicketPerAssigneeComponent } from './users/view-ticket-per-assignee/view-ticket-per-assignee.component';
+
+
+
+
 import { MenuComponent } from './ticket-management/menu/menu.component';
 import { MenuReportsComponent } from './reports/menu-reports/menu-reports.component';
 import { MonthlyReportComponent } from './monthly-report/monthly-report.component';
@@ -45,6 +45,7 @@ import { MenuUserRoleComponent } from './user-role-mgt/menu-user-role/menu-user-
 import { ListUserRoleComponent } from './user-role-mgt/list-user-role/list-user-role.component';
 import { UserRoleMgtModule } from './user-role-mgt/user-role-mgt.module';
 import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
+
 
 const appRoute: Routes =[
   {path: 'Home', component: UserDashboardComponent},
@@ -60,7 +61,7 @@ const appRoute: Routes =[
     // TicketListComponent,
     CreateListComponent,
     UpdateListComponent,
-    ViewTicketComponent,
+    // ViewTicketComponent,
     // AgingTicketComponent,
     // TicketWorkflowComponent,
     ViewTicketPerAssigneeComponent,

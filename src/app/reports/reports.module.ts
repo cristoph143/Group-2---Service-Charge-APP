@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TicketListComponent } from '../users/ticket-list/ticket-list.component';
-import { MontlyReportsComponent } from '../users/monthly-reports/monthly-reports.component';
+
 import { MonthlyReportComponent } from '../monthly-report/monthly-report.component';
 import { MenuReportsComponent } from './menu-reports/menu-reports.component';
 import { MatLegacyListModule as MatListModule } from '@angular/material/legacy-list';
@@ -25,7 +25,7 @@ import { TicketManagementModule } from '../ticket-management/ticket-management.m
   ],
   exports: [
     TicketListComponent,
-    MontlyReportsComponent,
+    
   ]
 })
 export class ReportsModule { }

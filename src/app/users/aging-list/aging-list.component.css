@@ -1,0 +1,23 @@
+.table-striped {
+    border-radius: 4px; 
+    width: 100%; 
+    height: auto;
+    margin: 10px 10px 10px 0px
+}
+
+.end {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.export {
+    width: 200px;
+    height: 40px;
+    margin-top: 15px;
+    margin-right: 20px;
+    border-radius: 10px;
+    border: none;
+    background: #DE0402;
+    color: white;
+    font-family: 'Poppins';
+}
