@@ -110,12 +110,14 @@ export class MonthlyReportComponent implements OnInit {
   header = ["Status", "Count"];
   
   exportToCSV(){
+    console.log(this.tickets_monthly)
     // export tickets to csv file
     const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
     // push the this.headers to headers
-    const header = Object.keys(this.monthly_report[0])
+    const header = Object.keys(this.tickets_monthly[0])
+    console.log(header)
     // from this.tickets get the values and push it to the rows
-    const csv = this.monthly_report.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
+    const csv = this.tickets_monthly.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
     csv.unshift(header.join(','));
     console.table(csv)
     const csvArray = csv.join('\r\n');

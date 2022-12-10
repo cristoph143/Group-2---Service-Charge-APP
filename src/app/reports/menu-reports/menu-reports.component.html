@@ -7,19 +7,21 @@
             <mat-list>
                 <mat-list-item *ngFor="let item of list" (click)="tab(item.path)">
                     <button mat-button class="list">
-                        <mat-icon class="icon-display">{{item.icon}}</mat-icon>
-                        <span class="list_name">{{item.name}}</span>
+                        <mat-icon class="icon-display ">{{item.icon}}</mat-icon>
+                        <span class="list_name ">{{item.name}}</span>
                     </button>
+
                 </mat-list-item>
             </mat-list>
         </div>
-        <div class="content" *ngIf="paths === '/ticket_list'">
-            <app-ticket-list [user] = "account$"></app-ticket-list>
+        <div class="content " *ngIf="paths==='/ticket_list' ">
+            <app-ticket-list [user]="account$ "></app-ticket-list>
         </div>
-        <div class="content" *ngIf="paths === '/aging_ticket'">
-            <app-aging-list [user] = "account$"></app-aging-list>
+        <div class="content " *ngIf="paths==='/aging_ticket' ">
+            <app-aging-list [user]="account$ "></app-aging-list>
         </div>
-        <div class="content" *ngIf="paths === '/monthly_report'">
+        <div class="content " *ngIf="account$.roleID ==101 && paths==='/monthly_report' ">
+
             <app-monthly-report></app-monthly-report>
         </div>
     </div>
