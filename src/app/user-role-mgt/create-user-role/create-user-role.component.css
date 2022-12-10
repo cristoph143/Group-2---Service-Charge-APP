@@ -4,8 +4,9 @@
     overflow: hidden;
     position: relative;
     width: 100%;
-  }
-  .create-tic-modal-zft {
+}
+
+.create-tic-modal-zft {
     /* align-items: center; */
     background-color: #ffffff;
     border: solid 0.2rem #000000;
@@ -16,8 +17,9 @@
     /* height: 100%; */
     padding: 4.7rem 0.2rem 6.8rem 0.2rem;
     width: 100%;
-  }
-  .create-ticket-header-XpE {
+}
+
+.create-ticket-header-XpE {
     background-color: #de0402;
     border-radius: 0 0.9rem 0.9rem 0;
     box-sizing: border-box;
@@ -32,16 +34,18 @@
     padding: 0.95rem 2.371rem 1.05rem 2.371rem;
     white-space: nowrap;
     width: 25.5rem;
-  }
-  .auto-group-ycyr-H4e {
+}
+
+.auto-group-ycyr-H4e {
     align-items: center;
     display: flex;
     flex-shrink: 0;
     height: 4.4rem;
-    margin: 0rem 9.8rem -0.39860000000000007rem  2.4rem;
+    margin: 0rem 9.8rem -0.39860000000000007rem 2.4rem;
     width: calc(100% - 12.2rem);
-  }
-  .assignee-id-8LA {
+}
+
+.assignee-id-8LA {
     color: #000000;
     display: flex;
     flex-shrink: 0;
@@ -51,9 +55,9 @@
     line-height: 1.5;
     margin-right: 6.100000000000001rem;
     white-space: nowrap;
-    
-  }
-  .auto-group-cpev-bjY {
+}
+
+.auto-group-cpev-bjY {
     background-color: #b9b9b9;
     border-radius: 0.5rem;
     box-sizing: border-box;
@@ -68,17 +72,18 @@
     padding: 0.05rem 2.1rem;
     white-space: nowrap;
     width: 39.7rem;
-  }
-  
-  .auto-group-gjmt-RCn {
+}
+
+.auto-group-gjmt-RCn {
     align-items: center;
     display: flex;
     flex-shrink: 0;
     height: 4.4rem;
     margin: 0rem 9.8rem 2.6014rem 2.4rem;
     width: calc(100% - 12.2rem);
-  }
-  .status-2yG {
+}
+
+.status-2yG {
     color: #000000;
     display: flex;
     flex-shrink: 0;
@@ -88,8 +93,9 @@
     line-height: 1.5;
     margin-right: 3.1000000000000014rem;
     white-space: nowrap;
-  }
-  .auto-group-531t-qfp {
+}
+
+.auto-group-531t-qfp {
     background-color: #b9b9b9;
     border-radius: 0.5rem;
     box-sizing: border-box;
@@ -104,17 +110,18 @@
     padding: 0.05rem 1.9rem;
     white-space: nowrap;
     width: 39.7rem;
-  }
-  
-  .auto-group-fks6-c4J {
+}
+
+.auto-group-fks6-c4J {
     align-items: center;
     display: flex;
     flex-shrink: 0;
     height: 4.4rem;
-    margin: 0rem 9.8rem -0.39860000000000007rem  2.4rem;
+    margin: 0rem 9.8rem -0.39860000000000007rem 2.4rem;
     width: calc(100% - 12.2rem);
-  }
-  .subject-HgE {
+}
+
+.subject-HgE {
     color: #000000;
     display: flex;
     flex-shrink: 0;
@@ -124,8 +131,9 @@
     line-height: 1.5;
     margin-right: 3.1000000000000014rem;
     white-space: nowrap;
-  }
-  .auto-group-arv8-PDU {
+}
+
+.auto-group-arv8-PDU {
     background-color: #b9b9b9;
     border-radius: 0.5rem;
     box-sizing: border-box;
@@ -140,17 +148,18 @@
     padding: 0.05rem 1.7rem;
     white-space: nowrap;
     width: 39.7rem;
-  }
-  
-  .auto-group-jyzk-3J2 {
+}
+
+.auto-group-jyzk-3J2 {
     align-items: flex-start;
     display: flex;
     flex-shrink: 0;
     /* height: 7.6rem; */
-    margin: 0rem 9.8rem -0.3000000000000007rem  2.2rem;
+    margin: 0rem 9.8rem -0.3000000000000007rem 2.2rem;
     width: calc(100% - 12rem);
-  }
-  .description-XDC {
+}
+
+.description-XDC {
     color: #000000;
     display: flex;
     flex-shrink: 0;
@@ -161,8 +170,9 @@
     margin-right: 3.400000000000014rem;
     white-space: nowrap;
     padding-top: 15px;
-  }
-  .auto-group-vgyx-R3g {
+}
+
+.auto-group-vgyx-R3g {
     background-color: #b9b9b9;
     border-radius: 0.5rem;
     box-sizing: border-box;
@@ -174,20 +184,21 @@
     font-weight: 500;
     height: 100%;
     line-height: 1.5;
-    padding: 0.05rem 2.1rem;;
+    padding: 0.05rem 2.1rem;
+    ;
     white-space: nowrap;
     width: 39.7rem;
-  }
-  
-  .auto-group-hpku-jyU {
+}
+
+.auto-group-hpku-jyU {
     align-items: flex-start;
     display: flex;
     flex-shrink: 0;
     margin: 0rem 23.2rem 6.7rem 22.008rem;
     width: calc(100% - 45.2083rem);
-  }
-  
-  .group-2-wy4 {
+}
+
+.group-2-wy4 {
     align-items: center;
     background-color: #de0402;
     border-radius: 0.9rem;
@@ -203,9 +214,9 @@
     margin: 1rem 23.1rem 0rem 27.7rem;
     white-space: nowrap;
     width: calc(100% - 50.8rem);
-  }
+}
 
-  .password_label{
+.password_label {
     color: #000000;
     display: flex;
     flex-shrink: 0;
@@ -215,8 +226,9 @@
     line-height: 1.5;
     margin-right: 6.100000000000001rem;
     white-space: nowrap;
-  }
-  .pass{
+}
+
+.pass {
     background-color: #b9b9b9;
     border-radius: 0.5rem;
     box-sizing: border-box;
@@ -231,8 +243,9 @@
     padding: 0.05rem 2.1rem;
     white-space: nowrap;
     width: 39.7rem;
-  }
-  .password-XDC{
+}
+
+.password-XDC {
     color: #000000;
     display: flex;
     flex-shrink: 0;
@@ -243,4 +256,29 @@
     margin-right: 6.100000000000013rem;
     white-space: nowrap;
     padding-top: 15px;
-  }
+}
+
+.crt {
+    align-items: center;
+    background-color: #de0402;
+}
+
+.act {
+    display: flex;
+    margin-left: 229px;
+    color: #ffffff;
+}
+
+.can {
+    display: flex;
+    margin-right: 72px;
+    padding: 18px;
+    /* color: black; */
+    border-radius: 10px;
+}
+
+.btn {
+    padding: 17px;
+    border-radius: 10px;
+    color: white;
+}
