@@ -1,7 +1,7 @@
 <table mat-table class="table table-striped">
     <thead>
         <tr>
-            <th mat-header-cell scope="col" *ngFor="let header of header">{{header}}</th>
+            <th mat-header-cell scope="col" *ngFor="let header of headers">{{header}}</th>
     </thead>
     <tbody>
         <tr *ngFor="let ticket of tickets">
@@ -22,8 +22,8 @@
             </td> -->
     </tbody>
 </table>
-<!-- <mat-dialog-actions align="end">
+<mat-dialog-actions align="end">
     <button class="cent" mat-button mat-dialog-close>
     <mat-icon>close</mat-icon>
     </button>
-</mat-dialog-actions> -->
+</mat-dialog-actions>

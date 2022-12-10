@@ -10,6 +10,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { TicketManagementModule } from '../ticket-management/ticket-management.module';
 import { MatDialogModule, MAT_DIALOG_DATA, MatDialogRef, MatDialogActions } from '@angular/material/dialog';
 import { AgingListComponent } from '../users/aging-list/aging-list.component';
+import { ViewTicketPerAssigneeComponent } from '../users/view-ticket-per-assignee/view-ticket-per-assignee.component';
 
 
 
@@ -17,10 +18,12 @@ import { AgingListComponent } from '../users/aging-list/aging-list.component';
   declarations: [
     MonthlyReportComponent,
     MenuReportsComponent,
+    ViewTicketPerAssigneeComponent,
     
   ],
   imports: [
-    CommonModule,
+  
+  CommonModule,
     MatListModule,
     ReportsRoutingModule,
     MatIconModule,

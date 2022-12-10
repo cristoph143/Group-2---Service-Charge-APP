@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Inject, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Inject, Input, OnInit, Output } from '@angular/core';
 import { MatDialog, MatDialogConfig, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 import { Router } from '@angular/router';
@@ -25,14 +25,35 @@ export class ViewTicketPerAssigneeComponent implements OnInit {
     @Inject(MAT_DIALOG_DATA) public data: any
   ){}
 
+ 
+
   tickets: any;
+  user: any;
   ngOnInit(): void {
     console.log(this.data)
-    this.tickets = this.data.datas
-    console.log(this.tickets)
+    this.tickets = this.data.datas;
+    this.user = this.data.user;
+    console.log(this.tickets);
+    this.getHeader();
   }
 
-  header = ["AssigneeID", "Status", "Subject", "Description"];
+  headers: any;
+
+  getHeader(){
+    //if admin naay assigneeID
+    if(this.user.roleID == 102){
+      this.headers = ["TicketID", "AssigneeID", "Status", "Subject", "Description"];
+    }else{
+      this.headers = ["TicketID", "Status", "Subject", "Description"];
+    }
+    //if di kay wala
+  }
+  fetchAllTicketsInView(userID : any){
+  this.ticketService.fetchAllTickets().subscribe((data:any) => {
+    this.tickets = data.data;
+    this.getHeader();
+  })
+  }
 
   show: boolean = false;
 

@@ -83,13 +83,15 @@ export class MonthlyReportComponent implements OnInit {
   viewTicket(assigneeID: any,status: any){
     this.ticketService.findTicketsPerAssigneeAndStatus(assigneeID,status).subscribe((data:any) => {
       const datas = data.data;
+      const user = this.account$;    
       
       const dialogConfig = new MatDialogConfig();
       dialogConfig.disableClose = true;
       dialogConfig.autoFocus = true;
       dialogConfig.width = "100%";
       dialogConfig.data = {
-        datas
+        datas,
+        user
       };
       console.log(dialogConfig.data, 'dialogConfig.data');
       const dialogRef = this.dialog.open(ViewTicketPerAssigneeComponent, dialogConfig);

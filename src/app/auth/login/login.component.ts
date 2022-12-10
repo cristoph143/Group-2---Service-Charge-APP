@@ -64,19 +64,19 @@ export class LoginComponent implements OnInit {
         this.loginForm.value.username,
         this.loginForm.value.password,
       )
-      .pipe(
-        // toaster 
-        this.toast.observe({
-          success: 'Successfully logged in',
-          // if this.currUser is undefined, error
-          loading: 'loading',
-          // error: (msg) => {
-          //   console.log(msg)
-          //   alert(msg)
-          //   return msg;
-          // }
-        })
-      )
+      // .pipe(
+      //   // toaster 
+      //   this.toast.observe({
+      //     success: 'Successfully logged in',
+      //     // if this.currUser is undefined, error
+      //     loading: 'loading',
+      //     // error: (msg) => {
+      //     //   console.log(msg)
+      //     //   alert(msg)
+      //     //   return msg;
+      //     // }
+      //   })
+      // )
       .subscribe(data => {
         console.log('Data', data);
         this.currUser = data;

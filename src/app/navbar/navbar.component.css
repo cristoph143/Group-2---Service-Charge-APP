@@ -27,7 +27,7 @@ span {
     padding-left: 5px;
 }
 
-.navbar-item{
+.navbar-item {
     font-family: 'Poppins';
     font-weight: 700;
     font-size: 17px;
@@ -47,13 +47,13 @@ span {
     border: none;
 }
 
-.butn{
+.butn {
     background-color: rgba(221, 3, 1, 1);
     color: white;
     padding: 16px;
     font-size: 16px;
-    border: none; 
-} 
+    border: none;
+}
 
 .dropdown-content {
     display: none;
@@ -64,7 +64,6 @@ span {
     z-index: 1;
     font-size: medium;
     font-family: 'Poppins';
-
 }
 
 .dropdown-content a {
@@ -88,8 +87,9 @@ span {
 
 .butn {
     background-color: transparent;
+    color: black;
 }
 
-.butn:hover{
-    color: black;
+.butn:hover {
+    color: #DD0301;
 }
