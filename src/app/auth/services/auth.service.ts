@@ -34,8 +34,6 @@ export class AuthService {
     }
   
   signup(user: Omit<Users,"username">): Observable<Users>{
-    console.log('signup')
-    console.log(user);
     return this.http
       .post<Users>(
         `${this.url}/signup`,
@@ -57,7 +55,6 @@ export class AuthService {
     token: string,
     username: Pick<Users, "username">
   }> {
-    console.log('login' + username);
     const user = this.http
       .post(
         `${this.url}/login`,
@@ -71,12 +68,10 @@ export class AuthService {
         first(),
         tap((tokenObject: any) => {
           this.username = tokenObject.username;
-          console.log(tokenObject)
           localStorage.setItem("token", tokenObject.token);
           this.isUserLoggedIn$.next(true);
           // this.isUserLoggedIn$ = true;
           this.username = username;
-          console.log('sdd=>',this.username);
           this.router.navigate(["user-dashboard"]);
           // alert("Successfully logged in");
         }),
@@ -87,11 +82,7 @@ export class AuthService {
           }>()
         ),
     ) 
-    console.log(user);
     this.currUser = user;
-    console.log(this.currUser,"djsjsdj");
-    
-    console.log('username' + this.username);
     return this.currUser;
   }
 
@@ -109,7 +100,6 @@ export class AuthService {
   }
 
   isUserAuthenticated(): boolean {
-    console.log(!!localStorage.getItem("token"));
     return !!localStorage.getItem("token");
   }
 }

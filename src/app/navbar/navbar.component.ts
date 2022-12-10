@@ -17,13 +17,9 @@ export class NavbarComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    console.log(this.authService.isUserLoggedIn$.subscribe((isLoggedIn) => {
+    this.authService.isUserLoggedIn$.subscribe((isLoggedIn) => {
       this.isAuthenticated = isLoggedIn;
-      console.log('?????',this.isAuthenticated)
-    }))
-    // this.isAuthenticated = this.authService.isUserLoggedIn$;
-    console.log('hello', this.isAuthenticated);
-
+    })
   }
   
   isAuthenticated = false;
@@ -38,9 +34,7 @@ export class NavbarComponent implements OnInit {
 
   logout(): void {
     localStorage.removeItem("token");
-    // const remove = this.authService.isUserLoggedIn$.next(false);
     const remove: any = this.authService.isUserLoggedIn$.next(false);
-    // this.authService.isUserLoggedIn$ = false;
     this.isAuthenticated = remove;
     this.router.navigate(["login"]);
   }

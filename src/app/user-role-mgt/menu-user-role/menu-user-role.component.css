@@ -17,8 +17,6 @@
     letter-spacing: 0.02em;
 }
 
-
-
 .inside {
     position: absolute;
     left: 90px;
@@ -34,7 +32,6 @@
     border: none;
     transition-duration: 0.4s;
     justify-items: center;
-
     position: absolute;
     width: 450px;
     height: 80px;
@@ -126,7 +123,7 @@ mat-icon {
     justify-content: center;
 }
 
-.create_user{
+.create_user {
     margin-left: -259px;
     position: absolute;
     width: 251px;
@@ -162,7 +159,6 @@ mat-icon {
     border: none;
     transition-duration: 0.4s;
     justify-items: center;
-
     position: absolute;
     width: 450px;
     height: 80px;
@@ -243,21 +239,6 @@ mat-icon {
 }
 
 .add:hover {
-    background-color: white;
-    color: black;
-}
-
-.workflow {
-    font-family: 'Poppins';
-    background-color: rgba(222, 4, 2, 0.5);
-    font-size: 20px;
-    color: white;
-    padding: 12px 28px;
-    border-radius: 8px;
-    width: 350px;
-}
-
-.workflow:hover {
     background-color: white;
     color: black;
 }

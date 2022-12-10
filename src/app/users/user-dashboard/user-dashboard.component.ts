@@ -30,7 +30,6 @@ export class UserDashboardComponent implements OnInit {
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
   }
 
@@ -38,15 +37,12 @@ export class UserDashboardComponent implements OnInit {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
-    // return this.accService.fetchAccount(username);
     this.userService
       .fetchAccountUsingUsername(
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -54,19 +50,12 @@ export class UserDashboardComponent implements OnInit {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   list: List[] = [
-    // ["ticket_list", "create_list", "update_list", "view_ticket", "aging_ticket", "ticket_workflow"];
     { path: '/ticket_list', icon: 'list', name: 'Ticket List' },
-    // { path: '/create_list', icon: 'add', name: 'Create Ticket' },
-    // { path: '/update_list', icon: 'update', name: 'Update Ticket' },
-    // { path: '/view_ticket', icon: 'view_list', name: 'View Ticket' },
     { path: '/aging_ticket', icon: 'watch_later', name: 'Aging Ticket' },
     { path: '/ticket_workflow', icon: 'workflow', name: 'Ticket Workflow' },
     { path: '/ticket_management', icon: 'ticket', name: 'TICKET MANAGEMENT' },

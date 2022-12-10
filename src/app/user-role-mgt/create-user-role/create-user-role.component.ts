@@ -29,7 +29,6 @@ export class CreateUserRoleComponent {
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
   }
 
@@ -42,7 +41,6 @@ export class CreateUserRoleComponent {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
     // return this.accService.fetchAccount(username);
     this.userService
@@ -50,7 +48,6 @@ export class CreateUserRoleComponent {
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -58,11 +55,8 @@ export class CreateUserRoleComponent {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   attachmentList:any = [];
@@ -72,7 +66,6 @@ export class CreateUserRoleComponent {
     formData.append('description', this.userRole.value.description.toString());
 
     this.userRoleService.createUserRole(formData).subscribe((data:any) => {
-      console.log(data);
       alert(data.message)
       // close all
       this.dialog.closeAll();

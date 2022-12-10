@@ -46,7 +46,6 @@ export class CreateUserComponent {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
     // return this.accService.fetchAccount(username);
     this.userService
@@ -54,7 +53,6 @@ export class CreateUserComponent {
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -62,11 +60,8 @@ export class CreateUserComponent {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   attachmentList:any = [];
@@ -80,9 +75,7 @@ export class CreateUserComponent {
     formData.append('password', this.user.value.password.toString());
 
     this.userService.createUser(formData).subscribe((data:any) => {
-      console.log(data);
       alert(data.message)
-      // close all
       this.dialog.closeAll();
       this.router.navigate['/user-role-management'];
     })

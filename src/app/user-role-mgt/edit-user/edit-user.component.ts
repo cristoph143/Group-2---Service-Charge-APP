@@ -36,9 +36,7 @@ export class EditUserComponent {
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
-    console.log(this.data)
     this.users = this.data
   }
 
@@ -46,7 +44,6 @@ export class EditUserComponent {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
     // return this.accService.fetchAccount(username);
     this.userService
@@ -54,7 +51,6 @@ export class EditUserComponent {
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -62,15 +58,11 @@ export class EditUserComponent {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   updateTicket() {
-    console.log(this.users.user.userID);
     let formData : FormData = new FormData();
     
     formData.append('userID', this.users.user.userID.toString());
@@ -81,7 +73,6 @@ export class EditUserComponent {
     formData.append('password', this.user.value.password.toString());
 
     this.userService.updateUser(this.users.user.userID, formData).subscribe((data:any) => {
-      console.log(data);
       alert(data.message)
       // close all
       this.dialog.closeAll();

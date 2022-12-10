@@ -5,8 +5,6 @@ import { AgingListComponent } from '../users/aging-list/aging-list.component';
 import { TicketListComponent } from '../users/ticket-list/ticket-list.component';
 
 import { MenuComponent } from './menu/menu.component';
-import { AgingTicketsComponent } from '../users/aging-tickets/aging-tickets.component';
-
 
 const routes: Routes = [
     {

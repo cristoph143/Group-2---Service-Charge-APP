@@ -42,7 +42,6 @@ export class TicketListComponent implements OnInit {
     ngOnInit(): void {
       // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
     this.fetchAllTickets(this.user);
     
@@ -52,15 +51,12 @@ export class TicketListComponent implements OnInit {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
-    // return this.accService.fetchAccount(username);
     this.userService
       .fetchAccountUsingUsername(
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -68,11 +64,8 @@ export class TicketListComponent implements OnInit {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   header : any;
@@ -84,7 +77,6 @@ export class TicketListComponent implements OnInit {
     }else{
       this.header = ["TicketID", "Status", "Subject", "Description"];
     }
-    //if di kay wala
   }
 
    
@@ -111,13 +103,9 @@ export class TicketListComponent implements OnInit {
     dialogConfig.data = {
       ticket
     };
-    console.log(dialogConfig.data, 'dialogConfig.data');
     const dialogRef = this.dialog.open(CreateListComponent, dialogConfig);
-    console.log(dialogRef)
-    //   const dialogRef = this.dialog.open(dialogReference);
 
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
       this.fetchAllTickets(this.user);
@@ -125,9 +113,7 @@ export class TicketListComponent implements OnInit {
     });
   }
   updateTicket(id:any){
-    console.log(this.tickets +"update");
     const ticket = this.tickets.find(t => t.ticketID === id);
-    console.log(ticket);
     // open the dialog box
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
@@ -136,13 +122,10 @@ export class TicketListComponent implements OnInit {
     dialogConfig.data = {
       ticket
     };
-    console.log(dialogConfig.data, 'dialogConfig.data');
     const dialogRef = this.dialog.open(UpdateListComponent, dialogConfig);
-    console.log(dialogRef)
     //   const dialogRef = this.dialog.open(dialogReference);
 
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
       this.fetchAllTickets(this.user);
@@ -168,12 +151,9 @@ export class TicketListComponent implements OnInit {
     const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
     // push the this.headers to headers
     const header = Object.keys(this.tickets[0])
-    console.log(header)
-    console.log(this.tickets);
     // from this.tickets get the values and push it to the rows
     const csv = this.tickets.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
     csv.unshift(header.join(','));
-    console.table(csv)
     const csvArray = csv.join('\r\n');
 
     const a = document.createElement('a');

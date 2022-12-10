@@ -35,7 +35,6 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
   }
 
@@ -43,7 +42,6 @@ export class MenuComponent implements OnInit {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
     // return this.accService.fetchAccount(username);
     this.userService
@@ -51,7 +49,6 @@ export class MenuComponent implements OnInit {
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -59,11 +56,8 @@ export class MenuComponent implements OnInit {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   list: List[] = [
@@ -97,17 +91,11 @@ export class MenuComponent implements OnInit {
     dialogConfig.data = {
       ticket
     };
-    console.log(dialogConfig.data, 'dialogConfig.data');
     const dialogRef = this.dialog.open(CreateListComponent, dialogConfig);
-    console.log(dialogRef)
-    //   const dialogRef = this.dialog.open(dialogReference);
-
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
       this.fetchAllTickets();
-      // refresh content o
     });
   }
 

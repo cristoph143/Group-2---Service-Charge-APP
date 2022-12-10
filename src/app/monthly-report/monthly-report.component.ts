@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
-import { Router } from '@angular/router';
 import { MonthlyReport } from '../auth/model/monthly-report';
-import { Ticket } from '../auth/model/ticket-interface';
 import { Users } from '../auth/model/user-interface';
 import { AuthService } from '../auth/services/auth.service';
 import { TicketService } from '../auth/services/ticket.service';
@@ -19,7 +17,6 @@ export class MonthlyReportComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private userService: UsersService,
-    private router: Router,
     private ticketService: TicketService,
     public dialog: MatDialog
     ) { }
@@ -33,7 +30,6 @@ export class MonthlyReportComponent implements OnInit {
     monthlyJson: any
     ngOnInit(): void {
       this.username = this.authService.username;
-      console.log(this.username)
       this.getInfoUsingUsername(this.username);
       this.monthlyReport();
       this.ticketPerAssignee();
@@ -43,7 +39,6 @@ export class MonthlyReportComponent implements OnInit {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
     // return this.accService.fetchAccount(username);
     this.userService
@@ -51,7 +46,6 @@ export class MonthlyReportComponent implements OnInit {
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -59,24 +53,19 @@ export class MonthlyReportComponent implements OnInit {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   monthlyReport() {
     this.ticketService.monthlyReport().subscribe((data:any) => {
       this.tickets_monthly = data;
-      console.log(this.tickets_monthly);
     });
   }
 
   ticketPerAssignee(){
     this.ticketService.ticketPerAssignee().subscribe((data:any) => {
       this.tickets_assignee = data;
-      console.log(this.tickets_assignee);
     });
   }
 
@@ -93,15 +82,10 @@ export class MonthlyReportComponent implements OnInit {
         datas,
         user
       };
-      console.log(dialogConfig.data, 'dialogConfig.data');
       const dialogRef = this.dialog.open(ViewTicketPerAssigneeComponent, dialogConfig);
-      console.log(dialogRef)
-      //   const dialogRef = this.dialog.open(dialogReference);
 
       dialogRef.afterClosed().subscribe((result: any) => {
-        console.log(`Dialog result: ${result}`);
         this.dialog.closeAll();
-        console.log(this.monthlyReport())
         this.ticketPerAssignee();
       });
 
@@ -110,16 +94,13 @@ export class MonthlyReportComponent implements OnInit {
   header = ["Status", "Count"];
   
   exportToCSV(){
-    console.log(this.tickets_monthly)
     // export tickets to csv file
     const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
     // push the this.headers to headers
     const header = Object.keys(this.tickets_monthly[0])
-    console.log(header)
     // from this.tickets get the values and push it to the rows
     const csv = this.tickets_monthly.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
     csv.unshift(header.join(','));
-    console.table(csv)
     const csvArray = csv.join('\r\n');
 
     const a = document.createElement('a');

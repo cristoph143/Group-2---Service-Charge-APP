@@ -35,7 +35,6 @@ export class ListUserComponent {
     ngOnInit(): void {
       // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
     this.fetchAllUsers();
   }
@@ -44,15 +43,12 @@ export class ListUserComponent {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
-    // return this.accService.fetchAccount(username);
     this.userService
       .fetchAccountUsingUsername(
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -60,11 +56,8 @@ export class ListUserComponent {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   header = ["User ID", "Role ID", "First Name", "Last Name", "Username", "Password"];
@@ -84,9 +77,7 @@ export class ListUserComponent {
     }
   }
   updateUser(id:any){
-    console.log(this.users +"update");
     const user = this.users.find(t => t.userID === id);
-    console.log(user);
     // open the dialog box
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
@@ -95,17 +86,13 @@ export class ListUserComponent {
     dialogConfig.data = {
       user
     };
-    console.log(dialogConfig.data, 'dialogConfig.data');
     const dialogRef = this.dialog.open(EditUserComponent, dialogConfig);
-    console.log(dialogRef)
-    //   const dialogRef = this.dialog.open(dialogReference);
 
     dialogRef.afterClosed().subscribe((result: any) => {
       console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
       this.fetchAllUsers();
-      // refresh content o
     });
     // 
   }
@@ -120,7 +107,6 @@ export class ListUserComponent {
     // from this.tickets get the values and push it to the rows
     const csv = this.users.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
     csv.unshift(header.join(','));
-    console.table(csv)
     const csvArray = csv.join('\r\n');
 
     const a = document.createElement('a');

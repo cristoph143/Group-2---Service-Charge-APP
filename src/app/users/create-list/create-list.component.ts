@@ -31,9 +31,7 @@ export class CreateListComponent implements OnInit {
   tickets: any;
   account$: any;
   ngOnInit(): void {
-    // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
   }
 
@@ -50,15 +48,12 @@ export class CreateListComponent implements OnInit {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
-    // return this.accService.fetchAccount(username);
     this.userService
       .fetchAccountUsingUsername(
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -66,16 +61,12 @@ export class CreateListComponent implements OnInit {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   attachmentList:any = [];
   createTicket() {
-    console.log(this.ticket.value)
     let formData : FormData = new FormData();
 
     formData.append('assignee', this.ticket.value.assigneeID.toString());
@@ -84,9 +75,7 @@ export class CreateListComponent implements OnInit {
     formData.append('description', this.ticket.value.description.toString());
 
     this.ticketService.createTicket(formData).subscribe((data:any) => {
-      console.log(data);
       alert(data.message)
-      // close all
       this.dialog.closeAll();
       this.router.navigate['/ticket-list'];
     })

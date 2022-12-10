@@ -40,32 +40,21 @@ export class AgingListComponent {
 
     account$: any;
     ngOnInit(): void{
-      // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
-    console.log(this.user, "GIPASA")
-  
     this.getInfoUsingUsername(this.username)
     this.fetchAllAgingTickets(this.user);
-    
     }
-
-    
-
 
     userId: Pick<Users, "username"> | undefined;
     username: any;
     header: any;
   
   getInfoUsingUsername(username: any) {
-      console.log(username, 'username');
       let res: never[] = [];
-      // return this.accService.fetchAccount(username);
       this.userService
         .fetchAccountUsingUsername(
           username
       ).subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -74,34 +63,23 @@ export class AgingListComponent {
     }
 
     getAcc(res:any) {
-      console.log(res)
       const curr_acc = res;
-      console.log(curr_acc, 'curr_acc');
       this.account$ = curr_acc;
-      console.log(this.account$, 'account$');
-      console.log(this.account$.roleID, 'account$ YAWA');
-      
     }
 
     fetchAllAgingTickets(user: any){
-      console.log(this.account$, "KAABOT KA DIRI?2")      
       if(user.roleID == 101){
         this.ticketService.fetchAllAgingTickets().subscribe((data:any) => {
           this.tickets = data.data; 
-          console.log(this.account$, "KAABOT KA DIRI?1")     
           this.getHeader();
         })
       }
       else{
         this.ticketService.fetchAllAgingTicketsByID(user.userID).subscribe((data:any) => {
           this.tickets = data.data;
-          console.log(this.tickets, "KAABOT KA DIRI?2")   
           this.getHeader();   
         })
       }
-
-
-      
     }
 
     
@@ -112,7 +90,6 @@ export class AgingListComponent {
       }else{
         this.header = ["TicketID", "Status", "Subject", "Description"];
       }
-      //if di kay wala
     }
 
     exportToCSV(){
@@ -120,12 +97,9 @@ export class AgingListComponent {
       const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
       // push the this.headers to headers
       const header = Object.keys(this.tickets[0])
-      console.log(header)
-      console.log(this.tickets);
       // from this.tickets get the values and push it to the rows
       const csv = this.tickets.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
       csv.unshift(header.join(','));
-      console.table(csv)
       const csvArray = csv.join('\r\n');
   
       const a = document.createElement('a');

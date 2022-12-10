@@ -34,7 +34,6 @@ export class MenuUserRoleComponent implements OnInit {
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
   }
 
@@ -42,15 +41,12 @@ export class MenuUserRoleComponent implements OnInit {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
-    // return this.accService.fetchAccount(username);
     this.userService
       .fetchAccountUsingUsername(
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -58,11 +54,8 @@ export class MenuUserRoleComponent implements OnInit {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   list: List[] = [
@@ -89,13 +82,10 @@ export class MenuUserRoleComponent implements OnInit {
     dialogConfig.data = {
       users
     };
-    console.log(dialogConfig.data, 'dialogConfig.data');
     const dialogRef = this.dialog.open(CreateUserComponent, dialogConfig);
-    console.log(dialogRef)
     //   const dialogRef = this.dialog.open(dialogReference);
 
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
       // refresh content o
@@ -111,16 +101,11 @@ export class MenuUserRoleComponent implements OnInit {
     dialogConfig.data = {
       users
     };
-    console.log(dialogConfig.data, 'dialogConfig.data');
     const dialogRef = this.dialog.open(CreateUserRoleComponent, dialogConfig);
-    console.log(dialogRef)
-    //   const dialogRef = this.dialog.open(dialogReference);
 
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
-      // refresh content o
     });
   }
 

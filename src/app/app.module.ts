@@ -47,7 +47,6 @@ import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.compone
 
 const appRoute: Routes =[
   {path: 'Home', component: UserDashboardComponent},
-  // {path: 'chuchu/chu/:id', component: UserDashboardComponent},
 ]
 
 @NgModule({
@@ -56,19 +55,9 @@ const appRoute: Routes =[
     LoginComponent,
     UserDashboardComponent,
     NavbarComponent,
-    // TicketListComponent,
     CreateListComponent,
     UpdateListComponent,
-    // ViewTicketComponent,
-    // AgingTicketComponent,
-    // TicketWorkflowComponent,
-    // ViewTicketPerAssigneeComponent,
     ForgotpasswordComponent,
-    // MenuUserRoleComponent,
-    // ListUserRoleComponent,
-    // MenuReportsComponent,
-    // MonthlyReportComponent,
-    // MenuComponent,
   ],
   exports: [
     CommonModule,

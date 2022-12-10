@@ -28,17 +28,11 @@ export class FileService {
     }
 
     uploadFile(formData: FormData) {
-        // extract and print the formData
-        console.log(formData.get('file'));
-        console.log(formData.get('research_id'));
-        console.log(formData)
         let id = formData.get('research_id');
         const req = new HttpRequest('POST', `${this.baseUrl}/upload/${id}`, formData, {
             reportProgress: true,
             responseType: 'json',
         });
-        console.log(req);
-      
           return this._http.request(req);
     }
     

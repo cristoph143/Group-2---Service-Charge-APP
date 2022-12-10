@@ -57,35 +57,16 @@ export class LoginComponent implements OnInit {
       this.loginForm.markAllAsTouched();
       return;
     }
-    console.log(this.loginForm.value.username)
-    
-    console.log(this.authService
+    this.authService
       .login(
         this.loginForm.value.username,
         this.loginForm.value.password,
       )
-      // .pipe(
-      //   // toaster 
-      //   this.toast.observe({
-      //     success: 'Successfully logged in',
-      //     // if this.currUser is undefined, error
-      //     loading: 'loading',
-      //     // error: (msg) => {
-      //     //   console.log(msg)
-      //     //   alert(msg)
-      //     //   return msg;
-      //     // }
-      //   })
-      // )
       .subscribe(data => {
         console.log('Data', data);
         this.currUser = data;
       }
       )
-    );
-    console.log(this.currUser);
-    console.log(this.authService.currUser)
-    console.log(this.authService.isUserAuthenticated)
   }
   getErrorMessage() {
     if (this.loginForm.hasError('required')) {

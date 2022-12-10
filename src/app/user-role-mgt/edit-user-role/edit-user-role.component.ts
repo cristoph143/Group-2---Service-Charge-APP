@@ -35,9 +35,7 @@ export class EditUserRoleComponent {
   ngOnInit(): void {
     // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
-    console.log(this.data)
     this.userRoles = this.data
   }
 
@@ -45,15 +43,12 @@ export class EditUserRoleComponent {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
-    // return this.accService.fetchAccount(username);
     this.userService
       .fetchAccountUsingUsername(
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -61,26 +56,18 @@ export class EditUserRoleComponent {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   updateUserRole() {
-    console.log(this.userRole.value)
-    console.log(this.userRoles.ticket)
-    // console.log(this.userRoles.userRole.roleID)
     let formData : FormData = new FormData();
     
     formData.append('roleID', this.userRoles.ticket.roleID.toString());
     formData.append('description', this.userRole.value.description.toString());
 
     this.userRoleService.updateUserRole(this.userRoles.ticket.roleID, formData).subscribe((data:any) => {
-      console.log(data);
       alert(data.message)
-      // close all
       this.dialog.closeAll();
     })
   }

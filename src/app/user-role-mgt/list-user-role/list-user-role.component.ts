@@ -38,9 +38,7 @@ export class ListUserRoleComponent implements OnInit {
 
   account$: any;
     ngOnInit(): void {
-      // this.userId = this.authService.userId;
     this.username = this.authService.username;
-    console.log(this.username)
     this.getInfoUsingUsername(this.username);
     this.fetchAllUserRoles();
 
@@ -50,7 +48,6 @@ export class ListUserRoleComponent implements OnInit {
   username: any;
 
   getInfoUsingUsername(username: any) {
-    console.log(username, 'username');
     let res: never[] = [];
     // return this.accService.fetchAccount(username);
     this.userService
@@ -58,7 +55,6 @@ export class ListUserRoleComponent implements OnInit {
         username
     )
       .subscribe((data:any) => {
-        console.log(data);
         res = data;
         this.getAcc(res);
       }
@@ -66,11 +62,8 @@ export class ListUserRoleComponent implements OnInit {
   }
 
   getAcc(res:any) {
-    console.log(res)
     const curr_acc = res;
-    console.log(curr_acc, 'curr_acc');
     this.account$ = curr_acc;
-    console.log(this.account$, 'account$');
   }
 
   header = ["Role ID", "Description"];
@@ -91,9 +84,7 @@ export class ListUserRoleComponent implements OnInit {
   }
 
   updateUserRole(id:any){
-    console.log(this.userRoles +"update");
     const ticket = this.userRoles.find(t => t.roleID === id);
-    console.log(ticket);
     // open the dialog box
     const dialogConfig = new MatDialogConfig();
     dialogConfig.disableClose = true;
@@ -102,19 +93,13 @@ export class ListUserRoleComponent implements OnInit {
     dialogConfig.data = {
       ticket
     };
-    console.log(dialogConfig.data, 'dialogConfig.data');
     const dialogRef = this.dialog.open(EditUserRoleComponent, dialogConfig);
-    console.log(dialogRef)
-    //   const dialogRef = this.dialog.open(dialogReference);
 
     dialogRef.afterClosed().subscribe((result: any) => {
-      console.log(`Dialog result: ${result}`);
       this.dialog.closeAll();
       this.router.navigate(['/user-dashboard']);
       this.fetchAllUserRoles();
-      // refresh content o
     });
-    // 
   }
 
 
@@ -124,12 +109,9 @@ export class ListUserRoleComponent implements OnInit {
     const replacer = (key, value) => (value === null ? '' : value); // specify how you want to handle null values here
     // push the this.headers to headers
     const header = Object.keys(this.userRoles[0])
-    console.log(header)
-    console.log(this.userRoles);
     // from this.tickets get the values and push it to the rows
     const csv = this.userRoles.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','));
     csv.unshift(header.join(','));
-    console.table(csv)
     const csvArray = csv.join('\r\n');
 
     const a = document.createElement('a');

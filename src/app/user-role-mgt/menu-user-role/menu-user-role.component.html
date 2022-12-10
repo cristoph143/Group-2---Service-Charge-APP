@@ -3,7 +3,6 @@
         <h1 class="user-role">USER/ROLE MANAGEMENT</h1>
     </div>
     <div class="row">
-        <!-- naay natabunan ani nila na button -->
         <button (click)="createUser()" class="add_user">Add User</button>
         <button (click)="createUserRole()" class="add_role">Add Role</button>
     </div>
@@ -19,7 +18,7 @@
             </mat-list>
         </div>
         <div class="content" *ngIf="paths === '/user-role-list'">
-           <app-list-user-role></app-list-user-role>
+            <app-list-user-role></app-list-user-role>
         </div>
         <div class="content" *ngIf="paths === '/user-list'">
             <app-list-user></app-list-user>
