@@ -89,31 +89,31 @@
 </div> -->
 
 <div>
-  <div class="title">
-    <h1 class="dashboard">DASHBOARD</h1>
-  </div>
-  <div class="card-deck" id="tix_mgt" >
-    <button class="tix_mgt_btn" (click)="goToTicketMgt()">
+    <div class="title">
+        <h1 class="dashboard">DASHBOARD</h1>
+    </div>
+    <div class="card-deck" id="tix_mgt">
+        <button class="tix_mgt_btn" (click)="goToTicketMgt()">
       <div>
         <span><img src="assets/ticket_icon.png" alt="ticket_icon" class="ticket_icon"></span>
         <p class="tix_text">TICKET MANAGEMENT</p>
       </div>
     </button>
-  </div>
-  <div class="card-deck" id="reports">
-    <button class="report_btn" (click)="goToReports()">
+    </div>
+    <div class="card-deck" id="reports">
+        <button class="report_btn" (click)="goToReports()">
       <div class="center">
         <span><img src="assets/reports_icon.png" alt="report_icon" class="report_icon"></span>
         <p class="report_text">REPORTS</p>
       </div>
     </button>
-  </div>
-  <div class="card-deck" id="user_role" *ngIf="account$.roleID == 102">
-    <button class="user_role_btn" (click)="goToUserRoleMgt()">
+    </div>
+    <div class="card-deck" id="user_role" *ngIf="account$.roleID == 101">
+        <button class="user_role_btn" (click)="goToUserRoleMgt()">
       <div class="center">
         <span><img src="assets/users_icon.png" alt="user_icon" class="user_icon"></span>
         <p class="user_role_text">USER/ROLE MANAGEMENT</p>
       </div>
     </button>
-  </div>
+    </div>
 </div>
