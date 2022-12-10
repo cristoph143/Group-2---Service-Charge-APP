@@ -42,6 +42,7 @@ import { ReportsModule } from './reports/reports.module';
 import { MenuUserRoleComponent } from './user-role-mgt/menu-user-role/menu-user-role.component';
 import { ListUserRoleComponent } from './user-role-mgt/list-user-role/list-user-role.component';
 import { UserRoleMgtModule } from './user-role-mgt/user-role-mgt.module';
+import { ForgotpasswordComponent } from './forgotpassword/forgotpassword.component';
 
 
 const appRoute: Routes =[
@@ -62,7 +63,7 @@ const appRoute: Routes =[
     // AgingTicketComponent,
     // TicketWorkflowComponent,
     // ViewTicketPerAssigneeComponent,
-    // AgingListComponent,
+    ForgotpasswordComponent,
     // MenuUserRoleComponent,
     // ListUserRoleComponent,
     // MenuReportsComponent,

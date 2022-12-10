@@ -1,6 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
-import { MatLegacyDialog as MatDialog, MAT_LEGACY_DIALOG_DATA as MAT_DIALOG_DATA } from '@angular/material/legacy-dialog';
+
 import { Router } from '@angular/router';
 // import * as saveAs from 'file-saver';
 import { Users } from 'src/app/auth/model/user-interface';
@@ -8,6 +8,8 @@ import { AuthService } from 'src/app/auth/services/auth.service';
 import { TicketService } from 'src/app/auth/services/ticket.service';
 import { UsersService } from 'src/app/auth/services/users.service';
 import { FileService } from 'src/app/auth/services/file.service';
+import { MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
+
 @Component({
   selector: 'app-create-list',
   templateUrl: './create-list.component.html',
